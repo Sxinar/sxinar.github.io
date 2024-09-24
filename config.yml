@@ -1,0 +1,107 @@
+baseURL: "https://sxi.is-a.dev"
+title: "Sxinar"
+DefaultContentLanguage: tr
+theme: hugo-PaperMod
+
+languages:
+  tr:
+    languageName: ":tr:"
+    weight: 1
+    params:
+      languageAltTitle: Turkish
+      homeInfoParams:
+        Title: "Sxinar"
+        Content: Burası benim teknoloji çiftliğim.
+
+menu:
+  main:
+    - identifier: Anasayfa
+      name: Anasayfa
+      url: /
+      weight: 1
+    - identifier: Blog
+      name: Blog
+      url: /post/
+      weight: 2
+    - identifier: İletişim
+      name: İletişim
+      url: /page/iletisim/
+      weight: 6
+    - identifier: Kategoriler
+      name: Kategoriler
+      url: /tags/
+      weight: 3
+    - identifier: Arşiv
+      name: "Arşiv"
+      url: /arsiv/
+      weight: 5
+    - identifier: Ara
+      name: "Ara \U0001f50d"
+      url: /ara/
+      weight: 7
+
+outputs:
+    home:
+        - HTML
+        - RSS
+        - JSON
+
+params:
+    ShowShareButtons: true
+    ShowReadingTime: true
+    ShowToc: true
+    tocopen: true
+    ShowRssButtonInSectionTermList: true
+    ShowFullTextinRSS: true
+    enableInlineShortcodes: true
+    enableRobotsTXT: true
+    buildDrafts: false
+    buildFuture: false
+    buildExpired: false
+    env: production
+    gtm_id: "GTM-5XKDQD65"
+    ShowBreadCrumbs: true
+    title: "Sxinar"
+    description: "Açıklama"
+    author: Sxinar
+    DateFormat: "2 January, 2006"
+    ShowPostNavLinks: true
+    defaultTheme: auto
+    rss: true
+    ShowFullTextinRSS: true
+    TocOpen: true
+    ShowCodeCopyButtons: true
+    comments: true
+    fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+    enableEmoji: true
+    location: 0
+    distance: 1000
+    threshold: 0.4
+    minMatchCharLength: 0
+    keys: ["title", "permalink", "summary", "content"]
+  
+    socialIcons:
+        - name: android
+          url: "https://www.android.com/"
+        - name: github
+          url: "https://github.com/Sxinar"
+        - name: gitlab
+          url: "https://gitlab.com/Sxinar"
+        - name: xda
+          url: "https://xdaforums.com/m/basaransemih.12859096/"
+        - name: forum
+          url: "https://techolay.net/sosyal/uye/sxinar.2046"
+        - name: email
+          url: "mailto:me.unreal462@simplelogin.com"
+        - name: rss
+          url: "https://sxinar.github.io/index.xml"
+      
+    assets:
+        favicon: "https://avatars.githubusercontent.com/u/130384567?v=4"
+
+    editPost:
+        URL: "https://github.com/sxinar/sxinar.github.io/tree/main/content"
+        Text: "Düzenle"
+        appendFilePath: true

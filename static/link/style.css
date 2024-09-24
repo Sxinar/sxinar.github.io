@@ -1,0 +1,159 @@
+/* style.css */
+body {
+  font-family: Consolas, monaco, monospace;
+  background-color: #161616; /* Karanlık moda uygun arka plan rengi */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  color: #ccc; /* Karanlık moda uygun metin rengi */
+}
+
+body.light-mode {
+  background-color: #f0f0f0; /* Aydınlık moda uygun arka plan rengi */
+  color: #333; /* Aydınlık moda uygun metin rengi */
+}
+
+.a-t {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.avatar {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+a {
+  color: #ccc; /* Karanlık moda uygun bağlantı rengi */
+  text-decoration: none;
+}
+
+body.light-mode a {
+  color: #333; /* Aydınlık moda uygun bağlantı rengi */
+}
+
+i {
+  font-size: 50px;
+  margin-right: 5px;
+  transition: transform 0.5s; /* Geçiş efekti için transition eklendi */
+}
+
+i:hover {
+  transform: scale(1.25);
+}
+
+.social {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.social a {
+  margin-right: 10px;
+}
+
+.recommended, .opensource {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.recommended a, .opensource a {
+  color: #888; /* Karanlık moda uygun bağlantı rengi */
+  margin: 0 10px;
+  font-size: 18px;
+}
+
+.recommended a:hover, .opensource a:hover {
+  color: #ccc; /* Karanlık moda uygun bağlantı hover rengi */
+}
+
+body.light-mode .recommended a, body.light-mode .opensource a {
+  color: #666; /* Aydınlık moda uygun bağlantı rengi */
+}
+
+body.light-mode .recommended a:hover, body.light-mode .opensource a:hover {
+  color: #333; /* Aydınlık moda uygun bağlantı hover rengi */
+}
+
+.theme-switch {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.theme-switch label {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  color: #ccc; /* Karanlık moda uygun metin rengi */
+  transition: color 0.3s ease;
+}
+
+body.light-mode .theme-switch label {
+  color: #333; /* Aydınlık moda uygun metin rengi */
+}
+
+.theme-switch i {
+  margin: 0 5px;
+  transition: color 0.3s ease;
+}
+
+#theme-toggle {
+  display: none;
+}
+
+#theme-toggle:checked + label i.fa-sun {
+  color: #f39c12; /* Aydınlık mod ikonu rengi */
+}
+
+#theme-toggle:not(:checked) + label i.fa-moon {
+  color: #f39c12; /* Karanlık mod ikonu rengi */
+}
+
+#blog-section {
+  width: 80%;
+  margin-top: 20px;
+}
+
+#blog-list {
+  list-style: none;
+  padding: 0;
+}
+
+#blog-list li {
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+#blog-list li:hover {
+  background-color: #444;
+}
+
+body.light-mode #blog-list li:hover {
+  background-color: #ddd;
+}
+
+#blog-details {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+}
+
+#blog-details.visible {
+  display: flex;
+}
+
+.hidden {
+  display: none;
+}
