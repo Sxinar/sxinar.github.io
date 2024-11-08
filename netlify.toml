@@ -1,5 +1,5 @@
 [build]
-  publish = "./config/_"
+  publish = ""
   command = "hugo"
 
 [build.environment]
