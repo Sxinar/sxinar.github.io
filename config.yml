@@ -13,6 +13,10 @@ languages:
         Title: "Sxinar"
         Content: Burası benim teknoloji çiftliğim.
 
+- name: Hugo setup
+uses: peaceiris/actions-hugo@v3.0.0
+            
+
 menu:
   main:
     - identifier: Anasayfa
