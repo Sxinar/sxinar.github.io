@@ -1,7 +1,7 @@
 baseURL: "https://sxi.loopstack.com.tr"
 title: "Sxinar"
 DefaultContentLanguage: tr
-theme: hugo-PaperMod
+theme: PaperMod
 
 languages:
   tr:
