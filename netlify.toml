@@ -1,5 +1,5 @@
 [build.environment]
-HUGO_VERSION = "0.128.0"
+HUGO_VERSION = "0.137.1"
 DART_SASS_VERSION = "1.77.5"
 TZ = "Europe/Istanbul"
 HUGO_BASEURL = "https://sxinarr.netlify.app/"
