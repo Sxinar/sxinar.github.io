@@ -5,7 +5,7 @@ export const SITE: Site = {
   author: "Sxinar",
   desc: "Sxinar ile Teknoloji , Yazılım ve daha fazlası",
   title: "Sxinar",
-  ogImage: "favicon.ico",
+  ogImage: "logo.png",
   lightAndDarkMode: true,
   postPerPage: 3,
   scheduledPostMargin: 15 * 60 * 1000, // 15 minutes
@@ -19,7 +19,7 @@ export const LOCALE = {
 export const LOGO_IMAGE = {
   enable: true,
   svg: true,
-  src: logo.png,
+  src: logo,
   width: 216,
   height: 46,
 };
@@ -27,7 +27,7 @@ export const LOGO_IMAGE = {
 export const SOCIALS: SocialObjects = [
   {
     name: "Github",
-    href: "https://github.com/satnaing/astro-paper",
+    href: "https://github.com/Sxinar",
     linkTitle: ` ${SITE.title} on Github`,
     active: true,
   },
