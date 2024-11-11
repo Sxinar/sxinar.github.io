@@ -5,7 +5,7 @@ export const SITE: Site = {
   author: "Sxinar",
   desc: "Sxinar ile Teknoloji , Yazılım ve daha fazlası",
   title: "Sxinar",
-  ogImage: "astropaper-og.jpg",
+  ogImage: "favicon.ico",
   lightAndDarkMode: true,
   postPerPage: 3,
   scheduledPostMargin: 15 * 60 * 1000, // 15 minutes
