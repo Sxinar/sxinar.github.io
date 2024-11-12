@@ -4,7 +4,7 @@ media:
 
 content:
   - name: posts
-    label: Posts
+    label: Gönderiler
     type: collection
     path: src/content/blog
     view:
@@ -22,9 +22,9 @@ content:
       - { name: description, label: Description, type: string }
       - { name: body, label: Body, type: rich-text }
 
-  - name: astro-config
-    label: Konfigrasyon dosyam
-    path: src/
+  - name: pages
+    label: Sayfalar
+    path: src/pages
     type: collection
     fields:
       - { name: author, label: Author, type: string }
@@ -58,7 +58,7 @@ content:
 
       
   - name: contact
-    label: Contact page
+    label: İletişim Sayfası
     type: file
     path: src/pages/contact.md
     view:
