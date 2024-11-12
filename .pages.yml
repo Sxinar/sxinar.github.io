@@ -62,6 +62,8 @@ content:
     label: Contact page
     type: file
     path: src/pages/contact.md
+    view:
+      fields: [ title, draft, date ]
     fields:
       - { name: author, label: Author, type: string }
       - { name: pubDatetime, label: Date, type: date }
