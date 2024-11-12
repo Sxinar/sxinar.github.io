@@ -23,7 +23,7 @@ content:
       - { name: body, label: Body, type: rich-text }
 
   - name: astro-config
-    label: astro-config
+    label: Konfigrasyon dosyam
     path: src/
     type: collection
     fields:
