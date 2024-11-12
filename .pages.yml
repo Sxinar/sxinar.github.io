@@ -6,7 +6,7 @@ content:
   - name: posts
     label: Posts
     type: collection
-    path: src/content/post
+    path: src/content/blog
     view:
       fields: [ title, draft, date ]
     fields:
@@ -21,6 +21,7 @@ content:
       - { name: tags, label: Tags, type: string, list: true }
       - { name: description, label: Description, type: string }
       - { name: body, label: Body, type: rich-text }
+ 
   - name: about
     label: About page
     type: file
