@@ -1,14 +1,15 @@
 import type { Site, SocialObjects } from "./types";
 
-export const SITE: Site = {
-  website: "https://sxi.is-a.dev/", // replace this with your deployed domain
+export const SITE = {
+  website: "https://sxi.is-a.dev/",
   author: "Sxinar",
-  desc: "Sxinar ile Teknoloji , Yazılım ve daha fazlası",
+  desc: "Sxinar ile teknoloji,yazılım ve günlük hayattan birkaç parça",
   title: "Sxinar",
   ogImage: "logo.png",
   lightAndDarkMode: true,
-  postPerPage: 3,
+  postPerPage: 4,
   scheduledPostMargin: 15 * 60 * 1000, // 15 minutes
+  showArchives: true,
 };
 
 export const LOCALE = {
@@ -17,7 +18,7 @@ export const LOCALE = {
 } as const;
 
 export const LOGO_IMAGE = {
-  enable: true,
+  enable: false,
   svg: true,
   width: 216,
   height: 46,
