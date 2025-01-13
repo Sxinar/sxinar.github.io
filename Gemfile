@@ -8,6 +8,10 @@ gem "html-proofer", "~> 5.0", group: :test
 
 gem 'jekyll-admin', group: :jekyll_plugins
 
+group :jekyll_plugins do
+  gem "jekyll-netlify"
+end
+
 platforms :mingw, :x64_mingw, :mswin, :jruby do
   gem "tzinfo", ">= 1", "< 3"
   gem "tzinfo-data"
