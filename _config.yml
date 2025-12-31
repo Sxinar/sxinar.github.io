@@ -81,16 +81,16 @@ comments:
   utterances:
     repo:
     issue_term:
- # giscus:
- #   repo: "sxinar/blog"
- #   repo_id: "R_kgDOQx1EfA"
- #   category: "General"
- #   category_id: "DIC_kwDOQx1EfM4C0b-r"
- #   mapping: pathname
- #   strict: 0
- #   input_position: bottom
- #   lang: en
- #   reactions_enabled: 1
+  giscus:
+    repo: "sxinar/blog"
+    repo_id: "R_kgDOQx1EfA"
+    category: "General"
+    category_id: "DIC_kwDOQx1EfM4C0b-r"
+    mapping: pathname
+    strict: 0
+    input_position: bottom
+    lang: en
+    reactions_enabled: 1
 
 assets:
   self_host:
