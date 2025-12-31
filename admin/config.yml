@@ -13,20 +13,18 @@ collections:
     label: "Blog Yazıları"
     folder: "_posts"
     create: true
-    slug: "{{slug}}"
-    editor:
-      widget: "text"
-      required: true
-      pattern: "^[0-9]{4}-[0-9]{2}-[0-9]{2}-.*$" # Dosya adının tarih ile başlamasını zorunlu kılar
+    # BURASI DÜZELTİLDİ: Dosya adının başına tarih gelmesini sağlar
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" 
     fields:
+      - { label: "Layout", name: "layout", widget: "hidden", default: "post" }
       - { label: "Başlık", name: "title", widget: "string" }
       - {
           label: "Yayın Tarihi",
           name: "date",
           widget: "datetime",
-          time_format: false,
           format: "YYYY-MM-DD",
-          date_format: "YYYY-MM-DD"
+          date_format: "YYYY-MM-DD",
+          time_format: false
         }
       - { label: "Yazar", name: "author", widget: "string", default: "Sxinar" }
       - { label: "Özet", name: "description", widget: "text" }
@@ -34,6 +32,3 @@ collections:
       - { label: "Taslak", name: "draft", widget: "boolean", default: false }
       - { label: "Etiketler", name: "tags", widget: "list", default: ["genel"] }
       - { label: "İçerik", name: "body", widget: "markdown" }
-
-# Dosya adının otomatik tarih eklenmesini sağlayan bölüm
-slug: "{{date | date: '%Y-%m-%d'}}-{{title | slugify}}"
