@@ -1,0 +1,32 @@
+backend:
+  name: github
+  repo: Sxinar/sxinar.github.io
+  branch: main
+  base_url: https://sveltia-cms-auth.basaranuse.workers.dev
+  auth_endpoint: auth
+
+media_folder: "public/images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "blog"
+    label: "Blog Yazıları"
+    folder: "_posts"  # Jekyll'de varsayılan blog dosyaları buradadır
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Başlık", name: "title", widget: "string" }
+      - { 
+          label: "Yayın Tarihi", 
+          name: "date",  # Jekyll'de tarih alanı 'date' olarak adlandırılır
+          widget: "datetime", 
+          time_format: false, 
+          format: "YYYY-MM-DD",
+          date_format: "YYYY-MM-DD" 
+        }
+      - { label: "Yazar", name: "author", widget: "string", default: "Sxinar" }
+      - { label: "Özet", name: "description", widget: "text" }
+      - { label: "Öne Çıkarılmış", name: "featured", widget: "boolean", default: false }
+      - { label: "Taslak", name: "draft", widget: "boolean", default: false }
+      - { label: "Etiketler", name: "tags", widget: "list", default: ["genel"] }
+      - { label: "İçerik", name: "body", widget: "markdown" }
