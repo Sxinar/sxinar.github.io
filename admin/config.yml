@@ -5,8 +5,8 @@ backend:
   base_url: https://sveltia-cms-auth.basaranuse.workers.dev
   auth_endpoint: auth
 
-media_folder: "public/images/uploads"
-public_folder: "/images/uploads"
+media_folder: "assets/images/uploads" # Jekyll standartlarına daha uygun
+public_folder: "/assets/images/uploads"
 
 collections:
   - name: "blog"
@@ -25,24 +25,38 @@ collections:
       - { label: "Etiketler", name: "tags", widget: "list", default: ["genel"] }
       - { label: "İçerik", name: "body", widget: "markdown" }
 
-  # --- YENİ EKLENEN SAYFALAR BÖLÜMÜ ---
   - name: "pages"
     label: "Sayfalar"
     files:
       - name: "about"
         label: "Hakkımda Sayfası"
-        file: "about.md" # Dosyanın ana dizindeki konumu
+        file: "about.md"
         fields:
-          - { label: "Başlık", name: "title", widget: "string" }
           - { label: "Layout", name: "layout", widget: "hidden", default: "page" }
-          - { label: "Açıklama", name: "description", widget: "string" }
+          - { label: "Başlık", name: "title", widget: "string" }
           - { label: "İçerik", name: "body", widget: "markdown" }
-          
-      - name: "contact"
-        label: "İletişim Sayfası"
-        file: "contact.md"
+
+  - name: "settings"
+    label: "Site Ayarları"
+    delete: false # Yanlışlıkla silinmesini engeller
+    editor:
+      preview: false # Config dosyaları için önizlemeye gerek yok
+    files:
+      - name: "jekyll-config"
+        label: "Jekyll Ana Ayarlar (_config.yml)"
+        file: "_config.yml"
         fields:
-          - { label: "Başlık", name: "title", widget: "string" }
-          - { label: "Layout", name: "layout", widget: "hidden", default: "page" }
-          - { label: "E-posta", name: "email", widget: "string" }
-          - { label: "İçerik", name: "body", widget: "markdown" }
+          - { label: "Site Başlığı", name: "title", widget: "string" }
+          - { label: "Açıklama (SEO)", name: "description", widget: "text" }
+          - { label: "Site URL", name: "url", widget: "string" }
+          - { label: "Base URL", name: "baseurl", widget: "string" }
+          # Buraya _config.yml içindeki diğer değişkenleri de ekleyebilirsin
+
+      - name: "cms-config"
+        label: "CMS Yapılandırması (config.yml)"
+        file: "admin/config.yml" # Kendini düzenlemesi için
+        fields:
+          - { label: "GitHub Repo", name: "repo", widget: "string" }
+          - { label: "Backend URL", name: "base_url", widget: "string" }
+          - { label: "Media Klasörü", name: "media_folder", widget: "string" }
+          # Dikkat: Buradaki değişiklikler CMS'in çalışma şeklini doğrudan etkiler.
