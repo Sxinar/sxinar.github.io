@@ -5,58 +5,61 @@ backend:
   base_url: https://sveltia-cms-auth.basaranuse.workers.dev
   auth_endpoint: auth
 
-media_folder: "assets/images/uploads" # Jekyll standartlarına daha uygun
+media_folder: "assets/images/uploads"
 public_folder: "/assets/images/uploads"
 
 collections:
+  # BLOG YAZILARI
   - name: "blog"
     label: "Blog Yazıları"
     folder: "_posts"
-    create: true
+    create: true # Yeni yazı eklemeyi sağlar
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}" 
     fields:
       - { label: "Layout", name: "layout", widget: "hidden", default: "post" }
       - { label: "Başlık", name: "title", widget: "string" }
-      - { label: "Yayın Tarihi", name: "date", widget: "datetime", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
-      - { label: "Yazar", name: "author", widget: "string", default: "Sxinar" }
-      - { label: "Özet", name: "description", widget: "text" }
-      - { label: "Öne Çıkarılmış", name: "featured", widget: "boolean", default: false }
-      - { label: "Taslak", name: "draft", widget: "boolean", default: false }
-      - { label: "Etiketler", name: "tags", widget: "list", default: ["genel"] }
       - { label: "İçerik", name: "body", widget: "markdown" }
 
+  # SAYFALAR (Hakkımda, İletişim vb.)
   - name: "pages"
     label: "Sayfalar"
-    files:
-      - name: "about"
-        label: "Hakkımda Sayfası"
-        file: "about.md"
-        fields:
-          - { label: "Layout", name: "layout", widget: "hidden", default: "page" }
-          - { label: "Başlık", name: "title", widget: "string" }
-          - { label: "İçerik", name: "body", widget: "markdown" }
+    folder: "/" # Sayfaların ana dizinde olduğunu varsayıyoruz
+    extension: "md"
+    format: "frontmatter"
+    create: true # BURASI ÖNEMLİ: Yeni sayfa (about.md, vs.) eklemeni sağlar
+    filter: { field: "layout", value: "page" } # Sadece layout'u 'page' olanları listeler
+    fields:
+      - { label: "Layout", name: "layout", widget: "hidden", default: "page" }
+      - { label: "Başlık", name: "title", widget: "string" }
+      - { label: "Dosya Adı", name: "title", widget: "string", hint: "Slug olarak kullanılır" }
+      - { label: "İçerik", name: "body", widget: "markdown" }
 
+  # YAPILANDIRMA DOSYALARI (Text Editor/Code Modu)
   - name: "settings"
-    label: "Site Ayarları"
-    delete: false # Yanlışlıkla silinmesini engeller
+    label: "Ayarlar"
     editor:
-      preview: false # Config dosyaları için önizlemeye gerek yok
+      preview: false
     files:
       - name: "jekyll-config"
         label: "Jekyll Ana Ayarlar (_config.yml)"
         file: "_config.yml"
         fields:
-          - { label: "Site Başlığı", name: "title", widget: "string" }
-          - { label: "Açıklama (SEO)", name: "description", widget: "text" }
-          - { label: "Site URL", name: "url", widget: "string" }
-          - { label: "Base URL", name: "baseurl", widget: "string" }
-          # Buraya _config.yml içindeki diğer değişkenleri de ekleyebilirsin
+          - { 
+              label: "Kod Düzenleyici", 
+              name: "body", 
+              widget: "code", 
+              default_language: "yaml",
+              output_code_only: true 
+            }
 
       - name: "cms-config"
         label: "CMS Yapılandırması (config.yml)"
-        file: "admin/config.yml" # Kendini düzenlemesi için
+        file: "admin/config.yml"
         fields:
-          - { label: "GitHub Repo", name: "repo", widget: "string" }
-          - { label: "Backend URL", name: "base_url", widget: "string" }
-          - { label: "Media Klasörü", name: "media_folder", widget: "string" }
-          # Dikkat: Buradaki değişiklikler CMS'in çalışma şeklini doğrudan etkiler.
+          - { 
+              label: "Kod Düzenleyici", 
+              name: "body", 
+              widget: "code", 
+              default_language: "yaml",
+              output_code_only: true 
+            }
