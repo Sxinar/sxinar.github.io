@@ -13,22 +13,36 @@ collections:
     label: "Blog Yazıları"
     folder: "_posts"
     create: true
-    # BURASI DÜZELTİLDİ: Dosya adının başına tarih gelmesini sağlar
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}" 
     fields:
       - { label: "Layout", name: "layout", widget: "hidden", default: "post" }
       - { label: "Başlık", name: "title", widget: "string" }
-      - {
-          label: "Yayın Tarihi",
-          name: "date",
-          widget: "datetime",
-          format: "YYYY-MM-DD",
-          date_format: "YYYY-MM-DD",
-          time_format: false
-        }
+      - { label: "Yayın Tarihi", name: "date", widget: "datetime", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
       - { label: "Yazar", name: "author", widget: "string", default: "Sxinar" }
       - { label: "Özet", name: "description", widget: "text" }
       - { label: "Öne Çıkarılmış", name: "featured", widget: "boolean", default: false }
       - { label: "Taslak", name: "draft", widget: "boolean", default: false }
       - { label: "Etiketler", name: "tags", widget: "list", default: ["genel"] }
       - { label: "İçerik", name: "body", widget: "markdown" }
+
+  # --- YENİ EKLENEN SAYFALAR BÖLÜMÜ ---
+  - name: "pages"
+    label: "Sayfalar"
+    files:
+      - name: "about"
+        label: "Hakkımda Sayfası"
+        file: "about.md" # Dosyanın ana dizindeki konumu
+        fields:
+          - { label: "Başlık", name: "title", widget: "string" }
+          - { label: "Layout", name: "layout", widget: "hidden", default: "page" }
+          - { label: "Açıklama", name: "description", widget: "string" }
+          - { label: "İçerik", name: "body", widget: "markdown" }
+          
+      - name: "contact"
+        label: "İletişim Sayfası"
+        file: "contact.md"
+        fields:
+          - { label: "Başlık", name: "title", widget: "string" }
+          - { label: "Layout", name: "layout", widget: "hidden", default: "page" }
+          - { label: "E-posta", name: "email", widget: "string" }
+          - { label: "İçerik", name: "body", widget: "markdown" }
