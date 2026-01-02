@@ -16,7 +16,7 @@ slug:
 
 collections:
   # -------------------------------------------------------------------------
-  # BLOG YAZILARI (KATEGORİ DESTEKLİ)
+  # BLOG YAZILARI (SAAT KALDIRILDI)
   # -------------------------------------------------------------------------
   - name: "posts"
     label: "Blog Yazıları"
@@ -31,10 +31,13 @@ collections:
     fields:
       - { label: "Layout", name: "layout", widget: "hidden", default: "post" }
       - { label: "Başlık", name: "title", widget: "string" }
-      - { label: "Tarih", name: "date", widget: "datetime", format: "YYYY-MM-DD HH:mm:ss" }
+      - label: "Tarih"
+        name: "date"
+        widget: "datetime"
+        format: "YYYY-MM-DD"        # Dosyaya sadece tarih yazar
+        date_format: "DD.MM.YYYY"  # Panelde Türk usulü gösterir
+        time_format: false         # SAAT BURADA KALDIRILDI
       
-      # BURASI İSTEDİĞİN KATEGORİ AYARI
-      # Chirpy hiyerarşiktir: [Ana Kategori, Alt Kategori]
       - label: "Kategoriler"
         name: "categories"
         widget: "list"
@@ -45,7 +48,6 @@ collections:
       
       - { label: "Etiketler (Tags)", name: "tags", widget: "list", hint: "Virgülle ayırarak etiket ekleyin." }
 
-      # Görsel
       - label: "Öne Çıkan Görsel"
         name: "image"
         widget: "object"
@@ -54,7 +56,6 @@ collections:
           - { label: "Resim Dosyası", name: "path", widget: "image" }
           - { label: "Alt Metni", name: "alt", widget: "string", required: false }
 
-      # Pin, Matematik vb.
       - label: "Ekstra Ayarlar"
         name: "settings"
         widget: "object"
@@ -66,39 +67,38 @@ collections:
       - { label: "İçerik", name: "body", widget: "markdown" }
 
   # -------------------------------------------------------------------------
-  # SAYFALAR (DÜZELTİLMİŞ VERSİYON)
+  # SAYFALAR
   # -------------------------------------------------------------------------
   - name: "pages"
     label: "Sayfalar"
-    folder: "_tabs" # Chirpy'de sayfalar genelde _tabs içindedir, kök dizindeyse "/" yapabilirsin.
+    folder: "_tabs"
     create: true
     extension: "md"
     format: "frontmatter"
     fields:
       - { label: "Layout", name: "layout", widget: "hidden", default: "page" }
-      
-      # DÜZELTME: Sadece bir tane 'title' olabilir.
       - { label: "Başlık", name: "title", widget: "string" }
-      
-      # DÜZELTME: İkinci 'title' yerine 'permalink' eklendi.
-      # Dosya adı zaten otomatik oluşur, ama URL'i elle yazmak istersen bunu kullanırsın.
-      - { label: "Özel URL (Permalink)", name: "permalink", widget: "string", required: false, hint: "/hakkimda/ gibi özel link vermek için." }
-      
-      - { label: "Simge (FontAwesome)", name: "icon", widget: "string", required: false, hint: "fas fa-info" }
+      - { label: "Özel URL (Permalink)", name: "permalink", widget: "string", required: false }
+      - { label: "Simge (FontAwesome)", name: "icon", widget: "string", required: false }
       - { label: "Sıralama (Order)", name: "order", widget: "number", required: false }
-      
       - { label: "İçerik", name: "body", widget: "markdown" }
 
   # -------------------------------------------------------------------------
-  # SİTE MENÜSÜ VE AYARLAR (SOL MENÜYÜ DÜZENLEME)
+  # SİTE AYARLARI (BURAYI TEK BİR DOSYADA TOPLADIM)
   # -------------------------------------------------------------------------
-  - name: "data"
-    label: "Site Verileri"
+  - name: "settings"
+    label: "Sistem Ayarları"
+    delete: false # Bu dosyalar silinmemeli
     files:
-      # Sol Menüye Kategori Eklemek İçin
+      - name: "main_config"
+        label: "Ana Config (_config.yml)"
+        file: "_config.yml"
+        fields:
+          - { label: "Tüm Yapılandırma", name: "body", widget: "markdown", hint: "Dikkat: Buradaki hatalar siteyi bozabilir." }
+
       - name: "navigation"
         label: "Sol Menü (Navigation)"
-        file: "_data/navigation.yml" # Chirpy sol menü dosyası burasıdır
+        file: "_data/navigation.yml"
         fields:
           - label: "Menü Öğeleri"
             name: "main"
@@ -106,30 +106,4 @@ collections:
             fields:
               - { label: "Başlık", name: "title", widget: "string" }
               - { label: "URL", name: "url", widget: "string" }
-              - { label: "İkon", name: "icon", widget: "string", hint: "fas fa-home" }
-
-      - name: "authors"
-        label: "Yazarlar"
-        file: "_data/authors.yml"
-        fields:
-          - name: "authors"
-            label: "Yazarlar Listesi"
-            widget: "list"
-            fields:
-              - { label: "Kullanıcı Kodu", name: "key", widget: "string" }
-              - { label: "İsim", name: "name", widget: "string" }
-              - { label: "Web", name: "url", widget: "string" }
-
-  # -------------------------------------------------------------------------
-  # DOSYA DÜZENLEYİCİLERİ
-  # -------------------------------------------------------------------------
-  - name: "config_files"
-    label: "Config Dosyaları"
-    editor:
-      preview: false
-    files:
-      - name: "config"
-        label: "_config.yml"
-        file: "_config.yml"
-        fields:
-          - { label: "Yaml Kodu", name: "body", widget: "code", default_language: "yaml" }
+              - { label: "İkon", name: "icon", widget: "string" }
