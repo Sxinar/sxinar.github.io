@@ -8,7 +8,6 @@ backend:
 media_folder: "assets/img/uploads"
 public_folder: "/assets/img/uploads"
 
-# Türkçe karakter sorununu önlemek için slug ayarları
 slug:
   encoding: "ascii"
   clean_accents: true
@@ -16,7 +15,7 @@ slug:
 
 collections:
   # -------------------------------------------------------------------------
-  # BLOG YAZILARI (SAAT KALDIRILDI)
+  # BLOG YAZILARI
   # -------------------------------------------------------------------------
   - name: "posts"
     label: "Blog Yazıları"
@@ -34,19 +33,20 @@ collections:
       - label: "Tarih"
         name: "date"
         widget: "datetime"
-        format: "YYYY-MM-DD"        # Dosyaya sadece tarih yazar
-        date_format: "DD.MM.YYYY"  # Panelde Türk usulü gösterir
-        time_format: false         # SAAT BURADA KALDIRILDI
+        format: "YYYY-MM-DD"
+        date_format: "DD.MM.YYYY"
+        time_format: false 
       
+      # Kategori Düzenlemesi: Chirpy için en sağlam liste yapısı
       - label: "Kategoriler"
         name: "categories"
         widget: "list"
-        summary: "{{fields.categories}}"
+        field: { label: "Kategori Adı", name: "category", widget: "string" }
         min: 1
         max: 2
-        hint: "1. satıra Ana Kategori, 2. satıra Alt Kategori yazın (Örn: Yazılım, React)."
+        hint: "Sırasıyla Ana ve Alt kategoriyi ekleyin."
       
-      - { label: "Etiketler (Tags)", name: "tags", widget: "list", hint: "Virgülle ayırarak etiket ekleyin." }
+      - { label: "Etiketler (Tags)", name: "tags", widget: "list", field: {label: "Etiket", widget: "string"} }
 
       - label: "Öne Çıkan Görsel"
         name: "image"
@@ -84,26 +84,24 @@ collections:
       - { label: "İçerik", name: "body", widget: "markdown" }
 
   # -------------------------------------------------------------------------
-  # SİTE AYARLARI (BURAYI TEK BİR DOSYADA TOPLADIM)
+  # SİSTEM AYARLARI (RAW FORMATI EKLENDİ)
   # -------------------------------------------------------------------------
   - name: "settings"
     label: "Sistem Ayarları"
-    delete: false # Bu dosyalar silinmemeli
+    delete: false
+    editor:
+      preview: false
     files:
       - name: "main_config"
-        label: "Ana Config (_config.yml)"
+        label: "_config.yml (Ana Ayarlar)"
         file: "_config.yml"
+        format: "raw" # Dosyayı ham metin olarak okuması için
         fields:
-          - { label: "Tüm Yapılandırma", name: "body", widget: "markdown", hint: "Dikkat: Buradaki hatalar siteyi bozabilir." }
+          - { label: "Dosya İçeriği", name: "body", widget: "code", default_language: "yaml" }
 
       - name: "navigation"
-        label: "Sol Menü (Navigation)"
+        label: "Sol Menü (_data/navigation.yml)"
         file: "_data/navigation.yml"
+        format: "raw" # YAML verisini ham olarak görmeni sağlar
         fields:
-          - label: "Menü Öğeleri"
-            name: "main"
-            widget: "list"
-            fields:
-              - { label: "Başlık", name: "title", widget: "string" }
-              - { label: "URL", name: "url", widget: "string" }
-              - { label: "İkon", name: "icon", widget: "string" }
+          - { label: "Menü Kodu", name: "body", widget: "code", default_language: "yaml" }
