@@ -5,13 +5,10 @@ backend:
   base_url: https://sveltia-cms-auth.basaranuse.workers.dev
   auth_endpoint: auth
 
-# Chirpy varsayılan resim klasörüne ayarlandı
 media_folder: "assets/img/uploads"
 public_folder: "/assets/img/uploads"
 
-# Yerel geliştirme için (opsiyonel)
-local_backend: true
-
+# Türkçe karakter sorununu önlemek için slug ayarları
 slug:
   encoding: "ascii"
   clean_accents: true
@@ -19,7 +16,7 @@ slug:
 
 collections:
   # -------------------------------------------------------------------------
-  # BLOG YAZILARI (CHIRPY UYUMLU)
+  # BLOG YAZILARI (KATEGORİ DESTEKLİ)
   # -------------------------------------------------------------------------
   - name: "posts"
     label: "Blog Yazıları"
@@ -33,111 +30,106 @@ collections:
         pattern: \d{4}
     fields:
       - { label: "Layout", name: "layout", widget: "hidden", default: "post" }
-      
-      # Başlık ve Tarih
       - { label: "Başlık", name: "title", widget: "string" }
       - { label: "Tarih", name: "date", widget: "datetime", format: "YYYY-MM-DD HH:mm:ss" }
       
-      # Yazar (Chirpy _data/authors.yml kullanır ama burada manuel giriş de yapılabilir)
-      - { label: "Yazar", name: "author", widget: "string", required: false, hint: "_data/authors.yml dosyasındaki kullanıcı adını yazın" }
+      # BURASI İSTEDİĞİN KATEGORİ AYARI
+      # Chirpy hiyerarşiktir: [Ana Kategori, Alt Kategori]
+      - label: "Kategoriler"
+        name: "categories"
+        widget: "list"
+        summary: "{{fields.categories}}"
+        min: 1
+        max: 2
+        hint: "1. satıra Ana Kategori, 2. satıra Alt Kategori yazın (Örn: Yazılım, React)."
+      
+      - { label: "Etiketler (Tags)", name: "tags", widget: "list", hint: "Virgülle ayırarak etiket ekleyin." }
 
-      # Kategoriler ve Etiketler
-      - { 
-          label: "Kategoriler", 
-          name: "categories", 
-          widget: "list", 
-          hint: "İlk eleman Ana Kategori, ikinci eleman Alt Kategori olur.",
-          min: 1,
-          max: 2 
-        }
-      - { label: "Etiketler (Tags)", name: "tags", widget: "list" }
-
-      # Görsel Ayarları (Chirpy Object Formatı)
+      # Görsel
       - label: "Öne Çıkan Görsel"
         name: "image"
         widget: "object"
         required: false
         fields:
           - { label: "Resim Dosyası", name: "path", widget: "image" }
-          - { label: "Alt Metni (SEO)", name: "alt", widget: "string", required: false }
-          - { label: "Resim Kaynağı/Kredisi", name: "credit", widget: "string", required: false }
+          - { label: "Alt Metni", name: "alt", widget: "string", required: false }
 
-      # Chirpy Özel Ayarları
-      - label: "Yazı Ayarları"
+      # Pin, Matematik vb.
+      - label: "Ekstra Ayarlar"
         name: "settings"
         widget: "object"
         collapsed: true
-        summary: "Pin, Math, Mermaid vb."
         fields:
-          - { label: "Ana Sayfaya Pinle", name: "pin", widget: "boolean", default: false, required: false }
+          - { label: "Pinle", name: "pin", widget: "boolean", default: false, required: false }
           - { label: "Matematik (MathJax)", name: "math", widget: "boolean", default: false, required: false }
-          - { label: "Mermaid Diyagramı", name: "mermaid", widget: "boolean", default: false, required: false }
-          - { label: "Yorumları Kapat", name: "comments", widget: "boolean", default: true, required: false }
-
-      # İçerik
+      
       - { label: "İçerik", name: "body", widget: "markdown" }
 
   # -------------------------------------------------------------------------
-  # SAYFALAR (About vb.)
+  # SAYFALAR (DÜZELTİLMİŞ VERSİYON)
   # -------------------------------------------------------------------------
   - name: "pages"
     label: "Sayfalar"
-    files:
-      - name: "about"
-        label: "Hakkımda Sayfası"
-        file: "_tabs/about.md" # Chirpy'de genellikle _tabs klasöründedir, kök dizindeyse "/" yapın.
-        fields:
-          - { label: "Layout", name: "layout", widget: "hidden", default: "page" }
-          - { label: "Başlık", name: "title", widget: "string", default: "About" }
-          - { label: "Simge (FontAwesome)", name: "icon", widget: "string", default: "fas fa-info-circle" }
-          - { label: "Sıralama", name: "order", widget: "number", default: 4 }
-          - { label: "İçerik", name: "body", widget: "markdown" }
+    folder: "_tabs" # Chirpy'de sayfalar genelde _tabs içindedir, kök dizindeyse "/" yapabilirsin.
+    create: true
+    extension: "md"
+    format: "frontmatter"
+    fields:
+      - { label: "Layout", name: "layout", widget: "hidden", default: "page" }
+      
+      # DÜZELTME: Sadece bir tane 'title' olabilir.
+      - { label: "Başlık", name: "title", widget: "string" }
+      
+      # DÜZELTME: İkinci 'title' yerine 'permalink' eklendi.
+      # Dosya adı zaten otomatik oluşur, ama URL'i elle yazmak istersen bunu kullanırsın.
+      - { label: "Özel URL (Permalink)", name: "permalink", widget: "string", required: false, hint: "/hakkimda/ gibi özel link vermek için." }
+      
+      - { label: "Simge (FontAwesome)", name: "icon", widget: "string", required: false, hint: "fas fa-info" }
+      - { label: "Sıralama (Order)", name: "order", widget: "number", required: false }
+      
+      - { label: "İçerik", name: "body", widget: "markdown" }
 
   # -------------------------------------------------------------------------
-  # VERİ DOSYALARI (Yazarlar, İletişim vb.)
+  # SİTE MENÜSÜ VE AYARLAR (SOL MENÜYÜ DÜZENLEME)
   # -------------------------------------------------------------------------
   - name: "data"
-    label: "Veri Dosyaları"
-    description: "Site genelindeki verileri düzenleyin."
-    delete: false
-    editor:
-      preview: false
+    label: "Site Verileri"
     files:
+      # Sol Menüye Kategori Eklemek İçin
+      - name: "navigation"
+        label: "Sol Menü (Navigation)"
+        file: "_data/navigation.yml" # Chirpy sol menü dosyası burasıdır
+        fields:
+          - label: "Menü Öğeleri"
+            name: "main"
+            widget: "list"
+            fields:
+              - { label: "Başlık", name: "title", widget: "string" }
+              - { label: "URL", name: "url", widget: "string" }
+              - { label: "İkon", name: "icon", widget: "string", hint: "fas fa-home" }
+
       - name: "authors"
-        label: "Yazarlar (authors.yml)"
+        label: "Yazarlar"
         file: "_data/authors.yml"
         fields:
           - name: "authors"
             label: "Yazarlar Listesi"
             widget: "list"
             fields:
-              - { label: "Kullanıcı Adı (Key)", name: "key", widget: "string", hint: "Bu anahtarı postlarda kullanacaksınız" }
-              - { label: "Görünen İsim", name: "name", widget: "string" }
-              - { label: "Web Sitesi", name: "url", widget: "string", required: false }
-              - { label: "Avatar URL", name: "avatar", widget: "image", required: false }
-
-      - name: "contact"
-        label: "İletişim Bilgileri (contact.yml)"
-        file: "_data/contact.yml"
-        fields:
-          - name: "contacts"
-            label: "Linkler"
-            widget: "list"
-            fields:
-              - { label: "Platform (twitter, github vb.)", name: "type", widget: "string" }
-              - { label: "İkon (fa-brands fa-github)", name: "icon", widget: "string" }
-              - { label: "Link", name: "url", widget: "string" }
+              - { label: "Kullanıcı Kodu", name: "key", widget: "string" }
+              - { label: "İsim", name: "name", widget: "string" }
+              - { label: "Web", name: "url", widget: "string" }
 
   # -------------------------------------------------------------------------
-  # GELİŞMİŞ AYARLAR (Config Düzenleyici)
+  # DOSYA DÜZENLEYİCİLERİ
   # -------------------------------------------------------------------------
-  - name: "settings"
-    label: "Gelişmiş Ayarlar"
+  - name: "config_files"
+    label: "Config Dosyaları"
     editor:
       preview: false
     files:
-      - name: "jekyll-config"
-        label: "_config.yml Düzenle"
+      - name: "config"
+        label: "_config.yml"
         file: "_config.yml"
         fields:
-          - { label: "Kod", name: "body", widget: "code", default_language: "yaml", output_code_only: true }
+          - { label: "Yaml Kodu", name: "body", widget: "code", default_language: "yaml" }
