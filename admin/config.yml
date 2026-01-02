@@ -5,61 +5,139 @@ backend:
   base_url: https://sveltia-cms-auth.basaranuse.workers.dev
   auth_endpoint: auth
 
-media_folder: "assets/images/uploads"
-public_folder: "/assets/images/uploads"
+# Chirpy varsayılan resim klasörüne ayarlandı
+media_folder: "assets/img/uploads"
+public_folder: "/assets/img/uploads"
+
+# Yerel geliştirme için (opsiyonel)
+local_backend: true
+
+slug:
+  encoding: "ascii"
+  clean_accents: true
+  sanitize_replacement: "-"
 
 collections:
-  # BLOG YAZILARI
-  - name: "blog"
+  # -------------------------------------------------------------------------
+  # BLOG YAZILARI (CHIRPY UYUMLU)
+  # -------------------------------------------------------------------------
+  - name: "posts"
     label: "Blog Yazıları"
     folder: "_posts"
-    create: true # Yeni yazı eklemeyi sağlar
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" 
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    sortable_fields: ['date', 'title']
+    view_groups:
+      - label: Yıl
+        field: date
+        pattern: \d{4}
     fields:
       - { label: "Layout", name: "layout", widget: "hidden", default: "post" }
+      
+      # Başlık ve Tarih
       - { label: "Başlık", name: "title", widget: "string" }
+      - { label: "Tarih", name: "date", widget: "datetime", format: "YYYY-MM-DD HH:mm:ss" }
+      
+      # Yazar (Chirpy _data/authors.yml kullanır ama burada manuel giriş de yapılabilir)
+      - { label: "Yazar", name: "author", widget: "string", required: false, hint: "_data/authors.yml dosyasındaki kullanıcı adını yazın" }
+
+      # Kategoriler ve Etiketler
+      - { 
+          label: "Kategoriler", 
+          name: "categories", 
+          widget: "list", 
+          hint: "İlk eleman Ana Kategori, ikinci eleman Alt Kategori olur.",
+          min: 1,
+          max: 2 
+        }
+      - { label: "Etiketler (Tags)", name: "tags", widget: "list" }
+
+      # Görsel Ayarları (Chirpy Object Formatı)
+      - label: "Öne Çıkan Görsel"
+        name: "image"
+        widget: "object"
+        required: false
+        fields:
+          - { label: "Resim Dosyası", name: "path", widget: "image" }
+          - { label: "Alt Metni (SEO)", name: "alt", widget: "string", required: false }
+          - { label: "Resim Kaynağı/Kredisi", name: "credit", widget: "string", required: false }
+
+      # Chirpy Özel Ayarları
+      - label: "Yazı Ayarları"
+        name: "settings"
+        widget: "object"
+        collapsed: true
+        summary: "Pin, Math, Mermaid vb."
+        fields:
+          - { label: "Ana Sayfaya Pinle", name: "pin", widget: "boolean", default: false, required: false }
+          - { label: "Matematik (MathJax)", name: "math", widget: "boolean", default: false, required: false }
+          - { label: "Mermaid Diyagramı", name: "mermaid", widget: "boolean", default: false, required: false }
+          - { label: "Yorumları Kapat", name: "comments", widget: "boolean", default: true, required: false }
+
+      # İçerik
       - { label: "İçerik", name: "body", widget: "markdown" }
 
-  # SAYFALAR (Hakkımda, İletişim vb.)
+  # -------------------------------------------------------------------------
+  # SAYFALAR (About vb.)
+  # -------------------------------------------------------------------------
   - name: "pages"
     label: "Sayfalar"
-    folder: "/" # Sayfaların ana dizinde olduğunu varsayıyoruz
-    extension: "md"
-    format: "frontmatter"
-    create: true # BURASI ÖNEMLİ: Yeni sayfa (about.md, vs.) eklemeni sağlar
-    filter: { field: "layout", value: "page" } # Sadece layout'u 'page' olanları listeler
-    fields:
-      - { label: "Layout", name: "layout", widget: "hidden", default: "page" }
-      - { label: "Başlık", name: "title", widget: "string" }
-      - { label: "Dosya Adı", name: "title", widget: "string", hint: "Slug olarak kullanılır" }
-      - { label: "İçerik", name: "body", widget: "markdown" }
+    files:
+      - name: "about"
+        label: "Hakkımda Sayfası"
+        file: "_tabs/about.md" # Chirpy'de genellikle _tabs klasöründedir, kök dizindeyse "/" yapın.
+        fields:
+          - { label: "Layout", name: "layout", widget: "hidden", default: "page" }
+          - { label: "Başlık", name: "title", widget: "string", default: "About" }
+          - { label: "Simge (FontAwesome)", name: "icon", widget: "string", default: "fas fa-info-circle" }
+          - { label: "Sıralama", name: "order", widget: "number", default: 4 }
+          - { label: "İçerik", name: "body", widget: "markdown" }
 
-  # YAPILANDIRMA DOSYALARI (Text Editor/Code Modu)
+  # -------------------------------------------------------------------------
+  # VERİ DOSYALARI (Yazarlar, İletişim vb.)
+  # -------------------------------------------------------------------------
+  - name: "data"
+    label: "Veri Dosyaları"
+    description: "Site genelindeki verileri düzenleyin."
+    delete: false
+    editor:
+      preview: false
+    files:
+      - name: "authors"
+        label: "Yazarlar (authors.yml)"
+        file: "_data/authors.yml"
+        fields:
+          - name: "authors"
+            label: "Yazarlar Listesi"
+            widget: "list"
+            fields:
+              - { label: "Kullanıcı Adı (Key)", name: "key", widget: "string", hint: "Bu anahtarı postlarda kullanacaksınız" }
+              - { label: "Görünen İsim", name: "name", widget: "string" }
+              - { label: "Web Sitesi", name: "url", widget: "string", required: false }
+              - { label: "Avatar URL", name: "avatar", widget: "image", required: false }
+
+      - name: "contact"
+        label: "İletişim Bilgileri (contact.yml)"
+        file: "_data/contact.yml"
+        fields:
+          - name: "contacts"
+            label: "Linkler"
+            widget: "list"
+            fields:
+              - { label: "Platform (twitter, github vb.)", name: "type", widget: "string" }
+              - { label: "İkon (fa-brands fa-github)", name: "icon", widget: "string" }
+              - { label: "Link", name: "url", widget: "string" }
+
+  # -------------------------------------------------------------------------
+  # GELİŞMİŞ AYARLAR (Config Düzenleyici)
+  # -------------------------------------------------------------------------
   - name: "settings"
-    label: "Ayarlar"
+    label: "Gelişmiş Ayarlar"
     editor:
       preview: false
     files:
       - name: "jekyll-config"
-        label: "Jekyll Ana Ayarlar (_config.yml)"
+        label: "_config.yml Düzenle"
         file: "_config.yml"
         fields:
-          - { 
-              label: "Kod Düzenleyici", 
-              name: "body", 
-              widget: "code", 
-              default_language: "yaml",
-              output_code_only: true 
-            }
-
-      - name: "cms-config"
-        label: "CMS Yapılandırması (config.yml)"
-        file: "admin/config.yml"
-        fields:
-          - { 
-              label: "Kod Düzenleyici", 
-              name: "body", 
-              widget: "code", 
-              default_language: "yaml",
-              output_code_only: true 
-            }
+          - { label: "Kod", name: "body", widget: "code", default_language: "yaml", output_code_only: true }
