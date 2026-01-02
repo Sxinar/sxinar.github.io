@@ -37,21 +37,19 @@ collections:
         date_format: "DD.MM.YYYY"
         time_format: false 
       
-      # KATEGORİ EKLEME (Yazı ekler gibi satır satır ekleme)
       - label: "Kategoriler"
         name: "categories"
         widget: "list"
         summary: '{{fields.category}}'
-        field: { label: "Kategori Yazın", name: "category", widget: "string" }
+        field: { label: "Kategori Adı", name: "category", widget: "string" }
         min: 1
         max: 2
-        hint: "Yazı ekler gibi '+' butonuna basıp kategori ismini yazın. İlk satır ana kategori, ikinci satır alt kategoridir."
       
       - label: "Etiketler (Tags)"
         name: "tags"
         widget: "list"
         summary: '{{fields.tag}}'
-        field: { label: "Etiket Yazın", name: "tag", widget: "string" }
+        field: { label: "Etiket Adı", name: "tag", widget: "string" }
 
       - label: "Öne Çıkan Görsel"
         name: "image"
@@ -72,7 +70,7 @@ collections:
       - { label: "İçerik", name: "body", widget: "markdown" }
 
   # -------------------------------------------------------------------------
-  # SAYFALAR
+  # SAYFALAR (HATA DÜZELTİLDİ: Title alanları teke düşürüldü)
   # -------------------------------------------------------------------------
   - name: "pages"
     label: "Sayfalar"
@@ -82,31 +80,29 @@ collections:
     format: "frontmatter"
     fields:
       - { label: "Layout", name: "layout", widget: "hidden", default: "page" }
-      - { label: "Başlık", name: "title", widget: "string" }
+      - { label: "Sayfa Başlığı", name: "title", widget: "string" } # Tek title burada
       - { label: "Özel URL (Permalink)", name: "permalink", widget: "string", required: false }
       - { label: "Simge (FontAwesome)", name: "icon", widget: "string", required: false }
       - { label: "Sıralama (Order)", name: "order", widget: "number", required: false }
       - { label: "İçerik", name: "body", widget: "markdown" }
 
   # -------------------------------------------------------------------------
-  # SİSTEM AYARLARI (CONFIG DÜZENLEME HATALARI GİDERİLDİ)
+  # SİSTEM AYARLARI (METİN OLARAK DÜZENLEME)
   # -------------------------------------------------------------------------
   - name: "settings"
     label: "Sistem Ayarları"
     delete: false
     files:
       - name: "main_config"
-        label: "_config.yml (Site Ayarları)"
+        label: "_config.yml"
         file: "_config.yml"
-        extension: "yml"
-        format: "yaml" # Burayı raw yerine yaml yaptım, kod olarak görünecek
+        format: "raw" # İçeriği doğrudan metin olarak çekmek için
         fields:
-          - { label: "Ayarları Düzenle", name: "body", widget: "code", default_language: "yaml" }
+          - { label: "Yaml İçeriği", name: "body", widget: "text" } # Code yerine Text daha güvenlidir
 
       - name: "navigation"
         label: "Sol Menü (_data/navigation.yml)"
         file: "_data/navigation.yml"
-        extension: "yml"
-        format: "yaml"
+        format: "raw"
         fields:
-          - { label: "Menü Kodlarını Düzenle", name: "body", widget: "code", default_language: "yaml" }
+          - { label: "Menü İçeriği", name: "body", widget: "text" }
