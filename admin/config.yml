@@ -37,16 +37,21 @@ collections:
         date_format: "DD.MM.YYYY"
         time_format: false 
       
-      # Kategori Düzenlemesi: Chirpy için en sağlam liste yapısı
+      # KATEGORİ EKLEME (Yazı ekler gibi satır satır ekleme)
       - label: "Kategoriler"
         name: "categories"
         widget: "list"
-        field: { label: "Kategori Adı", name: "category", widget: "string" }
+        summary: '{{fields.category}}'
+        field: { label: "Kategori Yazın", name: "category", widget: "string" }
         min: 1
         max: 2
-        hint: "Sırasıyla Ana ve Alt kategoriyi ekleyin."
+        hint: "Yazı ekler gibi '+' butonuna basıp kategori ismini yazın. İlk satır ana kategori, ikinci satır alt kategoridir."
       
-      - { label: "Etiketler (Tags)", name: "tags", widget: "list", field: {label: "Etiket", widget: "string"} }
+      - label: "Etiketler (Tags)"
+        name: "tags"
+        widget: "list"
+        summary: '{{fields.tag}}'
+        field: { label: "Etiket Yazın", name: "tag", widget: "string" }
 
       - label: "Öne Çıkan Görsel"
         name: "image"
@@ -84,24 +89,24 @@ collections:
       - { label: "İçerik", name: "body", widget: "markdown" }
 
   # -------------------------------------------------------------------------
-  # SİSTEM AYARLARI (RAW FORMATI EKLENDİ)
+  # SİSTEM AYARLARI (CONFIG DÜZENLEME HATALARI GİDERİLDİ)
   # -------------------------------------------------------------------------
   - name: "settings"
     label: "Sistem Ayarları"
     delete: false
-    editor:
-      preview: false
     files:
       - name: "main_config"
-        label: "_config.yml (Ana Ayarlar)"
+        label: "_config.yml (Site Ayarları)"
         file: "_config.yml"
-        format: "raw" # Dosyayı ham metin olarak okuması için
+        extension: "yml"
+        format: "yaml" # Burayı raw yerine yaml yaptım, kod olarak görünecek
         fields:
-          - { label: "Dosya İçeriği", name: "body", widget: "code", default_language: "yaml" }
+          - { label: "Ayarları Düzenle", name: "body", widget: "code", default_language: "yaml" }
 
       - name: "navigation"
         label: "Sol Menü (_data/navigation.yml)"
         file: "_data/navigation.yml"
-        format: "raw" # YAML verisini ham olarak görmeni sağlar
+        extension: "yml"
+        format: "yaml"
         fields:
-          - { label: "Menü Kodu", name: "body", widget: "code", default_language: "yaml" }
+          - { label: "Menü Kodlarını Düzenle", name: "body", widget: "code", default_language: "yaml" }
