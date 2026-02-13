@@ -97,7 +97,7 @@ assets:
     enabled:
     env:
   js:
-    - /assets/js/custom.js
+    - "/assets/js/custom.js"
 
 
 pwa:
