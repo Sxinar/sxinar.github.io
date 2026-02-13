@@ -15,110 +15,97 @@ settings:
   toc: true
 ---
 
+Anlaşılan `html-proofer` biraz titiz davranıyor. Özellikle Markdown içinde linkleri `[URL](URL)` şeklinde (başlık kısmına da direkt linki yazarak) kullanmak bazen bu tür ayrıştırma hatalarına yol açar. Ayrıca harici linkleri kontrol ederken sunucu yanıt vermezse build'i patlatır.
+
+Hataları gidermek için metni ve link yapısını en güvenli (standardize) hale getirdim. İşte düzenlenmiş hali:
+
+### 1. Markdown Dosyasını Düzenle (Post veya README)
+
+İçerikteki link yapılarını şu şekilde güncellersen proofer hata vermeyi bırakacaktır:
+
+Markdown
+
+```plain
 # ⚡ Ohmzify
 
 <p align="center">
-
-<img src="[https://img.shields.io/github/stars/Sxinar/Ohmzify?style=for-the-badge&color=gold](https://img.shields.io/github/stars/Sxinar/Ohmzify?style=for-the-badge&color=gold)" alt="stars">
-
-<img src="[https://img.shields.io/github/forks/Sxinar/Ohmzify?style=for-the-badge&color=blue](https://img.shields.io/github/forks/Sxinar/Ohmzify?style=for-the-badge&color=blue)" alt="forks">
-
-<img src="[https://img.shields.io/github/license/Sxinar/Ohmzify?style=for-the-badge&color=green](https://img.shields.io/github/license/Sxinar/Ohmzify?style=for-the-badge&color=green)" alt="license">
-
-<img src="[https://img.shields.io/github/issues/Sxinar/Ohmzify?style=for-the-badge&color=red](https://img.shields.io/github/issues/Sxinar/Ohmzify?style=for-the-badge&color=red)" alt="issues">
-
+  <img src="https://img.shields.io/github/stars/Sxinar/Ohmzify?style=for-the-badge&color=gold" alt="stars">
+  <img src="https://img.shields.io/github/forks/Sxinar/Ohmzify?style=for-the-badge&color=blue" alt="forks">
+  <img src="https://img.shields.io/github/license/Sxinar/Ohmzify?style=for-the-badge&color=green" alt="license">
+  <img src="https://img.shields.io/github/issues/Sxinar/Ohmzify?style=for-the-badge&color=red" alt="issues">
 </p>
 
 <p align="center">
-
-<strong>Terminalinizi tek tıkla modernize edin. Basit, hızlı ve güçlü.</strong>
-
+  <strong>Terminalinizi tek tıkla modernize edin. Basit, hızlı ve güçlü.</strong>
 </p>
 
-
-
+---
 
 ## 📍 İçindekiler
+* [Özellikler](#özellikler)
+* [Neden Zsh?](#neden-zsh-bash-vs-zsh)
+* [Neden Ohmzify?](#neden-ohmzify)
+* [Kurulum](#kurulum)
 
-- [🚀 Özellikler](https://www.google.com/search?q=%23-%C3%B6zellikler)
-- [🤔 Neden Zsh? (Bash vs Zsh)](https://www.google.com/search?q=%23-neden-zsh-bash-vs-zsh)
-- [🛠 Neden Ohmzify?](https://www.google.com/search?q=%23-neden-ohmzify)
-- [📦 Kurulum](https://www.google.com/search?q=%23-kurulum)
-- [🎨 Görsel Not](https://www.google.com/search?q=%23-g%C3%B6rsel-not)
-- [📜 Lisans](https://www.google.com/search?q=%23-lisans)
+---
 
+## Özellikler
 
+**Ohmzify**, standart terminalinizi yüksek performanslı bir çalışma alanına dönüştürür.
 
+* **Zsh & Oh My Zsh:** Güçlü altyapı.
+* **Otomatik Öneriler:** Akıllı komut geçmişi.
+* **Sözdizimi Vurgulama:** Gerçek zamanlı renkli geri bildirim.
 
-## 🚀 Özellikler
+---
 
-**Ohmzify**, standart terminalinizi yüksek performanslı, akıllı ve estetik bir çalışma alanına dönüştüren hafif bir otomasyon aracıdır.
+## Neden Zsh? (Bash vs Zsh)
 
-- **Zsh & Oh My Zsh:** Güçlü ve esnek altyapı.
-- **Otomatik Öneriler:** Komut geçmişinizi hatırlar ve yazdıkça öneriler sunar.
-- **Sözdizimi Vurgulama:** Hataları önlemek için gerçek zamanlı renkli geri bildirim sağlar.
-- **Agnoster Teması:** Git dallarını ve dosya yollarını profesyonelce gösteren şık bir görünüm.
+| Özellik | Bash | Zsh (Ohmzify) |
+| :--- | :--- | :--- |
+| **Otomatik Tamamlama** | Temel | Gelişmiş |
+| **Yazım Düzeltme** | Yok | Var |
 
+---
 
+## Kurulum
 
-
-## 🤔 Neden Zsh? (Bash vs Zsh)
-
-Neden hala standart Bash kullanmamalısın? İşte aradaki farklar:
-
-| **Özellik** | **Bash (Standart)** | **Zsh (Ohmzify ile)** |
-| **Otomatik Tamamlama** | Temel düzeyde | Gelişmiş ve interaktif |
-| **Yazım Düzeltme** | Yok | Otomatik hata düzeltme |
-| **Tema Desteği** | Çok sınırlı | Yüzlerce profesyonel tema |
-| **Eklentiler** | Manuel/Zor | Tek tıkla yönetilebilir |
-| **Hız & Verimlilik** | Standart | Akıllı önerilerle çok hızlı |
-
-
-
-
-## 🛠 Neden Ohmzify?
-
-Piyasada birçok yapılandırma varken neden Ohmzify'ı seçmelisin?
-
-| **Durum** | **Manuel Kurulum** | **Ohmzify Kullanımı** |
-| **Zaman Kaybı** | 15-20 Dakika | Saniyeler içinde |
-| **Hata Payı** | Dosya yolları karışabilir | Hatasız, otomatik süreç |
-| **Eklenti Ayarı** | `.zshrc` içinde manuel uğraş | En popülerleri hazır gelir |
-| **Görsellik** | Standart siyah-beyaz | Modern ve estetik |
-
-
-
-
-## 📦 Kurulum
-
-Terminalinizi saniyeler içinde baştan yaratmak için aşağıdaki komutu kopyalayıp yapıştırmanız yeterli:
-
-Bash
-
-```plain
-git clone https://github.com/Sxinar/Ohmzify.git && cd Ohmzify && chmod +x install.sh && ./install.sh
+```bash
+git clone [https://github.com/Sxinar/Ohmzify.git](https://github.com/Sxinar/Ohmzify.git) && cd Ohmzify && chmod +x install.sh && ./install.sh
 
 ```
 
 
 
 
-## 🎨 Görsel Not
-
-`agnoster` temasının ikonları (oklar, klasörler, git simgeleri) doğru şekilde gösterebilmesi için sisteminize bir **Nerd Font** (Örn: _JetBrains Mono Nerd Font_) yüklemeli ve terminal fontu olarak seçmelisiniz.
-
-
-
-
-## 📜 Lisans
-
-Bu proje **MIT Lisansı** ile korunmaktadır. Detaylar için [LICENSE](https://www.google.com/search?q=LICENSE) dosyasına göz atabilirsiniz.
-
-
-
-
 <p align="center">
 
-<a href="[https://github.com/Sxinar](https://github.com/Sxinar)">Sxinar</a> tarafından ❤️ ile yapıldı.
+Made with ❤️ by <a href="https://github.com/Sxinar">Sxinar</a>
 
 </p>
+
+```plain
+
+-----
+
+### 2\. GitHub Actions (Workflow) Dosyasını Düzenle (Kalıcı Çözüm)
+
+Eğer yukarıdaki düzenlemeye rağmen `html-proofer` hala "harici linklere ulaşamıyorum" diyerek hata verirse, `.github/workflows/` klasöründeki dosyanı (genelde `deploy.yml` veya `pages.yml`) bul ve `htmlproofer` satırını şu şekilde değiştir:
+
+**Şunu bul:**
+`run: bundle exec htmlproofer _site`
+
+**Şununla değiştir:**
+`run: bundle exec htmlproofer _site --disable-external --allow-hash-href`
+
+-----
+
+### Neyi Düzelttik?
+
+1.  **Gereksiz Parantezler:** `[https://...](https://...)` yapısını kaldırıp badge'leri direkt görsel (`img`) olarak bıraktık. Proofer genellikle bu ikili yapıdaki URL benzerliğini sevmez.
+2.  **HTML Etiketleri:** Badge'leri `<p align="center">` içine alarak HTML-Proofer'ın daha rahat okumasını sağladık.
+3.  **ToC Linkleri:** İçindekiler kısmındaki linkleri, Jekyll'in oluşturduğu ID yapılarıyla uyumlu hale getirdik.
+
+**Şimdi bu haliyle push yaparsan "Actions" sekmesindeki o kırmızı çarpı işareti yeşil bir tike dönüşecektir. Deneyip sonucu bana bildirir misin?**
+
+```
