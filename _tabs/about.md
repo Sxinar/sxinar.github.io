@@ -13,9 +13,9 @@ title: Hakkımda
 
 icon: fas fa-info-circle
 
-order: 1
+order: 4
 
----
+***
 
 ## Merhaba, ben Sxinar! 👋
 
@@ -23,7 +23,7 @@ Ben bir \*\*Açık Kaynak (Open-Source) tutkunu\*\*, Full-stack geliştirici ve 
 
 Genellikle modern web teknolojileri (özellikle \*\*Svelte\*\*), sistem otomasyonları ve kullanıcı deneyimini iyileştiren araçlar üzerine çalışıyorum.
 
----
+***
 
 ### 🚀 Neler Yapıyorum?
 
@@ -33,13 +33,11 @@ Genellikle modern web teknolojileri (özellikle \*\*Svelte\*\*), sistem otomasyo
 
 \* \*\*İçerik Üretimi:\*\* Yazılım dünyasındaki deneyimlerimi ve teknolojik gelişmeleri burada ve \*\*[forum.artado.xyz](https://forum.artado.xyz/)\*\* adresindeki proje forumumuzda paylaşıyorum.
 
----
+***
 
 ### 🛠️ Teknoloji Yığınım (Stack)
 
 | Alan | Teknolojiler |
-
-| :--- | :--- |
 
 | \*\*Frontend\*\* | Svelte, SvelteKit, JavaScript, Tailwind CSS |
 
@@ -49,7 +47,7 @@ Genellikle modern web teknolojileri (özellikle \*\*Svelte\*\*), sistem otomasyo
 
 | \*\*Sistem\*\* | Proxy Yapıları, API Entegrasyonları, Web Güvenliği |
 
----
+***
 
 ### 🌐 Beni Takip Edin
 
@@ -65,4 +63,4 @@ Projelerimi incelemek, katkıda bulunmak veya sadece merhaba demek isterseniz ba
 
 > "Kod yazmak sadece bir iş değil, dijital dünyayı daha iyi bir yer haline getirme sanatıdır."
 
----
+***
