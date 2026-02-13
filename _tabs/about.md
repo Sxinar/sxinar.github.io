@@ -21,7 +21,7 @@ Genellikle modern web teknolojileri (özellikle \*\*Svelte\*\*), sistem otomasyo
 
 \* \*\*[NalaZy](https://github.com/Sxinar/NalaZy):\*\* Debian tabanlı sistemlerde \`nala\` kullanımını hızlandıran akıllı alias koleksiyonu gibi terminal verimlilik araçları üretiyorum.
 
-\* \*\*İçerik Üretimi:\*\* Yazılım dünyasındaki deneyimlerimi ve teknolojik gelişmeleri burada ve \*\*[forum.artado.xyz](https://forum.artado.xyz/)\*\* adresindeki proje forumumuzda paylaşıyorum.
+\* \*\*İçerik Üretimi:\*\* Yazılım dünyasındaki deneyimlerimi ve teknolojik gelişmeleri burada ve \*\*[forum.artado.xyz](https://forum.artado.xyz/)\*\* adresindeki proje forumumluzda paylaşıyorum.
 
 ***
 
@@ -55,16 +55,32 @@ Projelerimi incelemek, katkıda bulunmak veya sadece merhaba demek isterseniz ba
 
 ***
 
+<div id="secoment-app" style="max-width: 650px; margin: 20px auto; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+    <h3 style="border-bottom: 2px solid #eee; padding-bottom: 10px; color: #333;">Yorumlar</h3>
+    
+    <div id="comment-list" style="min-height: 50px; margin-bottom: 30px;">
+        <div class="loading-spinner">Yükleniyor...</div>
+    </div>
 
-<div id="secoment-section" style="max-width:600px; margin:auto;">
-    <h4>Yorumlar</h4>
-    <div id="comment-list">Yükleniyor...</div>
-    <div style="margin-top:20px; border-top:1px solid #ddd; padding-top:10px;">
-        <input type="text" id="sc-name" placeholder="Adınız" style="width:100%; margin-bottom:5px;">
-        <textarea id="sc-msg" placeholder="Yorumunuz..." style="width:100%; height:80px;"></textarea>
-        <button onclick="sendCom()" style="width:100%; padding:10px; background:#28a745; color:white; border:none;">Gönder</button>
+    <div style="background: #f8f9fa; padding: 20px; border-radius: 12px; border: 1px solid #e1e4e8;">
+        <h4 style="margin-top: 0; color: #555;">Bir yorum bırakın</h4>
+        <input type="text" id="sc-name" placeholder="Adınız" style="width: 100%; padding: 12px; margin-bottom: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 14px;">
+        <textarea id="sc-msg" placeholder="Mesajınız..." style="width: 100%; height: 100px; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 14px; resize: vertical;"></textarea>
+        <button onclick="sendCom()" style="margin-top: 10px; background: #007bff; color: white; border: none; padding: 12px 24px; border-radius: 8px; font-weight: 600; cursor: pointer; transition: 0.3s;">
+            Gönder
+        </button>
     </div>
 </div>
+
+<style>
+    .comment-item { background: white; padding: 15px; border-radius: 10px; margin-bottom: 15px; border-left: 4px solid #007bff; box-shadow: 0 2px 5px rgba(0,0,0,0.05); transition: transform 0.2s; }
+    .comment-item:hover { transform: translateX(5px); }
+    .comment-meta { display: flex; align-items: center; margin-bottom: 8px; }
+    .comment-author { font-weight: bold; color: #2c3e50; font-size: 15px; }
+    .comment-date { font-size: 12px; color: #95a5a6; margin-left: 10px; }
+    .comment-text { color: #444; line-height: 1.5; font-size: 14px; }
+    .loading-spinner { text-align: center; color: #888; padding: 20px; font-style: italic; }
+</style>
 
 <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
@@ -81,7 +97,7 @@ Projelerimi incelemek, katkıda bulunmak veya sadece merhaba demek isterseniz ba
 
     const app = initializeApp(firebaseConfig);
     const db = getFirestore(app);
-    const pageId = window.location.pathname; // Otomatik sayfa ID'si
+    const pageId = window.location.pathname;
 
     const q = query(collection(db, "comments"), 
               where("pageId", "==", pageId), 
@@ -89,23 +105,39 @@ Projelerimi incelemek, katkıda bulunmak veya sadece merhaba demek isterseniz ba
               orderBy("createdAt", "desc"));
 
     onSnapshot(q, (snap) => {
-        let h = "";
+        const listDiv = document.getElementById("comment-list");
+        if (snap.empty) {
+            listDiv.innerHTML = "<p style='color:#999;'>İlk yorumu siz yapın!</p>";
+            return;
+        }
+        let html = "";
         snap.forEach(d => {
-            h += `<div style="padding:10px; border-bottom:1px solid #eee;">
-                    <b>${d.data().name}:</b><br>${d.data().text}
-                  </div>`;
+            const data = d.data();
+            const date = data.createdAt ? new Date(data.createdAt.seconds * 1000).toLocaleDateString() : "...";
+            html += `
+                <div class="comment-item">
+                    <div class="comment-meta">
+                        <span class="comment-author">${data.name}</span>
+                        <span class="comment-date">${date}</span>
+                    </div>
+                    <div class="comment-text">${data.text}</div>
+                </div>`;
         });
-        document.getElementById("comment-list").innerHTML = h || "Henüz onaylı yorum yok.";
+        listDiv.innerHTML = html;
     });
 
     window.sendCom = async () => {
-        const n = document.getElementById("sc-name").value;
-        const t = document.getElementById("sc-msg").value;
-        if(!n || !t) return alert("Boş bırakmayın!");
-        await addDoc(collection(db, "comments"), {
-            name: n, text: t, pageId: pageId, approved: false, createdAt: serverTimestamp()
-        });
-        alert("Yorumunuz iletildi, onay bekliyor.");
-        document.getElementById("sc-msg").value = "";
+        const n = document.getElementById("sc-name");
+        const t = document.getElementById("sc-msg");
+        if(!n.value || !t.value) return alert("Lütfen boş bırakmayın!");
+        
+        try {
+            await addDoc(collection(db, "comments"), {
+                name: n.value, text: t.value, pageId: pageId, approved: false, createdAt: serverTimestamp()
+            });
+            alert("Teşekkürler! Yorumunuz onaylandıktan sonra burada görünecektir.");
+            t.value = "";
+        } catch(e) { alert("Hata: " + e.message); }
     };
 </script>
+
