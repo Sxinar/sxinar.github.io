@@ -96,6 +96,9 @@ assets:
   self_host:
     enabled:
     env:
+  js:
+    - /assets/js/custom.js
+
 
 pwa:
   enabled: true
