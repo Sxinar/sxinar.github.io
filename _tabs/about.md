@@ -57,70 +57,78 @@ Projelerimi incelemek, katkıda bulunmak veya sadece merhaba demek isterseniz ba
 
 
 
-
+<div id="translator-anchor"></div>
 
 <script>
-  (function() {
-    function startTranslate() {
-      // 1. Google Script Yükle
-      if (!window.googleTranslateElementInit) {
-        window.googleTranslateElementInit = function() {
-          new google.translate.TranslateElement({pageLanguage: 'tr', autoDisplay: false}, 'google_translate_element');
-        };
-        const gtScript = document.createElement('script');
-        gtScript.src = "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
-        document.body.appendChild(gtScript);
-      }
+(function() {
+  const initTranslator = () => {
+    if (document.getElementById('permanent-translator')) return;
 
-      // 2. Gizli Div
-      if (!document.getElementById('google_translate_element')) {
-        const gDiv = document.createElement('div');
-        gDiv.id = 'google_translate_element';
-        gDiv.style.display = 'none';
-        document.body.appendChild(gDiv);
-      }
+    // 1. Google Altyapısı
+    const gDiv = document.createElement('div');
+    gDiv.id = 'google_translate_element';
+    gDiv.style.display = 'none';
+    document.body.appendChild(gDiv);
 
-      // 3. Sidebar'a Ekle
-      const inject = () => {
-        if (document.getElementById('custom-translator')) return;
-        const sidebar = document.querySelector('#sidebar .sidebar-bottom') || document.querySelector('.sidebar-bottom');
-        if (sidebar) {
-          const wrapper = document.createElement('div');
-          wrapper.id = 'custom-translator';
-          wrapper.style.cssText = "padding:15px; border-top:1px solid #444; margin-top:15px; text-align:center;";
-          wrapper.innerHTML = `
-            <div style="font-size:10px; color:#888; margin-bottom:10px;">DİL DEĞİŞTİR / SELECT LANG</div>
-            <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap:10px; font-size:20px;">
-              <span onclick="window.setLang('tr')" style="cursor:pointer">🇹🇷</span>
-              <span onclick="window.setLang('en')" style="cursor:pointer">🇺🇸</span>
-              <span onclick="window.setLang('de')" style="cursor:pointer">🇩🇪</span>
-              <span onclick="window.setLang('fr')" style="cursor:pointer">🇫🇷</span>
-              <span onclick="window.setLang('ru')" style="cursor:pointer">🇷🇺</span>
-              <span onclick="window.setLang('es')" style="cursor:pointer">🇪🇸</span>
-            </div>
-            <style>#goog-gt-tt, .goog-te-banner-frame, .skiptranslate { display: none !important; } body { top: 0px !important; }</style>
-          `;
-          sidebar.before(wrapper);
-        }
-      };
-      
-      window.setLang = function(lang) {
-        const combo = document.querySelector('.goog-te-combo');
-        if (combo) {
-          combo.value = lang;
-          combo.dispatchEvent(new Event('change'));
-        }
-        if (lang === 'tr') {
-          document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-          location.reload();
-        }
-      };
+    const gtScript = document.createElement('script');
+    gtScript.src = "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
+    document.body.appendChild(gtScript);
 
-      setInterval(inject, 1000);
+    window.googleTranslateElementInit = () => {
+      new google.translate.TranslateElement({pageLanguage: 'tr', autoDisplay: false}, 'google_translate_element');
+    };
+
+    // 2. Sabit Panel Oluştur (Ekranın sol altına yapışır)
+    const panel = document.createElement('div');
+    panel.id = 'permanent-translator';
+    panel.style.cssText = `
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      z-index: 999999;
+      background: var(--sidebar-bg, #1b1b1e);
+      border: 1px solid var(--main-border-color, #444);
+      padding: 10px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    `;
+
+    panel.innerHTML = `
+      <style>
+        #goog-gt-tt, .goog-te-banner-frame, .skiptranslate { display: none !important; }
+        body { top: 0px !important; position: static !important; }
+        .l-btn { cursor: pointer; font-size: 20px; transition: transform 0.2s; }
+        .l-btn:hover { transform: scale(1.3); }
+      </style>
+      <span class="l-btn" onclick="applyLang('tr')">🇹🇷</span>
+      <span class="l-btn" onclick="applyLang('en')">🇺🇸</span>
+      <span class="l-btn" onclick="applyLang('de')">🇩🇪</span>
+      <span class="l-btn" onclick="applyLang('fr')">🇫🇷</span>
+      <span class="l-btn" onclick="applyLang('ru')">🇷🇺</span>
+    `;
+
+    document.body.appendChild(panel);
+  };
+
+  window.applyLang = (lang) => {
+    const combo = document.querySelector('.goog-te-combo');
+    if (combo) {
+      combo.value = lang;
+      combo.dispatchEvent(new Event('change'));
     }
+    if (lang === 'tr') {
+      document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+      location.reload();
+    }
+  };
 
-    // Sayfa yüklendiğinde başlat
-    if (document.readyState === 'complete') { startTranslate(); } 
-    else { window.addEventListener('load', startTranslate); }
-  })();
+  // Sayfa yüklendiğinde ve her 2 saniyede bir (PWA için) kontrol et
+  window.addEventListener('load', initTranslator);
+  setInterval(initTranslator, 2000);
+  initTranslator(); // Anında çalıştır
+})();
 </script>
+
