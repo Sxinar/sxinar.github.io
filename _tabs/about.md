@@ -55,7 +55,6 @@ Projelerimi incelemek, katkıda bulunmak veya sadece merhaba demek isterseniz ba
 
 ***
 
-
 ### Dil Seçenekleri / Languages
 
 <div class="custom-translator-grid">
@@ -66,6 +65,8 @@ Projelerimi incelemek, katkıda bulunmak veya sadece merhaba demek isterseniz ba
   <span onclick="runLang('ru')" class="lang-link">🇷🇺 Русский</span>
 </div>
 
+<div id="google_translate_element" style="display:none"></div>
+
 <style>
   .custom-translator-grid {
     display: grid;
@@ -74,39 +75,57 @@ Projelerimi incelemek, katkıda bulunmak veya sadece merhaba demek isterseniz ba
     margin-top: 20px;
   }
   .lang-link {
-    padding: 10px;
+    padding: 12px;
     border: 1px solid var(--main-border-color);
     border-radius: 8px;
     text-align: center;
     cursor: pointer;
     color: var(--text-color);
     font-weight: bold;
-    background: var(--card-bg, transparent);
+    background: var(--card-bg);
+    user-select: none;
   }
   .lang-link:hover {
     background: var(--sidebar-active-color);
     color: white !important;
   }
-  /* Google Bar'ı gizlemek istersen */
+  /* Sayfa kaymasını önlemek için */
   .skiptranslate { display: none !important; }
   body { top: 0px !important; position: static !important; }
 </style>
 
-<div id="google_translate_element" style="display:none"></div>
 <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 <script>
   function googleTranslateElementInit() {
     new google.translate.TranslateElement({
       pageLanguage: 'tr',
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
       autoDisplay: false
     }, 'google_translate_element');
   }
 
   function runLang(langCode) {
-    // Cookie yöntemiyle çeviriyi tetikler (HTML-Proofer hash hatası vermez)
-    document.cookie = "googtrans=/tr/" + langCode + "; path=/; domain=" + window.location.hostname;
-    document.cookie = "googtrans=/tr/" + langCode + "; path=/;";
-    location.reload();
+    // 1. Google'ın içindeki gizli seçiciyi bul ve tetikle
+    var select = document.querySelector('select.goog-te-combo');
+    if (select) {
+        select.value = langCode;
+        select.dispatchEvent(new Event('change'));
+    }
+    
+    // 2. Çerezleri de her ihtimale karşı set et
+    var domain = window.location.hostname;
+    document.cookie = "googtrans=/tr/" + langCode + "; path=/; domain=" + domain;
+    document.cookie = "googtrans=/tr/" + langCode + "; path=/";
+    
+    // 3. Eğer hemen çevrilmezse sayfayı tazele
+    setTimeout(function() {
+        if (langCode === 'tr') {
+            document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+            location.reload();
+        } else {
+            location.reload();
+        }
+    }, 300);
   }
 </script>
