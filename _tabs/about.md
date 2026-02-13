@@ -56,79 +56,36 @@ Projelerimi incelemek, katkıda bulunmak veya sadece merhaba demek isterseniz ba
 ***
 
 
+### Dil Seçenekleri / Languages
+<div class="custom-translator-grid">
+  <a href="#googtrans(tr|tr)" onclick="location.reload()" class="lang-link">🇹🇷 Türkçe</a>
+  <a href="#googtrans(tr|en)" onclick="location.reload()" class="lang-link">🇺🇸 English</a>
+  <a href="#googtrans(tr|de)" onclick="location.reload()" class="lang-link">🇩🇪 Deutsch</a>
+  <a href="#googtrans(tr|fr)" onclick="location.reload()" class="lang-link">🇫🇷 Français</a>
+  <a href="#googtrans(tr|ru)" onclick="location.reload()" class="lang-link">🇷🇺 Русский</a>
+</div>
 
-<div id="translator-anchor"></div>
+<style>
+  .custom-translator-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-top: 20px;
+  }
+  .lang-link {
+    padding: 10px;
+    border: 1px solid var(--main-border-color);
+    border-radius: 8px;
+    text-align: center;
+    text-decoration: none !important;
+    color: var(--text-color) !important;
+    font-weight: bold;
+  }
+  .lang-link:hover {
+    background: var(--sidebar-active-color);
+    color: white !important;
+  }
+</style>
 
-<script>
-(function() {
-  const initTranslator = () => {
-    if (document.getElementById('permanent-translator')) return;
-
-    // 1. Google Altyapısı
-    const gDiv = document.createElement('div');
-    gDiv.id = 'google_translate_element';
-    gDiv.style.display = 'none';
-    document.body.appendChild(gDiv);
-
-    const gtScript = document.createElement('script');
-    gtScript.src = "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
-    document.body.appendChild(gtScript);
-
-    window.googleTranslateElementInit = () => {
-      new google.translate.TranslateElement({pageLanguage: 'tr', autoDisplay: false}, 'google_translate_element');
-    };
-
-    // 2. Sabit Panel Oluştur (Ekranın sol altına yapışır)
-    const panel = document.createElement('div');
-    panel.id = 'permanent-translator';
-    panel.style.cssText = `
-      position: fixed;
-      bottom: 20px;
-      left: 20px;
-      z-index: 999999;
-      background: var(--sidebar-bg, #1b1b1e);
-      border: 1px solid var(--main-border-color, #444);
-      padding: 10px;
-      border-radius: 12px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-      display: flex;
-      gap: 10px;
-      align-items: center;
-    `;
-
-    panel.innerHTML = `
-      <style>
-        #goog-gt-tt, .goog-te-banner-frame, .skiptranslate { display: none !important; }
-        body { top: 0px !important; position: static !important; }
-        .l-btn { cursor: pointer; font-size: 20px; transition: transform 0.2s; }
-        .l-btn:hover { transform: scale(1.3); }
-      </style>
-      <span class="l-btn" onclick="applyLang('tr')">🇹🇷</span>
-      <span class="l-btn" onclick="applyLang('en')">🇺🇸</span>
-      <span class="l-btn" onclick="applyLang('de')">🇩🇪</span>
-      <span class="l-btn" onclick="applyLang('fr')">🇫🇷</span>
-      <span class="l-btn" onclick="applyLang('ru')">🇷🇺</span>
-    `;
-
-    document.body.appendChild(panel);
-  };
-
-  window.applyLang = (lang) => {
-    const combo = document.querySelector('.goog-te-combo');
-    if (combo) {
-      combo.value = lang;
-      combo.dispatchEvent(new Event('change'));
-    }
-    if (lang === 'tr') {
-      document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-      location.reload();
-    }
-  };
-
-  // Sayfa yüklendiğinde ve her 2 saniyede bir (PWA için) kontrol et
-  window.addEventListener('load', initTranslator);
-  setInterval(initTranslator, 2000);
-  initTranslator(); // Anında çalıştır
-})();
-</script>
-
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script>function googleTranslateElementInit() { new google.translate.TranslateElement({pageLanguage: 'tr'}, 'google_translate_element'); }</script>
