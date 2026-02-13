@@ -15,8 +15,6 @@ settings:
   toc: true
 ---
 
-<p align="center">
-
 <img src="https://img.shields.io/github/stars/Sxinar/Ohmzify?style=for-the-badge&color=gold" alt="stars">
 
 <img src="https://img.shields.io/github/issues/Sxinar/Ohmzify?style=for-the-badge&color=red" alt="issues">
@@ -25,7 +23,7 @@ settings:
 
 <p align="center">
 
-<p>OhmZify </p>
+# OhmZify 
 
 <strong>Terminalinizi tek tıkla modernize edin. Basit, hızlı ve güçlü.</strong>
 
