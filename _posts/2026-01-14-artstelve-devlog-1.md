@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 'ArtStelve DevLog #1'
+description: ''
 date: 2026-01-14
 categories:
   - devlog
@@ -13,29 +14,11 @@ settings:
   math: false
 ---
 
----
-
-title: "DevLog: Artado Geliştirme Günlüğü – Bölüm 1"
-
-date: 2026-01-15 10:00:00 +0300
-
-categories: [Geliştirme, DevLog]
-
-tags: [artado, svelte, proxy, devlog, open-source]
-
-image:
-
-  path: https://forum.artado.xyz/assets/files/2026-01-15/1768508205-233429-resim.png
-
-  alt: Artado Search Geliştirme Günlüğü
-
----
-
 Merhabalar! Biz \*\*Artado\*\* ekibi olarak bir süredir gözle görülür bir paylaşım yapmadık. Bunun temel sebebi, yeni özelliklerimizi tam anlamıyla olgunlaştırmadan sizlerle paylaşmak istemeyişimizdi. Bu süreçte boş durmadık; sessizce GitHub üzerinde geliştirmelerimize devam ettik.
 
 Projelerimizin takipçilerinin gelişmeleri daha yakından görebilmesi ve bizim de daha düzenli bir geliştirme disiplini kazanmamız adına \*\*DevLog\*\* serisini başlatıyoruz.
 
----
+***
 
 ### 📑 İçindekiler
 
@@ -49,7 +32,7 @@ Projelerimizin takipçilerinin gelişmeleri daha yakından görebilmesi ve bizim
 
 \* [Artado Forum ve Blog](#topluluk)
 
----
+***
 
 ### 1. ArtStelve: Yenilenen Yüzümüz {#artstelve}
 
@@ -67,11 +50,11 @@ Projelerimizin takipçilerinin gelişmeleri daha yakından görebilmesi ve bizim
 
 _Modern Svelte altyapısı ile ArtStelve arayüzü._
 
-> \*\*GitHub:\*\* [sxinar/artstelve](https://github.com/sxinar/artstelve)  
+> \*\*GitHub:\*\* [sxinar/artstelve](https://github.com/sxinar/artstelve)
 
 > \*\*Ön İzleme:\*\* [artstelve.vercel.app](https://artstelve.vercel.app)
 
----
+***
 
 ### 2. Artado Hybrid Proxy System {#hybrid-proxy}
 
@@ -85,7 +68,7 @@ Bu haftanın ikinci büyük yeniliği ise \*\*Hybrid Proxy\*\* sistemimiz.
 
 ![Proxy Sistemi](https://forum.artado.xyz/assets/files/2026-01-15/1768508405-193620-resim.png)
 
----
+***
 
 ### 3. Kurumsal Web Sitesi Güncellemesi {#kurumsal-site}
 
@@ -97,7 +80,7 @@ Ana sitemiz [artado.xyz](https://artado.xyz), güvenlik zafiyetlerinden korunmak
 
 ![Kurumsal Site](https://forum.artado.xyz/assets/files/2026-01-15/1768508704-20556-resim.png)
 
----
+***
 
 ### 4. Yenilenmiş Artado Docs {#artado-docs}
 
@@ -109,7 +92,7 @@ Eski dokümantasyon altyapımızı (Bludit) bırakarak, PHP ile kendi dokümanta
 
 ![Artado Docs](https://forum.artado.xyz/assets/files/2026-01-15/1768509608-152003-resim.png)
 
----
+***
 
 ### 5. Forum ve Blog {#topluluk}
 
@@ -117,7 +100,7 @@ Eski dokümantasyon altyapımızı (Bludit) bırakarak, PHP ile kendi dokümanta
 
 \*\*Artado Blog:\*\* Sadece kendimize odaklanmak yerine, daha geniş bir teknoloji kitlesine hitap etmek amacıyla WordPress altyapılı blog sayfamızı yayına aldık. [artado.xyz/blog](https://artado.xyz/blog) adresinden ulaşabilirsiniz.
 
----
+***
 
 ### Bizimle İletişime Geçin!
 
