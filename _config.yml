@@ -32,7 +32,7 @@ social:
 
 # Site Verification Settings
 webmaster_verifications:
-  google: "google-site-verification=9vDl9ZWafw6axSRcM84i6n7GBAtBEr-CVM9ezziGjC0"
+  google: "9vDl9ZWafw6axSRcM84i6n7GBAtBEr-CVM9ezziGjC0"
   bing:
   alexa:
   yandex:
@@ -44,7 +44,7 @@ webmaster_verifications:
 # Web Analytics Settings
 analytics:
   google:
-    id: "G-X48MN6QVW8"
+    id: "G-X48MN6QVW8" # Google Etiketiniz buraya eklendi
   goatcounter:
     id:
   umami:
@@ -178,3 +178,4 @@ jekyll-archives:
     tag: /tags/:name/
     category: /categories/:name/
 
+google_site_verification: 9vDl9ZWafw6axSRcM84i6n7GBAtBEr-CVM9ezziGjC0
