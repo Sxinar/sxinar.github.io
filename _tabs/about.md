@@ -54,3 +54,73 @@ Projelerimi incelemek, katkıda bulunmak veya sadece merhaba demek isterseniz ba
 > "Kod yazmak sadece bir iş değil, dijital dünyayı daha iyi bir yer haline getirme sanatıdır."
 
 ***
+
+
+
+
+
+<script>
+  (function() {
+    function startTranslate() {
+      // 1. Google Script Yükle
+      if (!window.googleTranslateElementInit) {
+        window.googleTranslateElementInit = function() {
+          new google.translate.TranslateElement({pageLanguage: 'tr', autoDisplay: false}, 'google_translate_element');
+        };
+        const gtScript = document.createElement('script');
+        gtScript.src = "//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
+        document.body.appendChild(gtScript);
+      }
+
+      // 2. Gizli Div
+      if (!document.getElementById('google_translate_element')) {
+        const gDiv = document.createElement('div');
+        gDiv.id = 'google_translate_element';
+        gDiv.style.display = 'none';
+        document.body.appendChild(gDiv);
+      }
+
+      // 3. Sidebar'a Ekle
+      const inject = () => {
+        if (document.getElementById('custom-translator')) return;
+        const sidebar = document.querySelector('#sidebar .sidebar-bottom') || document.querySelector('.sidebar-bottom');
+        if (sidebar) {
+          const wrapper = document.createElement('div');
+          wrapper.id = 'custom-translator';
+          wrapper.style.cssText = "padding:15px; border-top:1px solid #444; margin-top:15px; text-align:center;";
+          wrapper.innerHTML = `
+            <div style="font-size:10px; color:#888; margin-bottom:10px;">DİL DEĞİŞTİR / SELECT LANG</div>
+            <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap:10px; font-size:20px;">
+              <span onclick="window.setLang('tr')" style="cursor:pointer">🇹🇷</span>
+              <span onclick="window.setLang('en')" style="cursor:pointer">🇺🇸</span>
+              <span onclick="window.setLang('de')" style="cursor:pointer">🇩🇪</span>
+              <span onclick="window.setLang('fr')" style="cursor:pointer">🇫🇷</span>
+              <span onclick="window.setLang('ru')" style="cursor:pointer">🇷🇺</span>
+              <span onclick="window.setLang('es')" style="cursor:pointer">🇪🇸</span>
+            </div>
+            <style>#goog-gt-tt, .goog-te-banner-frame, .skiptranslate { display: none !important; } body { top: 0px !important; }</style>
+          `;
+          sidebar.before(wrapper);
+        }
+      };
+      
+      window.setLang = function(lang) {
+        const combo = document.querySelector('.goog-te-combo');
+        if (combo) {
+          combo.value = lang;
+          combo.dispatchEvent(new Event('change'));
+        }
+        if (lang === 'tr') {
+          document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+          location.reload();
+        }
+      };
+
+      setInterval(inject, 1000);
+    }
+
+    // Sayfa yüklendiğinde başlat
+    if (document.readyState === 'complete') { startTranslate(); } 
+    else { window.addEventListener('load', startTranslate); }
+  })();
+</script>
