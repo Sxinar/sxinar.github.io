@@ -189,10 +189,6 @@ The \`install.sh\` script of NalaZy detects if Nala is not installed on your sys
 
 </details>
 
-## 📜 Lisans / License
-
-Bu proje [MIT](LICENSE) lisansı altında korunmaktadır. Detaylar için \`LICENSE\` dosyasına göz atabilirsiniz.
-
 ***
 
 \*\*⭐ Eğer bu projeyi beğendiyseniz yıldız vermeyi unutmayın!\*\* Developed by [Sxinar](https://github.com/Sxinar) with ❤️
