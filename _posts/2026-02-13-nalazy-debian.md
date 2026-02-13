@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'NalaZy: Debian için  modern bir APT'
+title: 'NalaZy: Debian ve Nala'
 date: 2026-02-13
 categories:
   - linux
