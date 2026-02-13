@@ -30,17 +30,12 @@ collections:
     fields:
       - { label: "Layout", name: "layout", widget: "hidden", default: "post" }
       - { label: "Başlık", name: "title", widget: "string" }
-      - label: "Tarih"
-        name: "date"
-        widget: "datetime"
-        format: "YYYY-MM-DD"
-        date_format: "DD.MM.YYYY"
-        time_format: false 
+      - { label: "Yazı Özeti (Description)", name: "description", widget: "string", required: false }
+      - { label: "Tarih", name: "date", widget: "datetime", format: "YYYY-MM-DD HH:mm:ss Z" }
       
       - label: "Kategoriler"
         name: "categories"
         widget: "list"
-        summary: '{{fields.category}}'
         field: { label: "Kategori Adı", name: "category", widget: "string" }
         min: 1
         max: 2
@@ -48,7 +43,6 @@ collections:
       - label: "Etiketler (Tags)"
         name: "tags"
         widget: "list"
-        summary: '{{fields.tag}}'
         field: { label: "Etiket Adı", name: "tag", widget: "string" }
 
       - label: "Öne Çıkan Görsel"
@@ -58,19 +52,22 @@ collections:
         fields:
           - { label: "Resim Dosyası", name: "path", widget: "image" }
           - { label: "Alt Metni", name: "alt", widget: "string", required: false }
+          - { label: "Lqip (Blur efekti)", name: "lqip", widget: "string", required: false }
 
       - label: "Ekstra Ayarlar"
         name: "settings"
         widget: "object"
         collapsed: true
         fields:
-          - { label: "Pinle", name: "pin", widget: "boolean", default: false, required: false }
-          - { label: "Matematik (MathJax)", name: "math", widget: "boolean", default: false, required: false }
+          - { label: "Yayınla", name: "published", widget: "boolean", default: true }
+          - { label: "Pinle", name: "pin", widget: "boolean", default: false }
+          - { label: "Matematik (MathJax)", name: "math", widget: "boolean", default: false }
+          - { label: "İçindekiler Tablosu (TOC)", name: "toc", widget: "boolean", default: true }
       
       - { label: "İçerik", name: "body", widget: "markdown" }
 
   # -------------------------------------------------------------------------
-  # SAYFALAR (HATA DÜZELTİLDİ: Title alanları teke düşürüldü)
+  # SAYFALAR
   # -------------------------------------------------------------------------
   - name: "pages"
     label: "Sayfalar"
@@ -80,29 +77,29 @@ collections:
     format: "frontmatter"
     fields:
       - { label: "Layout", name: "layout", widget: "hidden", default: "page" }
-      - { label: "Sayfa Başlığı", name: "title", widget: "string" } # Tek title burada
+      - { label: "Sayfa Başlığı", name: "title", widget: "string" }
       - { label: "Özel URL (Permalink)", name: "permalink", widget: "string", required: false }
       - { label: "Simge (FontAwesome)", name: "icon", widget: "string", required: false }
       - { label: "Sıralama (Order)", name: "order", widget: "number", required: false }
       - { label: "İçerik", name: "body", widget: "markdown" }
 
   # -------------------------------------------------------------------------
-  # SİSTEM AYARLARI (METİN OLARAK DÜZENLEME)
+  # VERİ VE AYARLAR (Burayı geri ekledim ama daha düzenli hale getirdim)
   # -------------------------------------------------------------------------
   - name: "settings"
     label: "Sistem Ayarları"
     delete: false
     files:
-      - name: "main_config"
-        label: "_config.yml"
-        file: "_config.yml"
-        format: "raw" # İçeriği doğrudan metin olarak çekmek için
-        fields:
-          - { label: "Yaml İçeriği", name: "body", widget: "text" } # Code yerine Text daha güvenlidir
-
       - name: "navigation"
         label: "Sol Menü (_data/navigation.yml)"
         file: "_data/navigation.yml"
-        format: "raw"
+        format: "yaml" # Raw yerine direkt YAML olarak düzenlemek daha hatasızdır
         fields:
-          - { label: "Menü İçeriği", name: "body", widget: "text" }
+          - label: "Menü Linkleri"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Başlık", name: "title", widget: "string" }
+              - { label: "URL", name: "url", widget: "string" }
+              - { label: "İkon", name: "icon", widget: "string" }
+              - { label: "Sıra", name: "order", widget: "number" }
