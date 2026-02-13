@@ -57,12 +57,13 @@ Projelerimi incelemek, katkıda bulunmak veya sadece merhaba demek isterseniz ba
 
 
 ### Dil Seçenekleri / Languages
+
 <div class="custom-translator-grid">
-  <a href="#googtrans(tr|tr)" onclick="location.reload()" class="lang-link">🇹🇷 Türkçe</a>
-  <a href="#googtrans(tr|en)" onclick="location.reload()" class="lang-link">🇺🇸 English</a>
-  <a href="#googtrans(tr|de)" onclick="location.reload()" class="lang-link">🇩🇪 Deutsch</a>
-  <a href="#googtrans(tr|fr)" onclick="location.reload()" class="lang-link">🇫🇷 Français</a>
-  <a href="#googtrans(tr|ru)" onclick="location.reload()" class="lang-link">🇷🇺 Русский</a>
+  <span onclick="runLang('tr')" class="lang-link">🇹🇷 Türkçe</span>
+  <span onclick="runLang('en')" class="lang-link">🇺🇸 English</span>
+  <span onclick="runLang('de')" class="lang-link">🇩🇪 Deutsch</span>
+  <span onclick="runLang('fr')" class="lang-link">🇫🇷 Français</span>
+  <span onclick="runLang('ru')" class="lang-link">🇷🇺 Русский</span>
 </div>
 
 <style>
@@ -77,15 +78,35 @@ Projelerimi incelemek, katkıda bulunmak veya sadece merhaba demek isterseniz ba
     border: 1px solid var(--main-border-color);
     border-radius: 8px;
     text-align: center;
-    text-decoration: none !important;
-    color: var(--text-color) !important;
+    cursor: pointer;
+    color: var(--text-color);
     font-weight: bold;
+    background: var(--card-bg, transparent);
   }
   .lang-link:hover {
     background: var(--sidebar-active-color);
     color: white !important;
   }
+  /* Google Bar'ı gizlemek istersen */
+  .skiptranslate { display: none !important; }
+  body { top: 0px !important; position: static !important; }
 </style>
 
-<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-<script>function googleTranslateElementInit() { new google.translate.TranslateElement({pageLanguage: 'tr'}, 'google_translate_element'); }</script>
+<div id="google_translate_element" style="display:none"></div>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<script>
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'tr',
+      autoDisplay: false
+    }, 'google_translate_element');
+  }
+
+  function runLang(langCode) {
+    // Cookie yöntemiyle çeviriyi tetikler (HTML-Proofer hash hatası vermez)
+    document.cookie = "googtrans=/tr/" + langCode + "; path=/; domain=" + window.location.hostname;
+    document.cookie = "googtrans=/tr/" + langCode + "; path=/;";
+    location.reload();
+  }
+</script>
