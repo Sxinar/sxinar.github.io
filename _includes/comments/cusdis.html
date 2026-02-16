@@ -1,0 +1,32 @@
+<div id="cusdis_thread"
+  data-host="https://cusdis.com"
+  data-app-id="741d2d52-b050-4ac9-a07c-9d4f64182800"
+  data-page-id="{{ page.url }}"
+  data-page-url="{{ site.url }}{{ page.url }}"
+  data-page-title="{{ page.title }}"
+  data-theme="auto"
+></div>
+
+<script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
+
+<script>
+  /* Chirpy'nin karanlık/aydınlık modu değişimini Cusdis'e bildirir */
+  window.addEventListener('message', (event) => {
+    try {
+      if (event.data && typeof event.data === 'string') {
+        const data = JSON.parse(event.data);
+        if (data.type === 'set-theme') {
+          const cusdisIframe = document.querySelector('#cusdis_thread iframe');
+          if (cusdisIframe) {
+            cusdisIframe.contentWindow.postMessage(
+              JSON.stringify({ type: 'set-theme', theme: data.theme }),
+              'https://cusdis.com'
+            );
+          }
+        }
+      }
+    } catch (e) {
+      // JSON ayrıştırma hatası olursa sessizce geç
+    }
+  });
+</script>
