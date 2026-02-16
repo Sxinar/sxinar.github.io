@@ -19,7 +19,7 @@ description: >-
   Artado Ekosistemini geliştirmek için Proje yöneticiliği yapıyorum.
 
 # Fill in the protocol & hostname for your site.
-url: "https://sxinar.github.io"
+url: "https://sxi.is-a.dev"
 
 github:
   username: Sxinar
@@ -110,7 +110,7 @@ paginate: 10
 
 # The base URL of your site. 
 # For 'https://sxinar.github.io/', set it to ""
-baseurl: ""
+baseurl: "https://sxi.is-a.dev"
 
 # ------------ The following options are not recommended to be modified ------------------
 
