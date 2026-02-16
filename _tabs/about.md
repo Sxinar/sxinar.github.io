@@ -9,7 +9,7 @@ order: 4
 
 ## Merhaba, ben Sxinar! 👋
 
-Ben bir \*\*Açık Kaynak (Open-Source) tutkunu\*\*, Full-stack geliştirici ve dijital gizlilik savunucusuyum. İnterneti daha özgür, daha hızlı ve daha şeffaf hale getirmek isteyen \*\*Artado\*\* ekibinin kurucudan sonraki Ana geliştiricisiyim.
+Ben bir **Açık Kaynak** (Open-Source) tutkunu, Full-stack geliştirici ve dijital gizlilik savunucusuyum. İnterneti daha özgür, daha hızlı ve daha şeffaf hale getirmek isteyen **Artado** ekibinin kurucudan sonraki Ana geliştiricisiyim.
 
 Genellikle modern web teknolojileri (özellikle \*\*Svelte\*\*), sistem otomasyonları ve kullanıcı deneyimini iyileştiren araçlar üzerine çalışıyorum.
 
@@ -17,11 +17,17 @@ Genellikle modern web teknolojileri (özellikle \*\*Svelte\*\*), sistem otomasyo
 
 ### 🚀 Neler Yapıyorum?
 
-\* \*\*[Artado Search](https://artado.xyz):\*\* Mahremiyet odaklı arama motoru projemizde, kullanıcıların verilerini koruyarak en doğru bilgiye ulaşmasını sağlayan frontend (ArtStelve) ve proxy sistemlerini geliştiriyorum.
+- [**Artado Search**](https://beta.artadosearch.com): Mahremiyet odaklı arama motoru projemizde, kullanıcıların verilerini koruyarak en doğru bilgiye ulaşmasını sağlayan frontend (ArtStelve) ve proxy sistemlerini geliştiriyorum.
 
-\* \*\*[NalaZy](https://github.com/Sxinar/NalaZy):\*\* Debian tabanlı sistemlerde \`nala\` kullanımını hızlandıran akıllı alias koleksiyonu gibi terminal verimlilik araçları üretiyorum.
+- [Artado Devs](devs.artado.xyz)
 
-\* \*\*İçerik Üretimi:\*\* Yazılım dünyasındaki deneyimlerimi ve teknolojik gelişmeleri burada ve \*\*[forum.artado.xyz](https://forum.artado.xyz/)\*\* adresindeki proje forumumluzda paylaşıyorum.
+- [Artado Proxy](artstelve-proxy.vercel.app)
+
+- [Artado Docs](docs.artado.xyz)
+
+- [**NalaZy**](https://github.com/Sxinar/NalaZy): Debian tabanlı sistemlerde \`nala\` kullanımını hızlandıran akıllı alias koleksiyonu gibi terminal verimlilik araçları üretiyorum.
+
+-** İçerik Üretimi: **Yazılım dünyasındaki deneyimlerimi ve teknolojik gelişmeleri burada ve [**forum.artado.xyz**](https://forum.artado.xyz/)** **adresindeki proje forumumluzda paylaşıyorum.
 
 ***
 
@@ -33,7 +39,7 @@ Genellikle modern web teknolojileri (özellikle \*\*Svelte\*\*), sistem otomasyo
 
 | \*\*Backend\*\* | Node.js, TypeScript, PHP |
 
-| \*\*Araçlar\*\* | Git, Docker, Bash Scripting, Linux (Debian/Ubuntu) |
+| \*\*Araçlar\*\* | Git, Bash Scripting, Linux (Debian/Ubuntu) |
 
 | \*\*Sistem\*\* | Proxy Yapıları, API Entegrasyonları, Web Güvenliği |
 
@@ -55,8 +61,8 @@ Projelerimi incelemek, katkıda bulunmak veya sadece merhaba demek isterseniz ba
 
 ***
 
-<iframe 
-  src="https://sxinar.github.io/secomment/widcom.html" 
-  style="width: 100%; border: none; min-height: 500px;" 
+<iframe
+  src="https://sxinar.github.io/secomment/widcom.html"
+  style="width: 100%; border: none; min-height: 500px;"
   id="secomment-frame">
 </iframe>
