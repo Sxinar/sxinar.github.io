@@ -73,9 +73,12 @@ avatar: https://avatars.githubusercontent.com/u/130384567
 social_preview_image: https://avatars.githubusercontent.com/u/130384567
 
 toc: true
-
 comments:
-  provider: giscus
+  active: cusdis          # Aktif olanı cusdis yaptık
+  provider: cusdis        # Sağlayıcıyı cusdis yaptık
+  cusdis:
+    app_id: "741d2d52-b050-4ac9-a07c-9d4f64182800" # Senin App ID'n
+  # Diğer giscus, disqus vb. ayarlarını silmene gerek yok, öylece durabilirler.
   disqus:
     shortname:
   utterances:
