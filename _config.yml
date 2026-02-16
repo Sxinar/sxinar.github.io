@@ -32,7 +32,7 @@ social:
 
 # Site Verification Settings
 webmaster_verifications:
-  google: "9vDl9ZWafw6axSRcM84i6n7GBAtBEr-CVM9ezziGjC0"
+  google: "yKVgox_rY7RgQV8sB6CD-Y2cYmh9XtFY6rroqNY-cQA"
   bing:
   alexa:
   yandex:
@@ -184,4 +184,4 @@ jekyll-archives:
     tag: /tags/:name/
     category: /categories/:name/
 
-google_site_verification: 9vDl9ZWafw6axSRcM84i6n7GBAtBEr-CVM9ezziGjC0
+google-site-verification: yKVgox_rY7RgQV8sB6CD-Y2cYmh9XtFY6rroqNY-cQA
