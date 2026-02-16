@@ -9,6 +9,7 @@ tags:
   - devlog
   - artado
 image: null
+comments: true
 settings:
   pin: false
   math: false
