@@ -74,12 +74,7 @@ social_preview_image: https://avatars.githubusercontent.com/u/130384567
 
 toc: true
 comments:
-  provider: giscus        # Sağlayıcıyı cusdis yaptık
-  disqus:
-    shortname:
-  utterances:
-    repo:
-    issue_term:
+  provider: giscus
   giscus:
     repo: "sxinar/blog"
     repo_id: "R_kgDOQx1EfA"
@@ -87,9 +82,15 @@ comments:
     category_id: "DIC_kwDOQx1EfM4C0b-r"
     mapping: pathname
     strict: 0
-    input_position: bottom
-    lang: en
+    input_position: top
+    lang: tr
     reactions_enabled: 1
+  disqus:
+    shortname:
+  utterances:
+    repo:
+    issue_term:
+
 
 assets:
   self_host:
