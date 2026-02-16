@@ -19,45 +19,53 @@ settings:
 
 <img src="https://img.shields.io/github/issues/Sxinar/Ohmzify?style=for-the-badge&color=red" alt="issues">
 
-</p>
-
-<p align="center">
-
-# OhmZify 
+OhmZify
 
 <strong>Terminalinizi tek tıkla modernize edin. Basit, hızlı ve güçlü.</strong>
 
 </p>
 
-## 📍 İçindekiler
+📍 İçindekiler
 
-\* [Özellikler](#özellikler)
+ - Özellikler
 
-\* [Neden Zsh?](#neden-zsh-bash-vs-zsh)
+- Neden Zsh?
 
-\* [Kurulum](#kurulum)
+- Kurulum
 
-## Özellikler
+Özellikler
 
-\*\*Ohmzify\*\*, standart terminalinizi yüksek performanslı bir çalışma alanına dönüştürür.
+Ohmzify, standart terminalinizi yüksek performanslı bir çalışma alanına dönüştürür.
 
-\* \*\*Zsh & Oh My Zsh:\*\* Güçlü altyapı.
+Zsh & Oh My Zsh:Güçlü altyapı.
 
-\* \*\*Otomatik Öneriler:\*\* Akıllı komut geçmişi.
+- Otomatik Öneriler: Akıllı komut geçmişi.
 
-\* \*\*Sözdizimi Vurgulama:\*\* Gerçek zamanlı renkli geri bildirim.
+- Sözdizimi Vurgulama: Gerçek zamanlı renkli geri bildirim.
 
-## Neden Zsh? (Bash vs Zsh)
+Neden Zsh? (Bash vs Zsh)
 
-| Özellik | Bash | Zsh (Ohmzify) |
+ Özellik
 
-| \*\*Otomatik Tamamlama\*\* | Temel | Gelişmiş |
+ Bash
 
-| \*\*Yazım Düzeltme\*\* | Yok | Var |
+ Zsh (Ohmzify)
 
-## Kurulum
+ \*\*Otomatik Tamamlama\*\*
 
-`git clone `[`https://github.com/Sxinar/Ohmzify.git`](https://github.com/Sxinar/Ohmzify.git)` && cd Ohmzify && chmod +x install.sh && ./install.sh`
+ Temel
+
+ Gelişmiş
+
+ \*\*Yazım Düzeltme\*\*
+
+ Yok
+
+ Var
+
+Kurulum
+
+git clone https://github.com/Sxinar/Ohmzify.git && cd Ohmzify && chmod +x install.sh && ./install.sh
 
 <p align="center">
 
