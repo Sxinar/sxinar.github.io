@@ -110,7 +110,7 @@ paginate: 10
 
 # The base URL of your site. 
 # For 'https://sxinar.github.io/', set it to ""
-baseurl: "https://sxi.is-a.dev"
+baseurl: ""
 
 # ------------ The following options are not recommended to be modified ------------------
 
