@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: Sxinar/sxinar.github.io
+  repo: Sxinar/blog
   branch: main
   base_url: https://sveltia-cms-auth.basaranuse.workers.dev
   auth_endpoint: auth
