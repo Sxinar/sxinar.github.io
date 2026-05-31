@@ -19,11 +19,11 @@ Genellikle modern web teknolojileri (özellikle \*\*Svelte\*\*), sistem otomasyo
 
 - [**Artado Search**](https://beta.artadosearch.com): Mahremiyet odaklı arama motoru projemizde, kullanıcıların verilerini koruyarak en doğru bilgiye ulaşmasını sağlayan frontend (ArtStelve) ve proxy sistemlerini geliştiriyorum.
 
-- [Artado Devs](devs.artado.xyz)
+- [Artado Devs](https://devs.artado.xyz)
 
-- [Artado Proxy](artstelve-proxy.vercel.app)
+- [Artado Proxy](https://artstelve-proxy.vercel.app)
 
-- [Artado Docs](docs.artado.xyz)
+- [Artado Docs](https://docs.artado.xyz)
 
 - [**NalaZy**](https://github.com/Sxinar/NalaZy): Debian tabanlı sistemlerde \`nala\` kullanımını hızlandıran akıllı alias koleksiyonu gibi terminal verimlilik araçları üretiyorum.
 
