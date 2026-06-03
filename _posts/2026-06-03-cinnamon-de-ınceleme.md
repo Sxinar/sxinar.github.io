@@ -7,9 +7,9 @@ categories:
   - Linux
   - Masaüstü Ortamı İnceleme
 tags:
-  - linux
-  - cinnamon
-  - linuxmint
+  - Linux
+  - Cinnamon
+  - Linux Mint
 image: null
 settings:
   published: true
@@ -109,7 +109,7 @@ settings:
 
 ##### 
 
-##### Mint Ekibinin Beğenmediğim Noktaları:
+## Mint Ekibinin Beğenmediğim Noktaları:
 
 - **Güvenlik Zafiyeti ve Sunucu Hacklenmesi (2016):** Geçmişte Linux Mint'in resmi web sitesinin hacklenmesi ve bilgisayar korsanlarının ISO dosyalarının içine arka kapı (backdoor) yerleştirmesi, ekibin altyapı güvenliği ve sunucu yönetimi konusunda ciddi şekilde sınıfta kaldığını gösteriyor.
 - **Wayland Protokolünü Görmezden Gelmesi:** Sektörün ve büyük dağıtımların yıllar önce geçiş yaptığı modern Wayland ekran sunucusunu çok uzun süre "gereksiz" görerek geliştirmeyi geciktirmesi, bugün Cinnamon'un yeni nesil grafik ve güvenlik teknolojilerinde rakiplerinin çok gerisinde kalmasına yol açıyor.
@@ -117,6 +117,8 @@ settings:
 - **Ubuntu LTS Tabanına Aşırı Bağımlılık:** Debian tabanlı LMDE projesine rağmen ana dağıtımın tamamen Ubuntu LTS döngüsüne bağlı kalması; kullanıcıların modern çekirdeklere (kernel), güncel donanım sürücülerine ve yeni nesil yazılımlara erişimini aylarca geciktiriyor. Aynı zamanda bununla ilgili bir LMDE sürümü inceleme de yapmayı planlıyorum orada da dağıtımın aşırı işlevsizlik sorunu mevcut.
 - **X-Apps İnadı ve Kaynak Bölünmesi:** Ekibin GNOME standartlarına kızıp kendi metin editörünü, resim görüntüleyicisini ve dosya yöneticisini sıfırdan geliştirmeye (X-Apps) devasa mesai harcaması, zaten kısıtlı olan iş gücünü ana masaüstü ortamı olan Cinnamon'un performans optimizasyonundan çalıyor bence.
 - **Yenilikçi Fikirleri "Deneysel" Diyerek Reddetmesi:** Topluluktan gelen modern arayüz tasarımları, dinamik çalışma alanları ve gelişmiş özelleştirme araçları gibi yenilikçi talepleri muhafazakar bir tavırla reddederek vizyoner kullanıcıların dağıtımdan uzaklaşmasına zemin hazırlıyor. Halbuki çoğu linux kullanıcısının da amacı Yenilikçi bir tutumla birlikte kullanmak.Debian tabanı bunu sunuyor ancak yine Debian bu kadar katı değil.
+
+## Cinnamon Kurulumu destekleyen dağıtımlar
 
 ##### Cinnamon masaüstü ortamını varsayılan olarak sunan ve kurulum aşamasında resmi olarak seçmenize izin veren Linux dağıtımları ise bu şekilde:
 
