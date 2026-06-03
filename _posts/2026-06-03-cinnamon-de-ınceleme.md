@@ -27,21 +27,13 @@ settings:
 ### Teknik Özellikler:
 
 - Altyapı olarak **Gnome 3** kullanıyor. 
-
 - Pencere Yöneticisi olarak ise GNOME'un _Mutter_ yazılımından çatallanan Muffin, ekran kartınızı yormadan pencerelerin akıcı bir şekilde açılmasını, gölgelendirmeleri ve masaüstü efektlerini yönetir.
-
-  - Muffin pencere yöneticisi **GTK** ve **Clutter** (OpenGL tabanlı bir sahne grafiği kütüphanesi) üzerine inşa edilmiştir. Ekrandaki her pencere her animasyon ve her efekt aslında birer OpenGL dokusudur. Bu, pencere taşıma ve yeniden boyutlandırma işlemlerinin doğrudan GPU tarafından **donanımsal olarak ivmelendirilmesini** (**Hardware Acceleration**) sağlar.
-
+    - Muffin pencere yöneticisi **GTK** ve **Clutter** (OpenGL tabanlı bir sahne grafiği kütüphanesi) üzerine inşa edilmiştir. Ekrandaki her pencere her animasyon ve her efekt aslında birer OpenGL dokusudur. Bu, pencere taşıma ve yeniden boyutlandırma işlemlerinin doğrudan GPU tarafından **donanımsal olarak ivmelendirilmesini** (**Hardware Acceleration**) sağlar.
 - Yüksek çözünürlüklü (4K) ekranlar için **Kesirli Ölçeklendirme (Fractional Scaling)** desteğine sahiptir
-
 - GNOME ekibinin aksine geleneksel menü çubuklarını ve kullanıcı alışkanlıklarını korur. Kendine özgü ve optimize edilmiş yerleşik uygulamalarla bir diğer adıyla **X-Apps** ile birlikte birlikte gelir.
-
 - GNOME 3 ilk dönemlerinde ciddi JavaScript kaynaklı bellek sızıntılarıyla boğuşurken, Cinnamon ekibi çöp toplayıcıyı (Garbage Collector) optimize etmek için **CJS üzerinde derin optimizasyonlar yaptı**. `cinnamon --replace` komutu ile tüm kabuk, açık pencereler kapanmadan ram bellek havuzunu temizleyerek kendini yeniden başlatabilir.
-
 - Cinnamon geleneksel olarak **Xorg (X11)** mimarisine  bağlıydı.Son dönemde (Cinnamon 6.x ve sonrası) mimari, **Wayland protokolünü destekleyecek şekilde yeniden yapılandırıldı**. Bu süreçte `cinnamon-wayland` oturumu, Wayland compositing işlevlerini doğrudan Muffin üzerinden yürütür. X11 bağımlı eski uygulamalar için ise arka planda **XWayland** katmanı çalıştırılır.
-
 - Cinnamon, UI elemanlarının çizimi için kararlı  **GTK 3** kütüphanelerini temel alır. Bu sayede GNOME 40+ ile gelen CSS tabanlı ağır libadwaita zorunluluklarından kaçınır. Ancak modern temalar ve performans kazanımları için **GTK 4 portlama çalışmaları da arka planda yürütüldüğü söylenmektedir**.
-
 - Eğer sisteminizde düzgün bir ekran kartı driver yoksa veya GPU arızalıysa, Cinnamon kilitlenip siyah ekranda kalmaz. **`cinnamon2d`** veya **Cinnamon (Software Rendering)** modu devreye girer. Bu modda Clutter efektleri işlemci (CPU) üzerinde **LLVMpipe** kullanılarak simüle edilir.
 
 ### Cinnamon Uygulamaları:
@@ -57,9 +49,11 @@ settings:
 - **Warpinator:** Yerel ağdaki (LAN) diğer cihazları **gRPC** ve mDNS (Multicast DNS) protokolleriyle otomatik keşfederek, aralarında **şifreli ve asenkron dosya transferi sağlayan bir ağ uygulamasıdır.**
 - **Bulky:** X-Apps ailesinin bir üyesi olan, seçilen çoklu dosyaların isimlerini düzenli ifadeler (Regex) ve asenkron GIO sinyalleri yardımıyla toplu olarak değiştirebilen **hafif bir yeniden adlandırma aracıdır.**
 
-##### Benim kendi Linux dağıtım tercihlerim arasında üst segment Masaüstü ortamları arasında en nefret ettiğim ve geliştirilme biçiminden memnun olmadığım masaüstü ortamı Cinnamon. Bunların bana göre başlıca sebepleri ise bunlar: 
-
 #### 
+
+## Eleştirdiğim Yanları
+
+##### Benim kendi Linux dağıtım tercihlerim arasında üst segment Masaüstü ortamları arasında en nefret ettiğim ve geliştirilme biçiminden memnun olmadığım masaüstü ortamı Cinnamon. Bunların bana göre başlıca sebepleri ise bunlar: 
 
 #### Teknik ve Mimari Darboğazlar
 
@@ -88,6 +82,8 @@ settings:
 
 ##### Cinnamon’ın sevilmeme nedenleri kadar, onu Linux dünyasının en popüler masaüstü ortamlarından biri yapan çok güçlü ve sevilen yanları da var:
 
+## Cinnamon Sevilen Yanları
+
 #### Kullanım Kolaylığı ve Tanıdık Arayüz Felsefesi
 
 - **Sıfır Öğrenme Eğrisi Sunuyor:** Windows tabanlı geleneksel masaüstü düzenini birebir koruduğu için, Windows'tan Linux'a geçen kullanıcıların hiç yabancılık çekmeden doğrudan işine odaklanmasını sağlıyor.
@@ -111,6 +107,17 @@ settings:
 - **Kullanıcıyı Arka Planda İzlemiyor:** Büyük teknoloji şirketlerinin aksine veri toplama (telemetri) veya reklam barındırmıyor, tamamen kullanıcı gizliliğine odaklanan şeffaf bir işletim sistemi deneyimi yaşatıyor.
 - **Şirketlerin Ticari Kaygılarından Uzak Duruyor:** Dev kurumsal yapıların dayatmalarına göre değil, doğrudan masaüstünü kullanan gerçek kişilerin geri bildirimlerine ve taleplerine göre şekilleniyor, topluluk ruhunu sonuna kadar koruyor.
 
+##### 
+
+##### Mint Ekibinin Beğenmediğim Noktaları:
+
+- **Güvenlik Zafiyeti ve Sunucu Hacklenmesi (2016):** Geçmişte Linux Mint'in resmi web sitesinin hacklenmesi ve bilgisayar korsanlarının ISO dosyalarının içine arka kapı (backdoor) yerleştirmesi, ekibin altyapı güvenliği ve sunucu yönetimi konusunda ciddi şekilde sınıfta kaldığını gösteriyor.
+- **Wayland Protokolünü Görmezden Gelmesi:** Sektörün ve büyük dağıtımların yıllar önce geçiş yaptığı modern Wayland ekran sunucusunu çok uzun süre "gereksiz" görerek geliştirmeyi geciktirmesi, bugün Cinnamon'un yeni nesil grafik ve güvenlik teknolojilerinde rakiplerinin çok gerisinde kalmasına yol açıyor.
+- **Snap Paketlerine Karşı Aşırı Radikal Tavır:** Canonical'ın Snap teknolojisine tepki göstererek sistemde Snap kullanımını tamamen engellemesi ve kullanıcıyı zorlaması, özgürlük vadeden bir dağıtımın kullanıcı tercihlerine katı bir şekilde müdahale etmesi olarak eleştiriliyor.Ancak ben bu noktada Mint ekibinin bu konuda görüşlerini anlıyorum aslında ancak bu kadar da aşırı olması topluluk tarafından eleştiriliyor.
+- **Ubuntu LTS Tabanına Aşırı Bağımlılık:** Debian tabanlı LMDE projesine rağmen ana dağıtımın tamamen Ubuntu LTS döngüsüne bağlı kalması; kullanıcıların modern çekirdeklere (kernel), güncel donanım sürücülerine ve yeni nesil yazılımlara erişimini aylarca geciktiriyor. Aynı zamanda bununla ilgili bir LMDE sürümü inceleme de yapmayı planlıyorum orada da dağıtımın aşırı işlevsizlik sorunu mevcut.
+- **X-Apps İnadı ve Kaynak Bölünmesi:** Ekibin GNOME standartlarına kızıp kendi metin editörünü, resim görüntüleyicisini ve dosya yöneticisini sıfırdan geliştirmeye (X-Apps) devasa mesai harcaması, zaten kısıtlı olan iş gücünü ana masaüstü ortamı olan Cinnamon'un performans optimizasyonundan çalıyor bence.
+- **Yenilikçi Fikirleri "Deneysel" Diyerek Reddetmesi:** Topluluktan gelen modern arayüz tasarımları, dinamik çalışma alanları ve gelişmiş özelleştirme araçları gibi yenilikçi talepleri muhafazakar bir tavırla reddederek vizyoner kullanıcıların dağıtımdan uzaklaşmasına zemin hazırlıyor. Halbuki çoğu linux kullanıcısının da amacı Yenilikçi bir tutumla birlikte kullanmak.Debian tabanı bunu sunuyor ancak yine Debian bu kadar katı değil.
+
 ##### Cinnamon masaüstü ortamını varsayılan olarak sunan ve kurulum aşamasında resmi olarak seçmenize izin veren Linux dağıtımları ise bu şekilde:
 
 #### Varsayılan Olarak Cinnamon ile Gelen Dağıtımlar:
@@ -129,18 +136,9 @@ settings:
 - **Arch Linux:** Resmi kurulum betiği (`archinstall`) üzerinden masaüstü ortamı adımı gelindiğinde, Cinnamon seçilerek saniyeler içinde minimal ve şişirilmemiş bir sistem inşa edilmesini sağlıyor.
 - **openSUSE (Tumbleweed / Leap):** Gelişmiş sistem yönetim aracı YaST ve kurulum ekranı üzerinden, Cinnamon'u güçlü bir Btrfs dosya sistemi altyapısıyla birlikte kullanıma sunuyor.
 
-##### Mint Ekibinin Beğenmediğim Noktaları:
-
-- **Güvenlik Zafiyeti ve Sunucu Hacklenmesi (2016):** Geçmişte Linux Mint'in resmi web sitesinin hacklenmesi ve bilgisayar korsanlarının ISO dosyalarının içine arka kapı (backdoor) yerleştirmesi, ekibin altyapı güvenliği ve sunucu yönetimi konusunda ciddi şekilde sınıfta kaldığını gösteriyor.
-- **Wayland Protokolünü Görmezden Gelmesi:** Sektörün ve büyük dağıtımların yıllar önce geçiş yaptığı modern Wayland ekran sunucusunu çok uzun süre "gereksiz" görerek geliştirmeyi geciktirmesi, bugün Cinnamon'un yeni nesil grafik ve güvenlik teknolojilerinde rakiplerinin çok gerisinde kalmasına yol açıyor.
-- **Snap Paketlerine Karşı Aşırı Radikal Tavır:** Canonical'ın Snap teknolojisine tepki göstererek sistemde Snap kullanımını tamamen engellemesi ve kullanıcıyı zorlaması, özgürlük vadeden bir dağıtımın kullanıcı tercihlerine katı bir şekilde müdahale etmesi olarak eleştiriliyor.Ancak ben bu noktada Mint ekibinin bu konuda görüşlerini anlıyorum aslında ancak bu kadar da aşırı olması topluluk tarafından eleştiriliyor.
-- **Ubuntu LTS Tabanına Aşırı Bağımlılık:** Debian tabanlı LMDE projesine rağmen ana dağıtımın tamamen Ubuntu LTS döngüsüne bağlı kalması; kullanıcıların modern çekirdeklere (kernel), güncel donanım sürücülerine ve yeni nesil yazılımlara erişimini aylarca geciktiriyor. Aynı zamanda bununla ilgili bir LMDE sürümü inceleme de yapmayı planlıyorum orada da dağıtımın aşırı işlevsizlik sorunu mevcut.
-- **X-Apps İnadı ve Kaynak Bölünmesi:** Ekibin GNOME standartlarına kızıp kendi metin editörünü, resim görüntüleyicisini ve dosya yöneticisini sıfırdan geliştirmeye (X-Apps) devasa mesai harcaması, zaten kısıtlı olan iş gücünü ana masaüstü ortamı olan Cinnamon'un performans optimizasyonundan çalıyor bence.
-- **Yenilikçi Fikirleri "Deneysel" Diyerek Reddetmesi:** Topluluktan gelen modern arayüz tasarımları, dinamik çalışma alanları ve gelişmiş özelleştirme araçları gibi yenilikçi talepleri muhafazakar bir tavırla reddederek vizyoner kullanıcıların dağıtımdan uzaklaşmasına zemin hazırlıyor. Halbuki çoğu linux kullanıcısının da amacı Yenilikçi bir tutumla birlikte kullanmak.Debian tabanı bunu sunuyor ancak yine Debian bu kadar katı değil.
-
 ## En iyi başlangıç dostu mu?
 
-Bence eskiden olduğu gibi hala da iyi sayılabilecek bir başlangıç dostu olmasına rağmen eskisi gibi **En iyi Başlangıç dostu** ünvanını **artık fazla gelenekselci ruhundan dolayı haketmiyor** bence**.**
+Bence eskiden olduğu gibi hala da iyi sayılabilecek bir başlangıç dostu olmasına rağmen eskisi gibi **En iyi Başlangıç dostu** ünvanını **artık fazla gelenekselci ruhundan dolayı haketmiyor** bence.
 
 ## Bitiriş
 
@@ -151,5 +149,4 @@ Ekibin gelenekselci yapısının ve GTK3/X11 gibi olgun ama yaşlı teknolojiler
 Son cümle olarak; Cinnamon Fedora gibi Linux dünyasını dönüştüren vizyoner bir lider değil ancak Windows'tan kaçan veya macera aramadan sadece kararlı bir masaüstü isteyen kitleyi elinde tutmayı başaran başarılı bir geçiş aracısı olabilir. Çoğu kullanıcının ilki olmuştur ancak bence en azından toplulukta da sıkça karşılaştığım birşey şu ki: Kullanıcılar artık gerçekten Gelenekselci dağıtımlardan yavaş yavaş vazgeçiyor. Gelenekselci dağıtımlar artık yerlerini Günlük Masaüstü yerine Sunuculara bırakıyor.
 
 Okuduğunuz için teşekkür ederim umarım buraya kadar oldukça beğenmişsinizdir.
-
-**Aşağıda yorumlarda buluşalım tartışalım.**
+  **Aşağıda yorumlarda buluşalım tartışalım.**
