@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Porsuk Summary
+title: Porsuk - Proje
 permalink: porsuk-summary
 icon: fas fa-folder-open
 order: null
