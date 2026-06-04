@@ -42,3 +42,5 @@ Neden Porsuk?
 Herhangi bir Yapay Zeka (AI) API bağımlılığı veya harici sunucu isteği kullanmaz. Mozilla'nın Readability prensiplerine dayalı lokal algoritmalar ile çalışır. İnternet bağlantınız olmasa bile çevrimdışı makaleleri temizleyebilir, veri gizliliğinizi en üst düzeyde korur.
 
 https://porsuk.vercel.app
+
+<div class="giscus"></div>
