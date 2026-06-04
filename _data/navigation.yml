@@ -1,7 +1,7 @@
 - title: Artado
-  url: https://artado.xyz/
+  url: "https://artado.xyz/"
   icon: fas fa-globe
 
 - title: Porsuk Summary
-  url: https://sxi.is-a.dev/porsuk-summary
+  url: "https://sxi.is-a.dev/porsuk-summary/"
   icon: fas fa-clipboard-list
