@@ -3,6 +3,7 @@ layout: page
 title: Porsuk - Proje
 permalink: porsuk-summary
 icon: fas fa-folder-open
+comments: true
 order: null
 ---
 
