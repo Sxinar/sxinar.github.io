@@ -1,8 +1,8 @@
 ---
 layout: page
-title: 'Porsuk: Gizliliğinizi ve vaktinizin değerini önemseyen sayfa özetleme sistemi'
+title: Porsuk Summary
 permalink: porsuk-summary
-icon: rss
+icon: fas fa-folder-open
 order: null
 ---
 
