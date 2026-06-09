@@ -420,3 +420,12 @@ Wombat:
   loading="lazy"
   referrerpolicy="no-referrer">
 </iframe>
+
+
+<iframe 
+  src="https://your-site.vercel.app/widget.html?id={{ page.url | slugify }}" 
+  style="width:100%; border:0; min-height:600px;" 
+  loading="lazy" 
+  referrerpolicy="no-referrer"
+></iframe>
+
