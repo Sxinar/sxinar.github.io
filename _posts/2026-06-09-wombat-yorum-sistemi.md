@@ -420,3 +420,9 @@ Wombat:
   loading="lazy"
   referrerpolicy="no-referrer">
 </iframe>
+
+<script
+  src="https://ec22a1c9-544a-48cf-a1c5-00dd65bcdeb1-00-8km52x5pu1wl.pike.replit.dev/api/widget.js"
+  data-page-id="my-page-slug"
+  data-api-url="https://ec22a1c9-544a-48cf-a1c5-00dd65bcdeb1-00-8km52x5pu1wl.pike.replit.dev">
+</script>
