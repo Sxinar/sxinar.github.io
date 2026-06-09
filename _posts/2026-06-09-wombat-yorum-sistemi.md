@@ -420,13 +420,3 @@ Wombat:
   loading="lazy"
   referrerpolicy="no-referrer">
 </iframe>
-
-
-<iframe 
-  src="https://zp1v56uxy8rdx5ypatb0ockcb9tr6a-oci3--5173--bd880c29.local-credentialless.webcontainer-api.io//widget.html?id= {{ page.url | slugify }}" 
-  style="width:100%; border:0; min-height:600px;" 
-  loading="lazy" 
-  referrerpolicy="no-referrer"
-></iframe>
-
-https://zp1v56uxy8rdx5ypatb0ockcb9tr6a-oci3--5173--bd880c29.local-credentialless.webcontainer-api.io//widget.html?id=
