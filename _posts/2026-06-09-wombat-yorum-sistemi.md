@@ -410,3 +410,12 @@ Wombat:
 - self-host edilebilir
 - güvenlik katmanı RLS ile kurulu
 - modern ve sade bir arayüz sunar
+
+
+
+<iframe
+  src="https://wombatc.vercel.app/widcom.html?id={{ page.url | slugify }}"
+  style="width:100%; border:0; min-height:900px;"
+  loading="lazy"
+  referrerpolicy="no-referrer">
+</iframe>
