@@ -9,6 +9,7 @@ categories:
 tags:
   - Projelerim
 image: null
+comments: false
 settings:
   published: true
   pin: false
