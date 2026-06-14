@@ -2,7 +2,7 @@
 layout: post
 title: Yazı fikirleri
 description: yazmak icin yazi fikirleri
-date: 2026-06-14 23:18:00 +03:00
+date: 2100-05-22 23:18:00 +03:00
 categories:
   - sxi
 tags:
