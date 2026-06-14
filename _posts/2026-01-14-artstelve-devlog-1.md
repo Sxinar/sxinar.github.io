@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'ArtStelve DevLog #1'
+title: 'Artado DevLog #1'
 description: ''
 date: 2026-01-14
 categories:
@@ -9,10 +9,10 @@ tags:
   - devlog
   - artado
 image: null
-comments: true
 settings:
   pin: false
   math: false
+comments: true
 ---
 
 Merhabalar! Biz \*\*Artado\*\* ekibi olarak bir süredir gözle görülür bir paylaşım yapmadık. Bunun temel sebebi, yeni özelliklerimizi tam anlamıyla olgunlaştırmadan sizlerle paylaşmak istemeyişimizdi. Bu süreçte boş durmadık; sessizce GitHub üzerinde geliştirmelerimize devam ettik.
