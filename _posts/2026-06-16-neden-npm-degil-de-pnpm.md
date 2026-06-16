@@ -82,6 +82,8 @@ pnpm install
 ```
 
 _Bu komut projenizi tarayacak, global store ile bağlantıları kuracak ve saniyeler içinde kararlı bir pnpm-lock.yaml dosyası oluşturacaktır._
+
+
 **3. Günlük Komut Pratikleri:**
 
 * Paket eklemek için: npm install paket_adi yerine pnpm add paket_adi
