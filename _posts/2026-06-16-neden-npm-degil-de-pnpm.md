@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Neden NPM değil de PNPM?
-description: Disk alanınızı sömüren ve dakikalarca süren npm install süreçlerinden sıkıldıysanız, Node.js projelerinizde **pnpm** devrimine geçmenin tam zamanı. Paketleri bilgisayarınıza sadece bir kez indirip projelerinize "Global Store" üzerinden ışık hızında bağlayan pnpm; hem gigabaytlarca disk alanı kazandırıyor hem de kurulum sürelerini milisaniyelere indiriyor.
+description: '"Global Store" ve diger mimarileriyle disk alanından tasarruf sağlayan pnpm, Node.js projesinfe hantal npm kurulum sürecini milisaniyeler seviyesine indiriyor.'
 date: 2026-06-16 23:26:00 +03:00
 categories:
   - İnceleme
