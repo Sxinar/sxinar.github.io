@@ -1,14 +1,8 @@
-{% comment %}
-Wombat yorum widget’ı – Chirpy teması için
-Öznitelik adları `data-appid`, `data-pageid`, … `entry.ts` ile eşleşir.
-{% endcomment %}
-
 <div id="wombat_thread"
      data-host="https://wombatc.vercel.app"
-     data-appid="{{ site.wombat_appid }}"
+     data-appid="eae7e901-dc94-40b5-ad11-99a9077fe672"
      data-pageid="{{ page.id | default: page.path }}"
-     data-pagetitle="{{ page.title | xml_escape }}"
+     data-pagetitle="{{ page.title }}"
      data-pageurl="{{ site.url }}{{ page.url }}">
 </div>
-
 <script async defer src="https://wombatc.vercel.app/widget.js"></script>
