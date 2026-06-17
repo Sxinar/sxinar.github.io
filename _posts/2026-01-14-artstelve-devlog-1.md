@@ -5,6 +5,7 @@ description: ''
 date: 2026-01-14
 categories:
   - Geliştirme Günlüğü
+  - Artado Günlükleri
 tags:
   - devlog
   - artado
