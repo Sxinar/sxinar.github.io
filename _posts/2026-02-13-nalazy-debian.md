@@ -1,9 +1,11 @@
 ---
 layout: post
 title: 'NalaZy: Debian ve Nala'
+description: ''
 date: 2026-02-13
 categories:
-  - linux
+  - Projelerim
+  - Linux
 tags:
   - project
   - debian
@@ -60,8 +62,7 @@ Standart \`apt\` paket yöneticisi işlevsel olsa da yavaştır ve çıktıları
 
 Projeyi yerel bilgisayarınıza çekin ve kurulum scriptini çalıştırın:
 
-
-`git clone `[`https://github.com/Sxinar/NalaZy.git`](https://github.com/Sxinar/NalaZy.git)
+`git clone` [`https://github.com/Sxinar/NalaZy.git`](https://github.com/Sxinar/NalaZy.git)
 `cd NalaZy`
 `chmod +x install.sh`
 `./install.sh`
