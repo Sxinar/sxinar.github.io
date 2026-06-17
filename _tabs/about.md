@@ -7,65 +7,81 @@ order: 4
 
 ***
 
-## Merhaba, ben Sxinar! 👋
+## Merhaba, Ben Sxinar!
 
-Ben bir **Açık Kaynak** (Open-Source) tutkunu, Full-stack geliştirici ve dijital gizlilik savunucusuyum. İnterneti daha özgür, daha hızlı ve daha şeffaf hale getirmek isteyen **Artado** ekibinin kurucudan sonraki Ana geliştiricisiyim.
+Bir yandan eğitim hayatıma devam eden bir öğrenci, diğer yandan vaktinin büyük bir kısmını terminal ekranları, kod editörleri ve sunucu yapılandırmaları arasında geçiren bir Full-Stack geliştiriciyim. Günümüz internet dünyasının giderek hantallaşması, kullanıcı verilerinin ticari bir meta haline gelmesi ve dijital gözetimin artması karşısında alternatif çözümler üretmeyi amaçlayan **Artado** ekosisteminin, kurucu ortaktan sonraki ana geliştiricisi (Core Developer) olarak görev alıyorum.
 
-Genellikle modern web teknolojileri (özellikle \*\*Svelte\*\*), sistem otomasyonları ve kullanıcı deneyimini iyileştiren araçlar üzerine çalışıyorum.
+Öğrencilik hayatımın bana kazandırdığı en büyük artı, sürekli araştırma ve sorgulama dürtüsüdür. Okul sıralarında öğrendiğim teorik bilgileri, açık kaynak dünyasının pratik ve dinamik gerçekleriyle harmanlıyorum. Benim için kod yazmak, sadece bir ödev veya gelecekteki bir meslek değil; dijital dünyayı kendi öğrenci masamdan başlayarak daha özgür, şeffaf ve güvenli bir yer haline getirme mücadelesidir.
 
-***
-
-### 🚀 Neler Yapıyorum?
-
-- [**Artado Search**](https://beta.artadosearch.com): Mahremiyet odaklı arama motoru projemizde, kullanıcıların verilerini koruyarak en doğru bilgiye ulaşmasını sağlayan frontend (ArtStelve) ve proxy sistemlerini geliştiriyorum.
-
-- [Artado Devs](https://devs.artado.xyz)
-
-- [Artado Proxy](https://artstelve-proxy.vercel.app)
-
-- [Artado Docs](https://docs.artado.xyz)
-
-- [**NalaZy**](https://github.com/Sxinar/NalaZy): Debian tabanlı sistemlerde \`nala\` kullanımını hızlandıran akıllı alias koleksiyonu gibi terminal verimlilik araçları üretiyorum.
-
--** İçerik Üretimi: **Yazılım dünyasındaki deneyimlerimi ve teknolojik gelişmeleri burada ve [**forum.artado.xyz**](https://forum.artado.xyz/)** **adresindeki proje forumumluzda paylaşıyorum.
+Proje geliştirmelerimde özellikle modern web teknolojilerine, sistem otomasyonlarına ve kullanıcı deneyimini doğrudan artıran mikro araçlara odaklanıyorum. Svelte ekosisteminin hafifliği ve hızı, geliştirme felsefemin temel taşlarından birini oluşturuyor.
 
 ***
 
-### 🛠️ Teknoloji Yığınım (Stack)
+## Dijital Mahremiyet ve Açık Kaynak Felsefem
 
-| Alan | Teknolojiler |
+İnterneti bilgiye ulaşmak, ders çalışmak ve kendimi geliştirmek için aktif olarak kullanan bir genç olarak, her adımımızın izlenmesi ve profillenmesi fikrine her zaman karşı durdum. Bu doğrultuda, geliştirdiğim veya katkı sunduğum tüm projelerde şu iki temel ilkeyi benimsiyorum:
 
-| \*\*Frontend\*\* | Svelte, SvelteKit, JavaScript, Tailwind CSS |
-
-| \*\*Backend\*\* | Node.js, TypeScript, PHP |
-
-| \*\*Araçlar\*\* | Git, Bash Scripting, Linux (Debian/Ubuntu) |
-
-| \*\*Sistem\*\* | Proxy Yapıları, API Entegrasyonları, Web Güvenliği |
+*   **Açık Kaynak (Open-Source):** Kodun gizli kalması, arkasında ne olduğunu bilmediğimiz kapalı kutular yaratır. Yazdığım her satırı topluluğun incelemesine, eleştirmesine ve geliştirmesine açıyorum. Bir öğrenci olarak hatalarımdan öğrenmenin en verimli yolunun bu şeffaflık olduğuna inanıyorum.
+*   **Kullanıcı Mahremiyeti (Privacy):** Kullanıcıların verilerini toplamadan, onları birer reklam hedefi haline getirmeden de yüksek performanslı ve kaliteli dijital hizmetler sunulabileceğini kanıtlamak istiyorum.
 
 ***
 
-### 🌐 Beni Takip Edin
+## Geliştirdiğim Projeler ve Ekosistem Bileşenleri
 
-Projelerimi incelemek, katkıda bulunmak veya sadece merhaba demek isterseniz bana aşağıdaki kanallardan ulaşabilirsiniz:
+Teoride kalmayıp, her gün yüzlerce kişinin aktif olarak kullandığı canlı sistemlerin altyapısını ve ön yüzünü tasarlıyorum. Üzerinde çalıştığım ana projeler şu şekildedir:
 
-\* \*\*GitHub:\*\* [@sxinar](https://github.com/sxinar)
+### Artado Search ve ArtStelve Mimarisi
+Büyük teknoloji devlerinin takip mekanizmalarına karşı geliştirdiğimiz, gizlilik odaklı arama motoru projemizin kullanıcıya dokunan tüm yüzünü yönetiyorum.
+*   **ArtStelve Ön Yüzü:** Geleneksel ve ağır framework'ler (React, Vue vb.) yerine, sanal DOM kullanmayan ve kodu doğrudan optimize edilmiş saf JavaScript'e derleyen **Svelte/SvelteKit** mimarisini tercih ettim. Bu sayede tarayıcıyı yormayan, çok düşük donanımlı cihazlarda bile anında tepki veren bir arayüz ortaya çıkardım.
+*   **Sıfır Takip Verisi:** Kullanıcı arama yaptığında tarayıcıya hiçbir takip çerezi (tracking cookie) bırakılmamasını sağlayan ve sorguları şifreleyerek arka uca ileten istemci tarafı güvenlik önlemlerini entegre ettim.
 
-\* \*\*Artado Profil:\*\* [sxinar @ Artado](https://artado.xyz/profile.php?slug=sxinar)
+### Artado Proxy Altyapısı
+Arama motorumuzun harici kaynaklardan veri çekerken kullanıcıların gerçek IP adreslerini ve kimliklerini sızdırmasını önleyen kritik güvenlik kalkanıdır.
+*   **Serverless Edge Teknolojileri:** Node.js tabanlı geliştirdiğim bu altyapıyı Vercel Edge Functions üzerinde çalışacak şekilde optimize ettim. Bu sayede kullanıcı trafiği, dünya genelindeki en yakın uç noktalarda anonimleştirilerek güvenli bir şekilde yönlendiriliyor.
 
-\* \*\*Blog:\*\* [forum.artado.xyz]https://forum.artado.xyz/)
+### NalaZy (Debian/Ubuntu Terminal Optimizasyonu)
+Linux dünyasına olan ilgimin ve sistem yöneticiliği merakımın bir ürünü olan, tamamen açık kaynaklı bir terminal verimlilik aracıdır.
+*   **Geliştirme Amacı:** Debian tabanlı dağıtımlarda gelişmiş paket yöneticisi olan `nala` komutlarının kullanımını hızlandırmak.
+*   **Teknik Detay:** Bash scripting yeteneklerimi kullanarak karmaşık, uzun ve akılda tutulması zor olan sistem güncelleme, temizleme ve paket yönetim komutlarını akıllı alias (takma ad) ve fonksiyon koleksiyonlarına dönüştürdüm.
 
-\* \*\*E-posta:\*\* \`sxi@artadosearch.com\`
-
-> "Kod yazmak sadece bir iş değil, dijital dünyayı daha iyi bir yer haline getirme sanatıdır."
+### Artado Devs & Artado Docs
+Ekosistemimizi diğer geliştiricilere açtığımız platformların mimarisini üstleniyorum.
+*   **Artado Devs:** Geliştirdiğimiz proxy yapılarını ve arama API'lerini diğer yazılımcıların kendi projelerinde kullanabilmesi için hazırladığımız geliştirici portalıdır.
+*   **Artado Docs:** Karmaşık sistem mimarilerini, özellikle yazılıma yeni başlayan öğrenci arkadaşlarımın bile rahatça anlayabileceği seviyeye indirgeyerek hazırladığım resmi dokümantasyon merkezidir.
 
 ***
 
-<div id="cusdis_thread"
-  data-host="https://cusdis.com"
-  data-app-id="741d2d52-b050-4ac9-a07c-9d4f64182800"
-  data-page-id="{{ PAGE_ID }}"
-  data-page-url="{{ PAGE_URL }}"
-  data-page-title="{{ PAGE_TITLE }}"
-></div>
-<script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
+## Teknik Yetkinliklerim (Tech Stack)
+
+Sürekli öğrenen ve teknolojiyi yakından takip eden bir geliştirici olarak, projelerimde modern, kararlı ve performans odaklı araçları seçmeye özen gösteriyorum.
+
+| Alan | Teknolojiler ve Protokoller | Kullanım ve Deneyim Detayları |
+| :--- | :--- | :--- |
+| **Ön Yüz (Frontend)** | Svelte, SvelteKit, JavaScript (ES6+), Tailwind CSS | Performans odaklı, bileşen tabanlı, responsive ve sıfır hantallık içeren modern web arayüzleri tasarımı. |
+| **Arka Yüz (Backend)** | Node.js, TypeScript, PHP | Güvenli API uç noktaları (REST), sunucu tarafı işleme (SSR) süreçleri ve mikro servis mimarilerinin yönetimi. |
+| **Sistem ve Altyapı** | Linux (Debian, Ubuntu), Bash Scripting | Sunucu otomasyonları, terminal verimlilik araçları yazımı ve kabuk betikleri ile sistem yönetimi. |
+| **Ağ ve Güvenlik** | Proxy Mimarileri, API Entegrasyonları, CORS Politikaları | Veri trafiğinin anonimleştirilmesi, tarayıcı güvenlik başlıklarının yapılandırılması ve veri maskeleme. |
+| **Araçlar ve Süreçler** | Git, GitHub, Vercel Deployment | Versiyon kontrolü, takım içi kod koordinasyonu, açık kaynak proje yönetimi ve CI/CD süreçleri. |
+
+***
+
+## Bilinen Tüm Hesaplarım ve İletişim Kanalları
+
+Açık kaynak dünyasında iş birliğine, geri bildirimlere ve birlikte öğrenmeye çok değer veriyorum. Projelerimi incelemek, kaynak kodlara katkıda bulunmak, hata bildiriminde bulunmak ya da yazılım ve öğrencilik hayatı üzerine sohbet etmek isterseniz bana aşağıdaki kanallardan ulaşabilirsiniz:
+
+*   **Açık Kaynak Kod Depom (GitHub):** [github.com/sxinar](https://github.com/sxinar) (NalaZy, ArtStelve ve tüm kişisel deneysel projelerim burada yer almaktadır.)
+*   **Artado Ağ Profilim:** [artado.xyz/profile.php?slug=sxinar](https://artado.xyz/profile.php?slug=sxinar) (Ekosistem içerisindeki resmi profil sayfam.)
+*   **Topluluk Forumu ve Blog:** [forum.artado.xyz](https://forum.artado.xyz/) (Geliştirici günlüklerimi paylaştığım, projelerimizi tartıştığımız ana platformumuz.)
+*   **Kurumsal İletişim E-Posta Adresi:** `sxi@artadosearch.com` (Geliştirme teklifleri, teknik sorular veya akademik iş birlikleri için.)
+
+### Canlı Proje Linkleri
+
+Geliştirilmesinde aktif rol oynadığım platformları doğrudan deneyimleyebilirsiniz:
+
+*   Mahremiyet Odaklı Arama Motoru: [beta.artadosearch.com](https://beta.artadosearch.com)
+*   Geliştirici Portalı: [devs.artado.xyz](https://devs.artado.xyz)
+*   Teknik Dokümantasyon: [docs.artado.xyz](https://docs.artado.xyz)
+*   Geliştirici Forumu: [forum.artado.xyz](https://forum.artado.xyz/)
+*   Kullanılan Canlı Proxy Altyapısı: [artstelve-proxy.vercel.app](https://artstelve-proxy.vercel.app)
+
+> "Kod yazmak sadece teknik bir süreç ya da bir meslek icrası değildir; dijital dünyayı, kendi çalışma masamızdan başlayarak daha özgür, şeffaf ve adil bir yapıya kavuşturma zanaatıdır."
