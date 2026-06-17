@@ -60,11 +60,19 @@ Projelerimi incelemek, katkıda bulunmak veya sadece merhaba demek isterseniz ba
 > "Kod yazmak sadece bir iş değil, dijital dünyayı daha iyi bir yer haline getirme sanatıdır."
 
 ***
+
 <div id="wombat_thread"
-     data-host="https://wombatc.vercel.app"
-     data-appid="eae7e901-dc94-40b5-ad11-99a9077fe672"
-     data-pageid="{{ page.id | default: page.path }}"
-     data-pagetitle="{{ page.title }}"
-     data-pageurl="{{ site.url }}{{ page.url }}">
-</div>
+  data-host="https://wombatc.vercel.app"
+  data-app-id="eae7e901-dc94-40b5-ad11-99a9077fe672"
+  data-page-id="" 
+  data-page-url="" 
+  data-page-title=""
+></div>
+<script>
+  // Sayfa yüklendiğinde verileri otomatik doldurur
+  const widget = document.getElementById('wombat_thread');
+  widget.setAttribute('data-page-id', window.location.pathname); // Sayfa yolunu ID yapar
+  widget.setAttribute('data-page-url', window.location.href);     // Tam URL'yi alır
+  widget.setAttribute('data-page-title', document.title);         // Sayfa başlığını alır
+</script>
 <script async defer src="https://wombatc.vercel.app/widget.js"></script>
