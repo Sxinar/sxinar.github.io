@@ -4,7 +4,8 @@ title: Ücretsiz subdomain elde edelim
 description: ''
 date: 2026-02-16 22:08:00 +03:00
 categories:
-  - genel
+  - İnceleme
+  - Araçlar
 tags:
   - domain
   - is-a.dev
@@ -35,15 +36,13 @@ Daha sonra ise Bu bağlantıya tıklayarak projeyi forkluyoruz.
 Daha sonra forkladığımız proje sayfasına giriyoruz.
 Ben kendi adıma konuşuyorum /domains adresine gidiyoruz ve “kendi-adin.json” adlı bir dosya oluşturuyoruz.
 
-
 `{`
 
-` "owner": `
+ `"owner":` 
 
-`{ "username": "sxi", "email": "ornek@sxi.tr" }, `
+`{ "username": "sxi", "email": "ornek@sxi.tr" },` 
 
 `"record": { "URL": "https://sxi.tr" } }`
-
 
 Dosyasını yapıştırıyoruz fakat siz düzenleme yapacaksınız daha sonra pull request atıyoruz ve alan adı kaydıni bekliyoruz.
 Bilgilendirme: Bu makale ilk olarak kişisel blogum üzerinde paylaşılmış olup daha sonra düzenlenerek btt üzerine yeniden paylaşılmıştır makale kendi dokümantasyondan yararlanılmıştır.
