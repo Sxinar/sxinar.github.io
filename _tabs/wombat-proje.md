@@ -205,3 +205,13 @@ Projenin yol haritasında yer alan gelecek modüller:
 ## Özet
 
 Wombat, statik ve dinamik sistemler için kolayca gömülebilen, Supabase odaklı geliştirilmiş ancak diğer sistemlere uyarlanabilir altyapıya sahip, modern ve self-host edilebilir bir yorum platformudur. Veritabanı seviyesindeki güvenlik politikaları (RLS) ile verilerinizi güvence altına alırken, son kullanıcılara temiz ve operasyonel bir arayüz sunar.
+
+## Wombat önizleme:
+<div id="wombat_thread"
+  data-host="https://wombatc.vercel.app"
+  data-app-id="eae7e901-dc94-40b5-ad11-99a9077fe672"
+  data-page-id="{{ PAGE_ID }}"
+  data-page-url="{{ PAGE_URL }}"
+  data-page-title="{{ PAGE_TITLE }}"
+></div>
+<script async defer src="https://wombatc.vercel.app/widget.js"></script>
