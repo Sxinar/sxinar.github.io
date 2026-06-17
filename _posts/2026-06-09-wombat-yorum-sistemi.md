@@ -413,16 +413,11 @@ Wombat:
 - modern ve sade bir arayüz sunar
 
 
-
-<iframe
-  src="https://wombatc.vercel.app/widcom.html?id={{ page.url | slugify }}"
-  style="width:100%; border:0; min-height:900px;"
-  loading="lazy"
-  referrerpolicy="no-referrer">
-</iframe>
-
-<script
-  src="https://ec22a1c9-544a-48cf-a1c5-00dd65bcdeb1-00-8km52x5pu1wl.pike.replit.dev/api/widget.js"
-  data-page-id="my-page-slug"
-  data-api-url="https://ec22a1c9-544a-48cf-a1c5-00dd65bcdeb1-00-8km52x5pu1wl.pike.replit.dev">
-</script>
+<div id="wombat_thread"
+  data-host="https://wombatc.vercel.app"
+  data-app-id="eae7e901-dc94-40b5-ad11-99a9077fe672"
+  data-page-id="{{ PAGE_ID }}"
+  data-page-url="{{ PAGE_URL }}"
+  data-page-title="{{ PAGE_TITLE }}"
+></div>
+<script async defer src="https://wombatc.vercel.app/widget.js"></script>
