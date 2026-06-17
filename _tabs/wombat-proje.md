@@ -10,25 +10,6 @@ order: null
 
 > Wombat, statik ve dinamik web siteleri için geliştirilmiş, Svelte-Kit tabanlı ve Supabase entegrasyonu ile çalışan hafif bir yorum sistemidir. Tek bir script dosyası üzerinden herhangi bir web sayfasına entegre edilebilir ve modern bir moderasyon altyapısı sunar.
 
----
-
-## İçindekiler
-\* [Temel Özellikler](#temel-özellikler)
-\* [Sistem Mimarisi ve Güvenlik](#sistem-mimarisi-ve-güvenlik)
-\* [Kurulum ve Yapılandırma](#kurulum-ve-yapılandırma)
-\* [Ortam Değişkenleri](#ortam-değişkenleri)
-\* [Veritabanı Şeması](#veritabanı-şeması)
-\* [Sistemi Sayfaya Entegre Etme](#sistemi-sayfaya-entegre-etme)
-\* [Geliştirme ve Dağıtım Komutları](#geliştirme-ve-dağıtım-komutları)
-\* [Sistem Test Prosedürleri](#sistem-test-prosedürleri)
-\* [Kullanıcı Arayüzü ve Tasarım Prensipleri](#kullanıcı-arayüzü-ve-tasarım-prensipleri)
-\* [Alternatif Veritabanı Desteği](#alternatif-veritabanı-desteği)
-\* [Planlanan İyileştirmeler](#planlanan-iyileştirmeler)
-\* [Sorun Giderme Kılavuzu](#sorun-giderme-kılavuzu)
-\* [Özet](#özet)
-
----
-
 ## Temel Özellikler
 \* \*\*Minimum Bağımlılık:\*\* Yalnızca yapılandırma dosyası ve entegrasyon scripti ile hızlı başlangıç.
 \* \*\*Güvenli Markdown Desteği:\*\* İçeriklerin \`marked\` ve \`DOMPurify\` kütüphaneleri kullanılarak güvenli bir şekilde işlenmesi.
