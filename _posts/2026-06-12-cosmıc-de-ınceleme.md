@@ -4,7 +4,7 @@ title: COSMIC DE İnceleme
 description: System76 tarafından Rust diliyle sıfırdan geliştirilen, modern, modüler ve Wayland tabanlı yeni nesil COSMIC masaüstü ortamı incelemesi.
 date: 2026-06-12 18:10:00 +03:00
 categories:
-  - linux
+  - Linux
   - Masaüstü Ortamı İnceleme
 tags:
   - Linux
@@ -20,7 +20,6 @@ settings:
 ---
 
 #### **Selam**
-
 
 Linux dünyasında uzun zamandır ya GNOME'un modernlik adı altında katı , kısıtlayıcı ve eklentilere bağımlı edici dünyasına ya da KDE'nin uçsuz bucaksız ama bazen yorucu özelleştirmeleri arasındaki çizgide mahkumduk. Artık"yeni bir çözüm gelmeyecek mi?" derken, System76 ekibi her şeyi değiştirecek bir hamle yaptı. Karşınızda açık kaynak dünyasının son dönemdeki en heyecan verici, tamamen **Rust** diliyle sıfırdan yazılmış yeni nesil canavarı: **COSMIC DE**.
 COSMIC (Computer Operating System Main Interface Components), donanım üreticisi System76 tarafından geliştirilen ve başlangıçta GNOME üzerinde bir eklenti yığınıyken, artık GNOME bağlarını tamamen koparıp bağımsız bir ekosisteme dönüşen fütüristik bir masaüstü ortamıdır.
@@ -40,8 +39,8 @@ COSMIC Uygulamaları:
 * **COSMIC Launcher:** Super (Windows) tuşuna bastığınızda açılan; sadece uygulama başlatmakla kalmayıp sistemde hesap makinesi, dosya arama ve script çalıştırma gibi görevleri de üstlenen akıllı ve aşırı hızlı bir arayüz aracıdır.
 
 ### **Eleştirdiğim Yanları**
-Benim gibi sistem mimarisine ve yeni teknolojilere bayılan biri için COSMIC bir başyapıt olsa da, henüz emekleme ve olgunlaşma döneminde olduğu için can sıkan eksikleri var. İşte başlıca eleştirdiğim noktalar:
 
+Benim gibi sistem mimarisine ve yeni teknolojilere bayılan biri için COSMIC bir başyapıt olsa da, henüz emekleme ve olgunlaşma döneminde olduğu için can sıkan eksikleri var. İşte başlıca eleştirdiğim noktalar:
 
 #### Genç Ekosistem
 
@@ -63,6 +62,7 @@ Geleceğe Tam Uyumlu Mimari
 * **Wayland ve Modern Grafik Standartları:** Eski mimarilerin (X11) getirdiği teknik borçları (technical debt) taşımadığı için HDR renk yönetimi, VRR ve yüksek yenileme hızlı oyuncu monitörleriyle kusursuz bir uyum içinde çalışır.
 
 ### COS**MIC Kurulumu Destekleyen Dağıtımla**r
+
 Yeni nesil COSMIC masaüstü ortamını resmi ve en optimize şekilde deneyimlemenizi sağlayan Linux dağıtımları:
 Varsayılan Olarak COSMIC ile Gelen Ana Dağıtım:
 
@@ -72,24 +72,17 @@ Kurulumda Resmi Olarak COSMIC Paketi Sunan Büyük Dağıtımlar:
 * **Arch Linux:** Resmi ve AUR depoları üzerinden, her zaman en güncel Rust derlemeleriyle tamamen "saf" ve üzerinde oynanmamış bir COSMIC masaüstünü terminal üzerinden saniyeler içinde inşa etmenize olanak tanır.
 * **openSUSE (Tumbleweed):** Yuvarlanan sürüm avantajıyla COSMIC paketlerini depolarında test ederek kararlı bir Btrfs altyapısı üzerinde kullanıcılarına sunuyor.
 
-
 ### En iyi başlangıç dostu mu?
-
 
 Şu an için **hayır, en iyi başlangıç dostu değil.** Çünkü hala geliştirilme aşamasında olan, bazı küçük hatalar (bug) barındırabilen ve eklenti ekosistemi tam olgunlaşmamış bir ortam. Ancak geliştirme süreci tamamen bittiğinde; şıklığı, hızı ve Pop!_OS'un sorunsuz yapısıyla birlikte GNOME ve Cinnamon'un tahtını sallayacak en güçlü başlangıç dostu adayı bence
 
-
 ### Bitiriş
-
 
 Sonuç olarak COSMIC, Linux dünyasında uzun yıllardır süregelen hantallığa, eski kütüphanelere (GTK3/X11) ve eski tasarım felsefelerine karşı yapılmış **radikal ve teknolojik devrimdir**. Geçmişin yüklerini taşımayı reddeden, geleceğin Wayland ve Rust dünyasına gözünü dikmiş bir projedir. Henüz eklenti ekosisteminin zayıflığı ve donanım seçiciliği gibi küçüklük hastalıkları olsa da, sunduğu ham performans ve hibrit pencere yönetimi erken dönemine göre cok can verici bir halde
 
-
 Ekibin _iced_ ve _Wayland_ tabanlı bu mimariyi her geçen gün kararlı hale getirmesi, gelecekte GNOME'un o tekelleşmiş ve kısıtlayıcı yapısına en büyük darbeyi vuracaktır.İleride stabilleşmenin de etkisiyle genişleyen ekosistem ile birlikte özelleştirme seçenekleri de artacaktır. COSMIC, Linux'un gelecekte modern bilgisayarlarda, HDR ekranlarda ve oyuncu sistemlerinde nasıl görünmesi gerektiğinin kanıtıdır.
-
 
 Son olarak; COSMIC sadece eskiyi koruma projesi değil, Linux dünyasını dönüştüren ve geleceğe taşıyan **yeni nesil vizyoner bir lider adayıdır**.
 Okuduğunuz için teşekkür ederim, umarım bu heyecan verici Rust canavarı incelemesini de büyük bir keyifle okumuşsunuzdur.
-
 
 **Aşağıda yorumlarda buluşalım, Rust tabanlı COSMIC ve geleceğini tartışalım!**
