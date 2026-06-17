@@ -4,7 +4,8 @@ title: TWRP derleme rehberi
 description: ''
 date: 2026-02-16 22:17:00 +03:00
 categories:
-  - android
+  - Rehberler
+  - Android
 tags:
   - twrp
   - android
