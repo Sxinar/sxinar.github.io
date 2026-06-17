@@ -74,7 +74,7 @@ social_preview_image: https://avatars.githubusercontent.com/u/130384567
 
 toc: true
 comments:
-  provider: giscus
+  provider: 
   giscus:
     repo: "sxinar/sxinar.github.io"
     repo_id: "R_kgDOQx1EfA"
@@ -93,9 +93,6 @@ comments:
   utterances:
     repo:
     issue_term:
-
-
-wombat_appid: eae7e901-dc94-40b5-ad11-99a9077fe672
 
 assets:
   self_host:
