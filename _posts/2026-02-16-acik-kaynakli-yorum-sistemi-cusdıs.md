@@ -4,7 +4,8 @@ title: 'Açık kaynaklı yorum sistemi: CUSDİS'
 description: ''
 date: 2026-02-16 22:18:00 +03:00
 categories:
-  - cusdis
+  - İnceleme
+  - Araçlar
 tags:
   - cusdis
   - blog
