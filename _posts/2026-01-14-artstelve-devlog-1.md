@@ -4,7 +4,7 @@ title: 'Artado DevLog #1'
 description: ''
 date: 2026-01-14
 categories:
-  - devlog
+  - Geliştirme Günlüğü
 tags:
   - devlog
   - artado
