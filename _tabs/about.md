@@ -60,9 +60,11 @@ Projelerimi incelemek, katkıda bulunmak veya sadece merhaba demek isterseniz ba
 > "Kod yazmak sadece bir iş değil, dijital dünyayı daha iyi bir yer haline getirme sanatıdır."
 
 ***
-
-<iframe
-  src="https://sxinar.github.io/secomment/widcom.html"
-  style="width: 100%; border: none; min-height: 500px;"
-  id="secomment-frame">
-</iframe>
+<div id="wombat_thread"
+     data-host="https://wombatc.vercel.app"
+     data-appid="eae7e901-dc94-40b5-ad11-99a9077fe672"
+     data-pageid="{{ page.id | default: page.path }}"
+     data-pagetitle="{{ page.title }}"
+     data-pageurl="{{ site.url }}{{ page.url }}">
+</div>
+<script async defer src="https://wombatc.vercel.app/widget.js"></script>
