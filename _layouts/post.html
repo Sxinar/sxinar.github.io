@@ -2,22 +2,46 @@
 layout: default
 ---
 
-<article class="post">
-
-  <!-- Başlık & meta -->
-  <header class="post-header">
-    <h1 class="post-title">{{ page.title | xml_escape }}</h1>
-    <p class="post-meta">
-      {{ page.date | date: "%B %d, %Y" }}
-    </p>
+<article class="px-1 px-md-4" data-post-content>
+  <header>
+    <h1 data-toc-skip>{{ page.title }}</h1>
+    <div class="post-meta text-muted d-flex flex-wrap font-small text-muted mb-3 w-100">
+      <div>
+        <span>{{ site.data.locales[site.lang].post.posted }}</span>
+        {% include datetime.html date=page.date lang=site.lang %}
+      </div>
+    </div>
   </header>
 
-  <!-- İçerik -->
-  <div class="post-content">
+  <div class="content flex-grow-1">
     {{ content }}
   </div>
 
-  <!-- **Wombat yorum widget’ı** burada -->
-  {% include wombat-comments.html %}
+  <div class="post-tail-wrapper text-muted">
+    <div class="post-meta d-flex justify-content-between">
+      {% if page.tags.size > 0 %}
+        <div class="post-tags">
+          <i class="fa fa-tags fa-fw me-1"></i>
+          {% for tag in page.tags %}
+            <a href="{{ site.baseurl }}/tags/{{ tag | slugify }}/" class="post-tag no-text-decoration">{{ tag }}</a>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+  </div>
 
-</article>
+  {% if page.comments %}
+    <div class="mt-5 pt-4 border-top">
+      <div id="wombat_thread"
+        data-host="https://wombatc.vercel.app"
+        data-app-id="79e1da8c-f79e-4d83-9879-43ea36a325d2"
+        data-page-id="{{ page.id }}"
+        data-page-url="{{ page.url | absolute_url }}"
+        data-page-title="{{ page.title | escape }}"
+      ></div>
+      <script async defer src="https://wombatc.vercel.app/widget.js"></script>
+    </div>
+  {% endif %}
+
+</art
+  icle>
