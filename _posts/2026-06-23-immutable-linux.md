@@ -1,3 +1,4 @@
+---
 layout: post
 title: Değiştirilemez (Immutable) Linux Dağıtımları İncelemesi
 description: Geleneksel paket yönetimini tarihe gömen imaj tabanlı ve salt okunur kök dizinine sahip Immutable dağıtımların derinlemesine incelemesi
@@ -17,8 +18,8 @@ settings:
   pin: false
   math: false
   toc: true
+---
 
-```
 # **Selam**
 Eğer son dönemde Linux dünyasındaki "sistemim çöktü" "bağımlılıklar birbirine girdi" veya "son güncellemeden sonra siyah ekranda kaldım" çilelerinden sıkıldıysanız yolunuz muhtemelen yeni nesil Immutable (Değiştirilemez / Atomik) dağıtım furyasına düşmüştür Şimdi benim gözümden Linux ekosisteminin geleceği olarak pazarlanan bu Değiştirilemez Dağıtım mimarisini tüm artı ve eksileriyle inceleyelim
 Öncelikle Immutable dağıtım felsefesi alışılagelmiş Ubuntu Arch veya Debian gibi sistemlerden çok farklı bir mantıkla çalışıyor Temel amaç işletim sisteminin çekirdeğini (kök dizinini) kullanıcıdan ve uygulamalardan tamamen soyutlayarak "bozulamaz" bir yapı inşa etmek
