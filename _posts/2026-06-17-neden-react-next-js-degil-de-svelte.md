@@ -91,14 +91,3 @@ Web'in geleceği, tarayıcıda çalışan ağır kütüphanelerde değil, derlem
 > 
 **Svelte ile yazılmış ilk projenizde yaşadığınız "kodun kısalması ve hızlanması" deneyimini yorumlarda paylaşmaya ne dersiniz?**
 ```
-
-```
-
-<div id="wombat_thread"
-  data-host="https://wombatc.vercel.app"
-  data-app-id="79e1da8c-f79e-4d83-9879-43ea36a325d2"
-  data-page-id="{{ PAGE_ID }}"
-  data-page-url="{{ PAGE_URL }}"
-  data-page-title="{{ PAGE_TITLE }}"
-></div>
-<script async defer src="https://wombatc.vercel.app/widget.js"></script>
