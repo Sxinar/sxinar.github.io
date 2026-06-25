@@ -32,7 +32,7 @@ social:
 
 # Site Verification Settings
 webmaster_verifications:
-  google: "yKVgox_rY7RgQV8sB6CD-Y2cYmh9XtFY6rroqNY-cQA"
+  google:
   bing:
   alexa:
   yandex:
@@ -44,7 +44,7 @@ webmaster_verifications:
 # Web Analytics Settings
 analytics:
   google:
-    id: "G-X48MN6QVW8" # Google Etiketiniz buraya eklendi
+    id:
   goatcounter:
     id:
   umami:
