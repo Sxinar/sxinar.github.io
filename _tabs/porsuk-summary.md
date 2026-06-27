@@ -1,10 +1,10 @@
 ---
 layout: page
-title: Porsuk - Proje
+title: Porsuk
 permalink: porsuk-summary
 icon: fas fa-folder-open
-comments: true
 order: null
+comments: true
 ---
 
 🦡 Porsuk: İnternetin Tozunu Pasını Kazar, Saf Okumayı Sunar!
