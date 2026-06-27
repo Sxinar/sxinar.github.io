@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Wombat - Proje
+title: Wombat
 permalink: wombat-proje
 icon: fas fa-folder-open
 order: null
@@ -11,40 +11,38 @@ order: null
 > Wombat, statik ve dinamik web siteleri için geliştirilmiş, Svelte-Kit tabanlı ve Supabase entegrasyonu ile çalışan hafif bir yorum sistemidir. Tek bir script dosyası üzerinden herhangi bir web sayfasına entegre edilebilir ve modern bir moderasyon altyapısı sunar.
 
 ## Temel Özellikler
+
 \* \*\*Minimum Bağımlılık:\*\* Yalnızca yapılandırma dosyası ve entegrasyon scripti ile hızlı başlangıç.
 \* \*\*Güvenli Markdown Desteği:\*\* İçeriklerin \`marked\` ve \`DOMPurify\` kütüphaneleri kullanılarak güvenli bir şekilde işlenmesi.
 \* \*\*Hiyerarşik Yorum Yapısı:\*\* \`parent_id\` referansı üzerinden iç içe yanıt verebilme kapasitesi.
 \* \*\*Gelişmiş Moderasyon:\*\* Yönetici yetkilendirmesi ve \`is_admin\` bayrağı ile yorum onaylama/reddetme mekanizmaları.
 \* \*\*Tema Uyumluluğu:\*\* İşletim sistemi veya tarayıcı düzeyindeki \`prefers-color-scheme\` ayarlarına duyarlı karanlık mod entegrasyonu.
 \* \*\*Supabase Optimizasyonu:\*\* Kimlik doğrulama, veri depolama ve CORS yapılandırmalarının yerleşik olarak desteklenmesi.
-
----
+  ---
 
 ## Sistem Mimarisi ve Güvenlik
+
 Sistem, güvenlik ve erişilebilirlik gereksinimlerini karşılamak üzere iki ana bileşene ayrılmıştır:
 
 \* \*\*Halka Açık Arayüz (Widget):\*\* Kullanıcıların yorum yapmasını sağlayan genel bileşen. Örnek URL yapısı: \`https://comments.example.com/widcom.html?id=post-123\`
 \* \*\*Yönetim Paneli (Admin):\*\* Moderasyon işlemlerinin yürütüldüğü, erişimi kısıtlanmış alan. Örnek URL yapısı: \`https://comments.example.com/admin.html\`
 
 > \*\*Not:\*\* Yönetim panelinin güvenliğini maksimize etmek için, bu alanın ayrı bir alt alan adında (subdomain) barındırılması, IP adresi kısıtlamaları uygulanması ve sıkılaştırılmış giriş politikaları ile korunması tavsiye edilmektedir.
-
----
+>   ---
 
 ## Kurulum ve Yapılandırma
+
 Yerel geliştirme ortamını hazırlamak için aşağıdaki adımları sırasıyla uygulayınız:
 
 1. \*\*Depoyu Klonlama\*\*
    \`\`\`bash
    git clone [https://github.com/your-username/wombat-widget.git](https://github.com/your-username/wombat-widget.git)
    cd wombat-widget
-
-
-2. **Bağımlılıkların Yüklenmesi**
+    1. **Bağımlılıkların Yüklenmesi**
 Bashnpm install
-
-3. **Supabase Projesinin Hazırlanması**
+2. **Supabase Projesinin Hazırlanması**
 Supabase platformu üzerinden yeni bir proje oluşturunuz. `auth`, `threads` ve `comments` tablolarını inşa etmek için proje dizininde yer alan `supabase/migrations/00000_init.sql` dosyasındaki SQL sorgularını Supabase SQL editöründe çalıştırınız.
-4. **Sunucuyu Başlatma**
+3. **Sunucuyu Başlatma**
 Bashnpm run dev
 Yerel sunucu `http://localhost:5173` adresinde dinlemeye başlayacaktır.
 
@@ -58,7 +56,6 @@ Kod snippet'i
 VITE_SUPABASE_URL=[https://YOUR-PROJECT.supabase.co](https://YOUR-PROJECT.supabase.co)
 VITE_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI...
 WIDGET_HOST=[https://comments.example.com](https://comments.example.com)
-
 ```
 
 > **Not:** `VITE_` ön eki taşıyan değişkenler, Vite derleyicisi tarafından `import.meta.env` nesnesi üzerinden istemci tarafında erişilebilir hale getirilmektedir.
@@ -90,7 +87,6 @@ create table comments (
   status text check (status in ('pending','approved','rejected')) default 'pending',
   created_at timestamp with time zone default now()
 );
-
 ```
 
 > **Uyarı:** Yorumların halka açık arayüzde listelenebilmesi için `status` değerinin `approved` olması gerekmektedir. Yöneticiler tarafından yapılan yorumlar `is_admin = true` mantıksal değeri ile ayrıştırılmaktadır.
@@ -121,7 +117,6 @@ Svelte
 ></div>
 
 <script async defer src="[https://comments.example.com/widget.js](https://comments.example.com/widget.js)"></script>
-
 ```
 
 ### Statik Sayfalar İçin (Örn: Jekyll, Hugo)
@@ -138,7 +133,6 @@ HTML
 </div>
 
 <script async defer src="[https://comments.example.com/widget.js](https://comments.example.com/widget.js)"></script>
-
 ```
 
 > **Uyarı:** `data-appid` parametresine mutlaka size tahsis edilen uygulama kimliğini giriniz.
@@ -207,7 +201,9 @@ Projenin yol haritasında yer alan gelecek modüller:
 Wombat, statik ve dinamik sistemler için kolayca gömülebilen, Supabase odaklı geliştirilmiş ancak diğer sistemlere uyarlanabilir altyapıya sahip, modern ve self-host edilebilir bir yorum platformudur. Veritabanı seviyesindeki güvenlik politikaları (RLS) ile verilerinizi güvence altına alırken, son kullanıcılara temiz ve operasyonel bir arayüz sunar.
 
 ## Wombat önizleme:
+
 ### Yorum Yapmayınız!
+
 ###No Comment!
 <div id="wombat_thread"
   data-host="https://wombatc.vercel.app"
