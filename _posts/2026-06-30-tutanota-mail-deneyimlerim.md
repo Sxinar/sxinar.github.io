@@ -2,7 +2,7 @@
 layout: post
 title: Tutanota Mail Deneyimlerim
 description: Gizlilik dünyasının parlayan yıldızı olan Tutanota Mail incelemesi ve deneyimlerim
-date: 2026-06-30 22:50:00 +03:00
+date: 2026-07-01 01:50:00 +03:00
 categories:
   - İnceleme
   - Araçlar
