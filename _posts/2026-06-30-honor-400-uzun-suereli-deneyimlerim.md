@@ -19,9 +19,8 @@ settings:
   toc: true
 ---
 
-# Honor 400 (8/256) Uzun Kullanım Deneyimlerim ve İzlenimlerim
+# Selamlar.
 
-Selamlar.
 Ekim 2025 den bu yana aktif olarak Honor 400 8/256 kullanıyorum. Sizlere de telefonum hakkında izlenimlerim ve deneyimlerimi aktarmak istiyorum.
 Hayatımda ilk defa Honor marka bir akıllı cihaz kullanıyorum ve ilk seferim olmasına rağmen küçük sorunlar dışında memnunum.
 Aldığım günden 1 hafta sonra cihaz indirime girdiğinden dolayı biraz moralim bozuk şekilde kullanmaya başladım cihazı. İnsan ister istemez keşke sadece bir hafta daha bekleseydim de para cebimde kalsaydı diyor ama yapacak bir şey yok diyerek moral bozukluğunu unutup cihazı kullanmaya devam ettim.
