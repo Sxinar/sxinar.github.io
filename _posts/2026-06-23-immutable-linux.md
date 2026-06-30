@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Değiştirilemez (Immutable) Linux Dağıtımları İncelemesi
+title: Değiştirilemez (Immutable) Dağıtımlar
 description: Geleneksel paket yönetimini tarihe gömen imaj tabanlı ve salt okunur kök dizinine sahip Immutable dağıtımların derinlemesine incelemesi
 date: 2026-06-23 23:40:00 +03:00
 categories:
