@@ -46,10 +46,10 @@ analytics:
   google:
     id:
   goatcounter:
-    id: sxinar
+    id: #sxinar
   umami:
-    id: #c4ba52d2-7ecf-4420-b027-9dc7c5471858
-    domain: #https://cloud.umami.is
+    id: c4ba52d2-7ecf-4420-b027-9dc7c5471858
+    domain: https://cloud.umami.is
   matomo:
     id:
     domain:
