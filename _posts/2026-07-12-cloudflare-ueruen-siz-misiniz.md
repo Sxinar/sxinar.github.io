@@ -17,8 +17,6 @@ settings:
   toc: true
 ---
 
-# Neden Cloudflare Ücretsiz? Freemium Modeli
-
 İnternetteki web sitelerinin yaklaşık %20'sinden fazlasına altyapı sağlayan **Cloudflare**, bireysel kullanıcılara ve küçük işletmelere devasa bütçeler gerektiren DDoS koruması, CDN (İçerik Dağıtım Ağı) ve SSL sertifikası gibi hizmetleri tamamen **ücretsiz** sunmaktadır.
 Şöyle bir soru sormadan edemiyoruz mantiken arkasında yüzlerce veri merkezi ve devasa sunucu maliyetleri olan bir şirket neden bu hizmeti "bedava" verir? 
 
