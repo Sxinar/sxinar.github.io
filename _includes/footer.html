@@ -1,0 +1,46 @@
+<!-- _includes/footer.html -->
+<footer aria-label="Site Info" class="d-flex flex-column align-items-center text-muted border-top pt-4 mt-5">
+  
+  <!-- Footer Üst Alanı: Bülten Formu -->
+  <div class="w-100 mb-4 px-3" style="max-width: 500px;">
+    <div class="text-center mb-3">
+      <h5 class="fw-bold mb-1" style="color: var(--heading-color);">Bültene Katıl</h5>
+      <p class="small text-muted mb-0">Yeni FOSS derlemeleri ve teknoloji günlükleri doğrudan gelen kutuna gelsin.</p>
+    </div>
+    
+    <form
+      action="https://buttondown.com/api/emails/embed-subscribe/sxinar"
+      method="post"
+      class="embeddable-buttondown-form d-flex gap-2"
+    >
+      <input 
+        type="email" 
+        name="email" 
+        id="bd-email" 
+        class="form-control" 
+        placeholder="E-posta adresin..." 
+        required 
+        style="background-color: var(--main-bg); border-color: var(--card-border-color); color: var(--text-color);"
+      />
+      <button type="submit" class="btn btn-primary px-4 fw-bold">Abone Ol</button>
+    </form>
+    
+    <p class="text-center small text-muted mt-2 mb-0" style="font-size: 0.75rem;">
+      <a href="https://buttondown.com/refer/sxinar" target="_blank" class="text-muted text-decoration-none">
+        ⚡ Powered by Buttondown
+      </a>
+    </p>
+  </div>
+
+  <!-- Footer Alt Alanı: Klasik Chirpy Telif Hakları -->
+  <div class="w-100 d-flex flex-column justify-content-center flex-lg-row justify-content-lg-between align-items-center fst-italic small px-3 pt-3 border-top" style="border-top-color: var(--card-border-color) !important;">
+    <p class="mb-1 mb-lg-0">© {{ 'now' | date: '%Y' }} <a href="{{ site.social.links[0] }}" class="text-decoration-none">{{ site.social.name }}</a>.
+      {% if site.data.locales[lang].copyright.brief %}
+        <span data-bs-toggle="tooltip" data-bs-placement="top" title="{{ site.data.locales[lang].copyright.verbose }}">{{ site.data.locales[lang].copyright.brief }}</span>
+      {% endif %}
+    </p>
+    <p class="mb-0">Powered by <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a> with <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a> theme.</p>
+  </div>
+
+</foote
+  r>
