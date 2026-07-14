@@ -99,3 +99,9 @@ Geliştirilmesinde aktif rol oynadığım platformları doğrudan deneyimleyebil
 *   Wombat: https://wombatc.vercel.app
 
 > "Kod yazmak sadece teknik bir süreç ya da bir meslek icrası değildir; dijital dünyayı, kendi çalışma masamızdan başlayarak daha özgür, şeffaf ve adil bir yapıya kavuşturma zanaatıdır."
+>
+>   <!-- BUTTONDOWN BÜLTEN ALANI -->
+  <div class="my-5">
+    {% include buttondown.html %}
+  </div>
+  bultene abone olabilirisniz.
