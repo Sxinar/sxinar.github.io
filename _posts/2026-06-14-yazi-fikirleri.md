@@ -70,3 +70,30 @@ settings:
 * **Neden Notion Değil de Obsidian?** (Markdown Formatında, Yerel ve Geleceğe Yatırım Not Tutma Sistemi)
 * **Neden Bitwarden Değil de Vaultwarden?** (Şifre Yöneticisini Docker Üzerinde Çok Daha Az Kaynakla Barındırmak)
 * **Neden Hazır Bulut Yedeklemesi Değil de Rclone/Restic?** (Verileri Şifreleyerek Farklı Bulut Sağlayıcılarına Otomatik Yedekleme)
+
+### Büyük Veri ve İş Modeli Analizleri
+
+* GitHub Ücretsiz mi? Microsoft Dünyanın En Büyük Kod Deposunu Neden Fonluyor?
+* Discord’un Gizli Yakıtı: Tamamen Ücretsiz Bir Platform Nasıl Ayakta Kalıyor?
+* Epic Games Neden Bedava Oyun Dağıtıyor? Milyon Dolarlık Ekosistem Savaşları
+* Spotify Free vs. Premium: Ücretsiz Dinleyiciler Şirkete Nasıl Para Kazandırıyor?
+
+### Siber Güvenlik ve Gizlilik İncelemeleri
+
+* Ücretsiz VPN'ler: Güvenlik Kalkanı mı, Veri Otobanı mı?
+* Gizlilik mi, Yeni Bir Tekel mi? Üçüncü Taraf Çerezlerin Ölümü Ne Anlama Geliyor?
+* Dijital Kasanız Ne Kadar Güvenli? Parola Yöneticilerinin Güvenlik Anatomisi
+* AdBlocker Savaşları: YouTube ve Reklam Engelleyiciler Arasındaki Kedi Fare Oyunu
+
+### Altyapı ve Web Teknolojileri
+
+* Bulut Savaşları: Teknoloji Devleri Startup'ları Neden Ücretsiz Krediye Boğuyor?
+* Açık Kaynak Kodun Paradoksu: Bedava Yazılımdan Milyar Dolarlık Şirket Yaratmak
+* Let's Encrypt İncelemesi: İnternetin SSL Sertifikalarını Kim, Neden Bedava Dağıtıyor?
+* Vercel ve Netlify: Ücretsiz Web Barındırma Hizmetlerinin Arkasındaki Ticari Tuzak Ne?
+
+### Yapay Zeka Ekonomisi
+
+* Yapay Zeka Modelleri Neden Ücretsiz? ChatGPT'yi Eğiten Gizli İşçiler Biz Miyiz?
+* Canva ve Midjourney: Yapay Zeka Tasarım Araçları Kreatif Sektörü Nasıl Tekelleştiriyor?
+* Hugging Face: Yapay Zeka Devriminin Ücretsiz Altyapısı ve Geleceği
