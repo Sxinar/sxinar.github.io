@@ -148,5 +148,10 @@ Bu çalışma ileride Linux çekirdeğinde yeni optimizasyonların önünü aça
 Hangi gelişme daha çok ilgini çekti?
 - Ben Fedora kullandığım için sanırım Fedora güncelleme haberleri.
 
-
-{% include comments/wombat.html %}
+<div id="wombat_thread"
+  data-host="https://wombat-fywcl64gm-sxinars-projects.vercel.app"
+  data-app-id="79e1da8c-f79e-4d83-9879-43ea36a325d2"
+  data-page-id="{{ PAGE_ID }}"
+  data-page-url="{{ PAGE_URL }}"
+  data-page-title="{{ PAGE_TITLE }}"
+></div>
