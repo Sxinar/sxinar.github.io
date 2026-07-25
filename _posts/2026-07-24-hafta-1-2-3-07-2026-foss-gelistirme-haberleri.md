@@ -147,3 +147,6 @@ Bu çalışma ileride Linux çekirdeğinde yeni optimizasyonların önünü aça
 ---
 Hangi gelişme daha çok ilgini çekti?
 - Ben Fedora kullandığım için sanırım Fedora güncelleme haberleri.
+
+
+{% include comments/wombat.html %}
