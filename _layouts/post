@@ -32,15 +32,14 @@ layout: default
 
   {% if page.comments %}
     <div class="mt-5 pt-4 border-top">
-      <div id="wombat_thread"
-        data-host="https://wombatc.vercel.app"
-        data-app-id="79e1da8c-f79e-4d83-9879-43ea36a325d2"
-        data-page-id="{{ page.id }}"
-        data-page-url="{{ page.url | absolute_url }}"
-        data-page-title="{{ page.title | escape }}"
-      ></div>
-      <script async defer src="https://wombatc.vercel.app/widget.js"></script>
-    </div>
+<div id="wombat_thread"
+  data-host="https://wombatc.vercel.app"
+  data-app-id="79e1da8c-f79e-4d83-9879-43ea36a325d2"
+  data-page-id="{{ page.id | default: page.slug | default: page.url }}"
+  data-page-url="{{ site.url }}{{ page.url }}"
+  data-page-title="{{ page.title | escape }}"
+></div>
+<script async defer src="https://wombatc.vercel.app/widget.js"></script>
   {% endif %}
 
 </art
