@@ -64,6 +64,9 @@ pageviews:
 
 theme_mode: # [light | dark]
 
+feed:
+  posts_limit: 100
+
 cdn:
 
 # the avatar on sidebar
