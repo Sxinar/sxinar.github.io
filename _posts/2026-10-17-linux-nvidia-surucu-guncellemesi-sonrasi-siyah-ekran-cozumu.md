@@ -17,70 +17,73 @@ settings:
   toc: true
 ---
 
-Linux işletim sistemlerinde gerçekleştirilen ekran kartı sürücüsü güncellemeleri, özellikle tescilli (proprietary) Nvidia sürücülerinde bazen Xorg veya Wayland sunucusunun çökmesine neden olur. Bu durum, grafik arayüzün tamamen devre dışı kalmasına ve bilgisayarın açılışta siyah ekranda takılmasına yol açar. Masaüstü ortamına erişilemediği için kullanıcılar açısından kritik bir kriz anı oluşturan bu sorun, komut satırı aracılığıyla kalıcı olarak çözülebilir.
 
-Bu kapsamlı rehber, masaüstü arayüzüne ulaşamayan kullanıcıların TTY konsolu üzerinden sürücü çakışmalarını nasıl gidereceğini, sistemi kararlı duruma nasıl getireceğini ve resmi Nvidia sürücülerini hatasız bir şekilde nasıl yeniden kuracağını adım adım açıklamaktadır.
+# Linux Nvidia Surucu Guncellemesi Sonrasi Siyah Ekran Hatasi ve Kesin Cozumu
 
----
+Linux islem sistemlerinde gerceklestirilen ekran karti surucusu guncellemeleri, ozellikle tescilli (proprietary) Nvidia suruculerinde bazen Xorg veya Wayland sunucusunun cokmesine neden olur. Bu durum, grafik arayuzun tamamen devre disi kalmasina ve bilgisayarin acilista siyah ekranda takilmasina yol acar. Masustu ortamina erisilemedigi icin kullanicilar acisindan kritik bir kriz ani olusturan bu sorun, komut satiri araciligiyla kalici olarak cozulebilir.
 
-## İçindekiler
-- [Sorunun Kaynağı ve Belirtileri](#sorunun-kaynağı-ve-belirtileri)
-- [Gerekli Ön Hazırlıklar ve Kurtarma Yöntemleri](#gerekli-ön-hazırlıklar-ve-kurtarma-yöntemleri)
-- [Adım Adım Çözüm Rehberi](#adım-adım-çözüm-rehberi)
-  - [Adım 1: TTY Konsoluna Erişim Sağlama](#adım-1-tty-konsoluna-erişim-sağlama)
-  - [Adım 2: Bozuk Nvidia Sürücülerini Tamamen Kaldırma](#adım-2-bozuk-nvidia-sürücülerini-tamamen-kaldırma)
-  - [Adım 3: Sistemi Yeniden Başlatma ve Açık Kaynak Sürücüye Dönüş](#adım-3-sistemi-yeniden-başlatma-ve-açık-kaynak-sürücüye-dönüş)
-  - [Adım 4: Kararlı Resmi Nvidia Sürücüsünü Yeniden Kurma](#adım-4-kararlı-resmi-nvidia-sürücüsünü-yeniden-kurma)
-- [Alternatif Durumlar ve Ek İpuçları](#alternatif-durumlar-ve-ek-ipuçları)
-- [Sık Sorulan Sorular (SSS)](#sık-sorulan-sorular-sss)
+Bu kapsamli rehber, masustu arayuzune ulasamayan kullanicilarin TTY konsolu uzerinden surucu cakismalarini nasil giderecegini, sistemi kararli duruma nasil getirecegini ve resmi Nvidia suruculerini hatasiz bir sekilde nasil yeniden kuracagini adim adim aciklamaktadir.
 
 ---
 
-## Sorunun Kaynağı ve Belirtileri
-
-Sistem açılışında imlecin bulunmadığı tamamen siyah bir ekranda kalıyorsanız, ekranda yalnızca sol üst köşede yanıp sönen bir metin imleci varsa ya da oturum açma ekranı (Display Manager) döngüye girip sürekli başa sarıyorsa, grafik alt sisteminde bir uyumsuzluk yaşanmaktadır.
-
-Bu durum genellikle şu sebeplerden kaynaklanır:
-* Yeni çekirdek (kernel) sürümü ile Nvidia modüllerinin (DKMS) derlenememesi.
-* Paket yöneticisi güncellemeleri sırasında bağımlılıkların eksik kalması.
-* Wayland veya X11 protokolleri ile yeni sürücü sürümü arasında oluşan çakışmalar.
-
----
-
-## Gerekli Ön Hazırlıklar ve Kurtarma Yöntemleri
-
-Grafik arayüz çalışmadığı için fare hareketleri veya standart grafiksel kısayollar işlevsizdir. Ancak Linux çekirdeği arka planda sanal konsolları çalıştırmaya devam eder. Bu aşamada klavye girdileri doğrudan çekirdeğe ulaşır ve sistemi komut satırı üzerinden yönetmenize olanak tanır.
+## Icindekiler
+- [Sorunun Kaynagi ve Belirtileri](#sorunun-kaynagi-ve-belirtileri)
+- [Gerekli On Hazirliklar ve Kurtarma Yontemleri](#gerekli-on-hazirliklar-ve-kurtarma-yontemleri)
+- [Adim Adim Cozum Rehberi](#adim-adim-cozum-rehberi)
+  - [Adim 1: TTY Konsoluna Erisim Saglama](#adim-1-tty-konsoluna-erisim-saglama)
+  - [Adim 2: Bozuk Nvidia Suruculerini Tamamen Kaldirma](#adim-2-bozuk-nvidia-suruculerini-tamamen-kaldirma)
+  - [Adim 3: Sistemi Yeniden Baslatma ve Acik Kaynak Surucuye Donus](#adim-3-sistemi-yeniden-baslatma-ve-acik-kaynak-surucuye-donus)
+  - [Adim 4: Kararli Resmi Nvidia Surucusunu Yeniden Kurma](#adim-4-kararli-resmi-nvidia-surucusunu-yeniden-kurma)
+- [Alternatif Durumlar ve Ek Ipuclari](#alternatif-durumlar-ve-ek-ipuclari)
+- [Sik Sorulan Sorular (SSS)](#sik-sorulan-sorular-sss)
 
 ---
 
-## Adım Adım Çözüm Rehberi
+## Sorunun Kaynagi ve Belirtileri
 
-### Adım 1: TTY Konsoluna Erişim Sağlama
-Bilgisayarınız siyah ekrandayken grafik arayüzden tamamen bağımsız, metin tabanlı bir terminal oturumu açmak için klavyenizden şu tuş kombinasyonunu tuşlayın:
+Sistem acilisinda imlecin bulunmadigi tamamen siyah bir ekranda kaliyorsaniz, ekranda yalnizca sol ust kosede yanip sonen bir metin imleci varsa ya da oturum acma ekrani (Display Manager) donguye girip surekli basa sariyorsa, grafik alt sisteminde bir uyumsuzluk yasanmaktadir.
+
+Bu durum genellikle sunu sebeplerden kaynaklanir:
+* Yeni cekirdek (kernel) surumu ile Nvidia modullerinin (DKMS) derlenememesi.
+* Paket yoneticisi guncellemeleri sirasinda bagimliliklarin eksik kalmasi.
+* Wayland veya X11 protokolleri ile yeni surucu surumu arasinda olusan cakismalar.
+
+---
+
+## Gerekli On Hazirliklar ve Kurtarma Yontemleri
+
+Grafik arayuz calismadigi icin fare hareketleri veya standart grafiksel kisayollar islevsizdir. Ancak Linux cekirdegi arka planda sanal konsollari calistirmaya devam eder. Bu asamada klavye girdileri dogrudan cekirdege ulasir ve sistemi komut satiri uzerinden yonetmenize olanak tanir.
+
+---
+
+## Adim Adim Cozum Rehberi
+
+### Adim 1: TTY Konsoluna Erisim Saglama
+Bilgisayariniz siyah ekrandayken grafik arayuzden tamamen bagimsiz, metin tabanli bir terminal oturumu acmak icin klavyenizden su tus kombinasyonunu tuslayin:
 
 ```text
 Ctrl + Alt + F3
 
 ```
 
-*(Not: F3 tuşu sisteminizde farklı bir sanal terminale atanmışsa F4, F5 veya F6 tuş kombinasyonlarını da deneyebilirsiniz.)*
+*(Not: F3 tusu sisteminizde farkli bir sanal terminale atanmissa F4, F5 veya F6 tus kombinasyonlarini da deneyebilirsiniz.)*
 
-Ekran siyahlıktan çıkıp bir yazı ekranına dönüştüğünde sistem sizden kullanıcı oturum bilgilerini isteyecektir:
+Ekran siyahliktan cikip bir yazi ekranina donustugunde sistem sizden kullanici oturum bilgilerini isteyecektir:
 
-1. **login:** kısmına sistem kullanıcı adınızı yazıp Enter tuşuna basın.
-2. **Password:** kısmına şifrenizi girin.
+1. **login:** kismina sistem kullanici adinizi yazip Enter tusuna basin.
+2. **Password:** kismina sifrenizi girin.
 
-> **Önemli Güvenlik Notu:** Linux sistemlerde şifre girerken güvenlik sebebiyle ekranda hiçbir karakter, yıldız veya nokta belirmez. Bu durum tamamen normaldir. Şifrenizi eksiksiz yazıp doğrudan **Enter** tuşuna basın.
+> **Onemli Guvenlik Notu:** Linux sistemlerde sifre girerken guvenlik sebebiyle ekranda hicbir karakter, yildiz veya nokta belirmez. Bu durum tamamen normaldir. Sifrenizi eksiksiz yazip dogrudan **Enter** tusuna basin.
 
 ---
 
-### Adım 2: Bozuk Nvidia Sürücülerini Tamamen Kaldırma
+### Adim 2: Bozuk Nvidia Suruculerini Tamamen Kaldirma
 
-Sistem oturumunu başarıyla açtıktan sonra, güncellemeyle bozulmuş veya eksik derlenmiş olan eski Nvidia paketlerini sistemden tamamen temizlemeniz gerekir. Hatalı kalıntıların temizlenmesi, temiz bir kurulum için zorunludur.
+Sistem oturumunu basariyla actiktan sonra, guncellemeyle bozulmus veya eksik derlenmis olan eski Nvidia paketlerini sistemden tamamen temizlemeniz gerekir. Hatali kalintilarin temizlenmesi, temiz bir kurulum icin zorunludur.
 
-Kullandığınız Linux dağıtımına uygun komut grubunu çalıştırın:
+Kullandiginiz Linux dagitimina uygun komut grubunu calistirin:
 
-* **Ubuntu, Linux Mint ve Debian Tabanlı Dağıtımlar İçin:**
+* **Ubuntu, Linux Mint ve Debian Tabanli Dagitimlar Icin:**
 ```bash
 sudo apt-get purge "*nvidia*"
 sudo apt autoremove --purge
@@ -88,14 +91,14 @@ sudo apt autoremove --purge
 ```
 
 
-* **Fedora ve RHEL Tabanlı Dağıtımlar İçin:**
+* **Fedora ve RHEL Tabanli Dagitimlar Icin:**
 ```bash
 sudo dnf remove "*nvidia*"
 
 ```
 
 
-* **Arch Linux ve Manjaro Tabanlı Dağıtımlar İçin:**
+* **Arch Linux ve Manjaro Tabanli Dagitimlar Icin:**
 ```bash
 sudo pacman -Rns $(pacman -Qq | grep nvidia)
 
@@ -105,24 +108,24 @@ sudo pacman -Rns $(pacman -Qq | grep nvidia)
 
 ---
 
-### Adım 3: Sistemi Yeniden Başlatma ve Açık Kaynak Sürücüye Dönüş
+### Adim 3: Sistemi Yeniden Baslatma ve Acik Kaynak Surucuye Donus
 
-Sürücü paketleri tamamen kaldırıldıktan sonra, grafik alt sisteminin varsayılan ve kararlı olan açık kaynak kodlu `nouveau` sürücüsüne geri dönmesini sağlamak için sistemi yeniden başlatın:
+Surucu paketleri tamamen kaldirildiktan sonra, grafik alt sisteminin varsayilan ve kararli olan acik kaynak kodlu `nouveau` surucusune geri donmesini saglamak icin sistemi yeniden baslatin:
 
 ```bash
 sudo reboot
 
 ```
 
-Yeniden başlatma işleminin ardından sisteminiz normal açılış rutinine dönecek ve grafik masaüstü arayüzüne (GNOME, KDE, XFCE vb.) sorunsuz bir şekilde erişebileceksiniz.
+Yeniden baslatma isleminin ardindan sisteminiz normal acilis rutinine donecek ve grafik masustu arayuzune (GNOME, KDE, XFCE vb.) sorunsuz bir sekilde erisebileceksiniz.
 
 ---
 
-### Adım 4: Kararlı Resmi Nvidia Sürücüsünü Yeniden Kurma
+### Adim 4: Kararli Resmi Nvidia Surucusunu Yeniden Kurma
 
-Masaüstü ortamına ulaştıktan sonra terminal uygulamasını açın ve güncel, kararlı resmi tescilli Nvidia sürücüsünü yeniden sisteminize entegre edin:
+Masustu ortamina ulastiktan sonra terminal uygulamasini acin ve guncel, kararli resmi tescilli Nvidia surucusunu yeniden sisteminize entegre edin:
 
-* **Ubuntu ve Linux Mint İçin:**
+* **Ubuntu ve Linux Mint Icin:**
 ```bash
 sudo ubuntu-drivers install
 sudo reboot
@@ -130,7 +133,7 @@ sudo reboot
 ```
 
 
-* **Fedora İçin:**
+* **Fedora Icin:**
 ```bash
 sudo dnf install akmod-nvidia
 sudo reboot
@@ -138,7 +141,7 @@ sudo reboot
 ```
 
 
-* **Arch Linux İçin:**
+* **Arch Linux Icin:**
 ```bash
 sudo pacman -S nvidia nvidia-utils nvidia-settings
 sudo reboot
@@ -147,30 +150,30 @@ sudo reboot
 
 
 
-Kurulum tamamlandıktan sonra bilgisayarınızı son bir kez yeniden başlattığınızda sisteminiz Nvidia sürücüleriyle sorunsuz bir şekilde çalışmaya devam edecektir.
+Kurulum tamamlandiktan sonra bilgisaturanizi son bir kez yeniden baslattiginizda sisteminiz Nvidia suruculeriyle sorunsuz bir sekilde calismaya devam edecektir.
 
 ---
 
-## Alternatif Durumlar ve Ek İpuçları
+## Alternatif Durumlar ve Ek Ipuclari
 
-* **Güvenlik Mod (Recovery Mode) Kullanımı:** Eğer standart yöntemlerle TTY ekranına erişemiyorsanız, bilgisayarı yeniden başlatıp önyükleme sırasında açılan **Grub Bootloader** menüsünden **Advanced Options for Linux** seçeneğine girerek **Recovery Mode** satırını seçebilir ve buradan **Root** komut satırına geçiş yapabilirsiniz.
-* **Nouveau Çakışma Kontrolü:** Bazı özel durumlarda açık kaynaklı `nouveau` sürücüsü arka planda çalışmaya devam ederek tescilli sürücünün yüklenmesini engelleyebilir. Bu gibi senaryolarda `/etc/modprobe.d/blacklist.conf` dosyasına `blacklist nouveau` kuralının ekli olduğundan emin olunmalıdır.
+* **Guvenlik Mod (Recovery Mode) Kullanimi:** Eger standart yontemlerle TTY ekranina erisemiyorsaniz, bilgisayari yeniden baslatip onyukleme sirasinda acilan **Grub Bootloader** menusunden **Advanced Options for Linux** secenegine girerek **Recovery Mode** satirini secebilir ve buradan **Root** komut satirina gecis yapabilirsiniz.
+* **Nouveau Cakisma Kontrolu:** Bazi ozel durumlarda acik kaynakli `nouveau` surucusu arkada planda calismaya devam ederek tescilli surucunun yuklenmesini engelleyebilir. Bu gibi senaryolarda `/etc/modprobe.d/blacklist.conf` dosyasina `blacklist nouveau` kuralinin ekli oldugundan emin olunmalidir.
 
 ---
 
-## Sık Sorulan Sorular (SSS)
+## Sik Sorulan Sorular (SSS)
 
-### TTY ekranında şifremi yazarken neden hiçbir şey görünmüyor?
+### TTY ekraninda sifremi yazarken neden hicbir sey gorunmuyor?
 
-Linux terminal güvenliği gereği şifre karakterlerini (yıldız veya gizleme simgesi dahi olsa) ekrana yansıtmaz. Şifrenizi klavyeden yazıp doğrudan Enter tuşuna basmanız yeterlidir, sistem şifrenizi arka planda kabul edecektir.
+Linux terminal guvenligi geregi sifre karakterlerini (yildiz veya gizleme simgesi dahi olsa) ekrana yansitmaz. Sifrenizi klavyeden yazip dogrudan Enter tusuna basmaniz yeterlidir, sistem sifrenizi arkada planda kabul edecektir.
 
-### Sürücüleri kaldırdıktan sonra masaüstü açılmazsa ne yapmalıyım?
+### Suruculeri kaldirdiktan sonra masustu acilmazsa ne yapmaliyim?
 
-Eğer temizlik sonrasında masaüstü gelmiyorsa, ekran kartınızın modeline uygun en kararlı sürücü sürümünü üreticinin resmi web sitesinden veya paket yöneticinizin eski kararlı havuzlarından manuel olarak seçmeniz gerekebilir.
+Eger temizlik sonrasinda masustu gelmiyorsa, ekran kartinizin modeline uygun en kararli surucu surumunu ureticinin resmi web sitesinden veya paket yoneticinizin eski kararli havuzlarindan manuel olarak secmeniz gerekebilir.
 
-### Bu sorun her güncellemede tekrarlar mı?
+### Bu sorun her guncellemede tekrarlar mi?
 
-Genellikle çekirdek güncellemeleri ile DKMS modüllerinin eş zamanlı güncellenememesinden kaynaklanır. Düzenli sistem güncellemelerinde paket bağımlılıklarının eksiksiz tamamlandığından emin olmak bu sorunun tekrarlanma riskini en aza indirir.
+Genellikle cekirdek guncellemeleri ile DKMS modullerinin es zamanli guncellenememesinden kaynaklanir. Duzenli sistem guncellemelerinde paket bagimliliklarinin eksiksiz tamamlandigindan emin olmak bu sorunun tekrarlanma riskini en aza indirir.
 
 ```
 
