@@ -97,3 +97,138 @@ settings:
 * Yapay Zeka Modelleri Neden Ücretsiz? ChatGPT'yi Eğiten Gizli İşçiler Biz Miyiz?
 * Canva ve Midjourney: Yapay Zeka Tasarım Araçları Kreatif Sektörü Nasıl Tekelleştiriyor?
 * Hugging Face: Yapay Zeka Devriminin Ücretsiz Altyapısı ve Geleceği
+
+Linux dünyasında kullanıcıların güncellemeler sonrasında en sık yaşadığı ve çözüm aradığı **popüler, arama hacmi yüksek (SEO potansiyeli yüksek)** 100 adet teknik sorunu ve çözüm başlığını senin için kategorize ederek derledim. Bu başlıklar, hem Google'da sıkça aratılan "nasıl yapılır?" (how-to) ve "çözümü" (fix) sorgularına uygundur hem de bloguna doğrudan trafik getirecek niteliktedir.
+
+
+
+
+##  1. Tarayıcı ve İnternet Sorunları (Firefox, Chrome, Ağ)
+
+1. **Firefox Güncellemesi Sonrası Touchpad (İki Parmak Kaydırma) Çalışmıyor Çözümü** _(Senin örneğin)_
+2. Firefox Wayland Modunda Donuyor ve Kilitleniyor Nasıl Düzeltilir?
+3. Linux Kernel Güncellemesi Sonrası Wi-Fi (Kablosuz Ağ) Sinyali Yok / Görmüyor
+4. Bluetooth Kulaklık Linux'ta Ses Vermiyor veya Mikrofon Çalışmıyor
+5. Firefox Güncellemesinden Sonra Donanım İvmesi (Hardware Acceleration) Nasıl Aktif Edilir?
+6. Linux'ta Tarayıcı Sekmeleri Neden Donuyor? (Out of Memory Sorunu)
+7. Ethernet (Kablolu Bağlantı) Güncelleme Sonrası "IP Alınamıyor" Hatası ve Çözümü
+8. VPN Bağlantıları Linux Güncellemesi Sonrası Neden Kopuyor? (NetworkManager Fix)
+9. DNS Çözümleme Hataları ve Linux'ta Hızlı DNS Ayarlama Rehberi
+10. Firefox Güncellemesi Sonrası Web Sayfalarındaki Yazı Tipleri (Fontlar) Neden Bozuldu?
+
+##  2. Grafik, Ekran Kartı ve Görüntü Sorunları (Nvidia / AMD / Intel)
+
+11. Nvidia Sürücü Güncellemesi Sonrası Siyah Ekran Hatası Kesin Çözüm
+12. Linux Kernel Güncellemesinden Sonra Ekran Çözünürlüğü Değişmiyor
+13. Wayland ve X11 Geçişinde Ekran Paylaşımı (Zoom/Discord) Çalışmıyor
+14. Linux'ta Ekran Parlaklığı (Brightness) Ayarlanamıyor Sorunu
+15. Çoklu Monitör (Dual Monitor) Düzeni Güncelleme Sonrası Neden Sıfırlanıyor?
+16. AMD Ekran Kartı Sürücü Güncellemesi Sonrası Oyunlarda FPS Düşüşü
+17. Linux'ta Ekran Kartı Fanları Çok Hızlı ve Sesli Çalışıyor (Nvidia/AMD)
+18. Uyku Modundan (Suspend) Uyanınca Ekranın Siyah Kalması Sorunu
+19. G-Sync / FreeSync Linux'ta Güncelleme Sonrası Devre Dışı Kaldı
+20. HiDPI (4K) Ekranlarda Ölçeklendirme (Scaling) Bozulması ve Çözümü
+
+##  3. Çekirdek (Kernel), Paket Yöneticisi ve Sistem Güncelleme Hataları
+
+21. `sudo apt update` veya `pacman` Güncelleme Hatası: "GPG Key Expired" Çözümü
+22. Disk Alanı Doldu Hatası: Linux'ta Eski Kernel (Çekirdek) Dosyaları Nasıl Temizlenir?
+23. `apt` veya `dnf` Kilitlendi (Could not get lock / frontend locked) Hatası
+24. Arch Linux Güncellemesi Sonrası "initramfs" Hatası Nasıl Onarılır?
+25. Grub Bootloader Açılış Menüsü Güncelleme Sonrası Kayboldu (Dual Boot Sorunu)
+26. Fedora DNF Güncellemesi Yarım Kaldı / Sistem Açılmıyor Çözümü
+27. Linux Çekirdeği (Kernel) Nasıl Rollback (Eski Sürüme Geri Dönüş) Yapılır?
+28. Flatpak Uygulamaları Güncelleme Sonrası Açılmıyor / Hata Veriyor
+29. Snap Paketleri Neden Yavaş Çalışıyor ve Nasıl Optimize Edilir?
+30. "Broken Packages" (Bozuk Paketler) Terminalden Otomatik Nasıl Temizlenir?
+
+##  4. Ses, Mikrofon ve Multimedya Sorunları
+
+31. PipeWire Güncellemesi Sonrası Ses Hiç Çıkmıyor veya Cırıltılı Geliyor
+32. PulseAudio'dan PipeWire'a Geçiş Rehberi ve Karşılaşılan Hatalar
+33. Linux'ta HDMI Üzerinden Ses Gelmiyor (TV veya Monitör Hoparlörü)
+34. Mikrofon Ses Seviyesi Sürekli Kendi Kendine Düşüyor / Kapanıyor
+35. Bluetooth Ses Cihazlarında (A2DP / HSP/HFP) Ses Gecikmesi (Latency) Çözümü
+36. Linux'ta VLC veya MPV Oynatıcıda 4K Video Takılma Sorunu
+37. Kayıt Alırken veya Yayın Yaparken (OBS Studio) Ses Senkronizasyon Kaybı
+38. Dahili Mikrofon Çalışmıyor Ama Harici Kulaklık Mikrofonu Çalışıyor
+39. Linux'ta Ses Kartı Tanınmıyor ("Dummy Output" Hatası)
+40. ALSA ve PipeWire Çakışmaları Nasıl Giderilir?
+
+## 5. Donanım, Klavye, Touchpad ve Güç Yönetimi
+
+41. Laptop Kapağı Kapatıldığında Bilgisayar Uyku Moduna Geçmiyor
+42. Türkçe Q/F Klavye Düzeni Güncelleme Sonrasında Neden İngilizceye Dönüyor?
+43. Medya Tuşları (Ses Açma/Kapatma, Parlaklık) Çalışmıyor Çözümü
+44. USB Bellek veya Harici Disk Linux'ta "Read-Only" (Salt Okunur) Hatası Veriyor
+45. Parmak İzi Okuyucu (Fingerprint Reader) Linux Güncellemesi Sonrası Çalışmıyor
+46. Linux'ta Pil Ömrü Çok Hızlı Tükeniyor (Güç Yönetimi ve TLP Ayarları)
+47. Mekanik Klavye Arka Işıkları (RGB) Linux'ta Nasıl Kontrol Edilir?
+48. Fare Tekeri (Scroll) Çok Hızlı veya Çok Yavaş Kaydırma Sorunu
+49. Harici Fare (Mouse) Bağlandığında İmleç Donuyor veya Takılıyor
+50. Thunderbolt Cihazlar Linux Güncellemesinden Sonra Algılanmıyor
+
+## 6. Geliştirici Araçları, Docker ve Konteyner Sorunları
+
+51. Docker Servisi Güncelleme Sonrası Başlamıyor (Systemd Hatası)
+52. VS Code Güncellemesi Sonrası Git Entegrasyonu Çalışmıyor
+53. Node.js ve NPM Güncellemesi Sonrası "Permission Denied" (Erişim Reddedildi) Hatası
+54. Python `pip` Güncelleme Sonrası "Externally Managed Environment" Hatası ve Çözümü
+55. Git Komutları Güncelleme Sonrası SSH Anahtarını (Key) Kabul Etmiyor
+56. PostgreSQL / MySQL Servisi Linux Güncellemesi Sonrası Başlamıyor
+57. Curl / Wget Sertifika Doğrulama (SSL Certificate Verify Failed) Hatası
+58. Wine Güncellemesi Sonrası Windows Uygulamaları Açılmıyor
+59. Android Studio Emulator Linux'ta KVM Hatası Verip Açılmıyor
+60. Kubernetes (Minikube / Kubectl) Bağlantı Kopma Sorunları
+
+## 7. Güvenlik, Şifreleme ve İzin (Permission) Sorunları
+
+61. SSH Bağlantılarında "REMOTE HOST IDENTIFICATION HAS CHANGED" Hatası Çözümü
+62. LUKS Disk Şifreleme Güncelleme Sonrası Parolayı Kabul Etmiyor
+63. Polkit / PolicyKit Hatası Nedeniyle Uygulamalar Yönetici Yetkisi İstemiyor
+64. SELinux Güncelleme Sonrası Web Sunucusunu (Nginx/Apache) Engelliyor
+65. UFW Güvenlik Duvarı (Firewall) Güncelleme Sonrası Erişimi Engelliyor
+66. GNOME Keyring Sürekli Şifre İstiyor / Kilit Açma Ekranı Döngüsü
+67. Linux'ta Dosya İzinleri Bozuldu (`chmod / chown` ile Nasıl Düzeltilir?)
+68. AppArmor Güncelleme Sonrası Uygulamaları Kısıtlıyor / Log Hataları
+69. Sudo Yetkisi Kayboldu / Kullanıcı Sudoers Dosyasından Silindi Çözümü
+70. VPN ve Sertifika Tabanlı Girişlerde "Expired Certificate" Hatası
+
+## 8. Masaüstü Ortamları ve Özelleştirme Sorunları (GNOME, KDE, XFCE)
+
+71. GNOME Uzantıları (Extensions) Güncelleme Sonrası Neden Kapanıyor?
+72. KDE Plasma Güncellemesinden Sonra Panel (Taskbar) Donuyor / Çöküyor
+73. XFCE Pencere Yöneticisi (XFWM) Ekran Yırtılması (Tearing) Sorunu ve Çözümü
+74. Wayland Üzerinde Ekran Görüntüsü (Screenshot) Alma Araçları Çalışmıyor
+75. Linux Temaları ve Simgeler (Icons) Güncelleme Sonrası Neden Varsayılanına Döndü?
+76. KRunner veya GNOME Search Çubuğu Dosyaları Aramıyor
+77. Conky veya Masaüstü Widget'ları Güncelleme Sonrası Arka Planda Kalıyor
+78. Otomatik Oturum Açma (Auto-login) Güncelleme Sonrası Devre Dışı Kaldı
+79. Kilit Ekranı (Lock Screen) Şifre Girilmesine Rağmen Açılmıyor
+80. Linux'ta Pencere Gölgeleri ve Efektleri Nasıl Kapatılır / Açılır?
+
+##  9. Bulut, Yedekleme ve Dosya Sistemi Sorunları
+
+81. Nextcloud / Owncloud Linux Senkronizasyon İstemcisi Hataları ve Çözümü
+82. Google Drive / OneDrive Linux'ta (Rclone/Insync) Güncelleme Sonrası Senkronize Olmuyor
+83. NTFS Dosya Sistemi Linux'ta "Dirty Bit" Hatası Veriyor ve Bağlanmıyor
+84. Timeshift Yedekleme Aracı Güncelleme Sonrası Geri Yükleme Yapamıyor
+85. Samba (SMB) Paylaşımları Güncelleme Sonrası Ağda Görünmüyor
+86. NFS Sunucu Bağlantıları Timeout (Zaman Aşımı) Hatası Veriyor
+87. ZFS Dosya Sistemi Güncelleme Sonrası Havuz (Pool) Hatası
+88. Btrfs Snapshot (Anlık Görüntü) Alan Doluluğu Temizleme Rehberi
+89. Harici SSD (ExFAT/FAT32) Linux'ta Dosya Kopyalamada Donuyor
+90. Eksternal Disk Bağlandığında Otomatik Mount (Bağlanma) Olmuyor
+
+##  10. Performans, Isınma ve Batarya Optimizasyon Sorunları
+
+91. Linux Güncellemesi Sonrası İşlemci (CPU) Sürekli %100 Çalışıyor (Karasöz / Rogue Process)
+92. Laptop Aşırı Isınıyor ve Fanlar Hiç Durmuyor (CPU Governor Ayarları)
+93. Linux'ta RAM Bellek Sızıntısı (Memory Leak) Nasıl Tespit Edilir ve Önlenir?
+94. SSD Disklerde TRIM Komutu Nasıl Aktif Edilir? (Performans Artırma)
+95. Systemd Servisleri Açılış Süresini Yavaşlatıyor (Boot Süresi Nasıl Düşürülür?)
+96. Linux'ta Swappiness Ayarı Nasıl Yapılır? (Performans İyileştirme)
+97. Harici Ekran Kartı (Nvidia Optimus) Hibrit Modda Çok Elektrik Harcıyor
+98. Linux Güncellemesi Sonrası Wi-Fi Hızı Düştü (Power Saving Modunu Kapatma)
+99. İşlemci Frekansı (Frequency Scaling) Sabitlendi ve Performans Düştü
+100. Linux'ta "OOM Killer" (Out of Memory) Süreçleri Durduruyor Nasıl Engellenir?
