@@ -34,7 +34,7 @@ Bu kapsamlı rehber, masaüstü arayüzüne ulaşamayan kullanıcıların TTY ko
     - [Adım 2: Bozuk Nvidia Sürücülerini Tamamen Kaldırma](#adım-2-bozuk-nvidia-sürücülerini-tamamen-kaldırma)
     - [Adım 3: Sistemi Yeniden Başlatma ve Açık Kaynak Sürücüye Dönüş](#adım-3-sistemi-yeniden-başlatma-ve-açık-kaynak-sürücüye-dönüş)
     - [Adım 4: Kararlı Resmi Nvidia Sürücüsünü Yeniden Kurma](#adım-4-kararlı-resmi-nvidia-sürücüsünü-yeniden-kurma)
-- [Alternatif Durumlar ve Ek İpuçları](#alternatif-durumlar-ve-ek-ipuçları)
+- [Alternatif Durumlar ve Ek İpuçları](#alternatif-durumlar)
 - [Sık Sorulan Sorular (SSS)](#sık-sorulan-sorular-sss)
 
 ***
@@ -174,3 +174,7 @@ Eğer temizlik sonrasında masaüstü gelmiyorsa, ekran kartınızın modeline u
 ### Bu sorun her güncellemede tekrarlar mı?
 
 Genellikle çekirdek güncellemeleri ile DKMS modüllerinin eş zamanlı güncellenememesinden kaynaklanır. Düzenli sistem güncellemelerinde paket bağımlılıklarının eksiksiz tamamlandığından emin olmak bu sorunun tekrarlanma riskini en aza indirir.
+
+```
+
+```
