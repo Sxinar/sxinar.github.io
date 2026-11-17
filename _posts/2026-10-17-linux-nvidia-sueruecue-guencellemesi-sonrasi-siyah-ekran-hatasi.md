@@ -17,11 +17,11 @@ settings:
   toc: true
 ---
 
-# Linux Nvidia Sürücü Güncellemesi Sonrası Siyah Ekran Hatası 
+# Linux Nvidia Sürücü Güncellemesi Sonrası Siyah Ekran Hatası  
 
 Linux işletim sistemlerinde gerçekleştirilen ekran kartı sürücüsü güncellemeleri, özellikle tescilli (proprietary) Nvidia sürücülerinde bazen Xorg veya Wayland sunucusunun çökmesine neden olur. Bu durum, grafik arayüzün tamamen devre dışı kalmasına ve bilgisayarın açılışta siyah ekranda takılmasına yol açar. Masaüstü ortamına erişilemediği için kullanıcılar açısından kritik bir kriz anı oluşturan bu sorun, komut satırı aracılığıyla kalıcı olarak çözülebilir.
 
-Bu kapsamlı rehber, masaüstü arayüzüne ulaşamayan kullanıcıların TTY konsolu üzerinden sürücü çakışmalarını nasıl gidereceğini, sistemi kararlı duruma nasıl getireceğini ve resmi Nvidia sürücülerini hatasız bir şekilde nasıl yeniden kuracağını adım adım açıklamaktadır.
+Bu kapsamlı rehber, masaüstü arayüzüne ulaşamayan kullanıcıların TTY konsolu üzerinden sürücü çakışmalarını nasıl gidereceğini, sistemi kararlı duruma nasıl getireceğini ve resmi Nvidia sürücülerine hatasız bir şekilde nasıl yeniden döneceğini adım adım açıklamaktadır.
 
 ***
 
@@ -45,9 +45,9 @@ Sistem açılışında imlecin bulunmadığı tamamen siyah bir ekranda kalıyor
 
 Bu durum genellikle şu sebeplerden kaynaklanır:
 
-* Yeni çekirdek (kernel) sürümü ile Nvidia modüllerinin (DKMS) derlenememesi.
-* Paket yöneticisi güncellemeleri sırasında bağımlılıkların eksik kalması.
-* Wayland veya X11 protokolleri ile yeni sürücü sürümü arasında oluşan çakışmalar.
+- Yeni çekirdek (kernel) sürümü ile Nvidia modüllerinin (DKMS) derlenememesi.
+- Paket yöneticisi güncellemeleri sırasında bağımlılıkların eksik kalması.
+- Wayland veya X11 protokolleri ile yeni sürücü sürümü arasında oluşan çakışmalar.
 
 ***
 
@@ -65,9 +65,10 @@ Bilgisayarınız siyah ekrandayken grafik arayüzden tamamen bağımsız, metin 
 
 ```text
 Ctrl + Alt + F3
+
 ```
 
-_(Not: F3 tuşu sisteminizde farklı bir sanal terminale atanmışsa F4, F5 veya F6 tuş kombinasyonlarını da deneyebilirsiniz.)_
+*(Not: F3 tuşu sisteminizde farklı bir sanal terminale atanmışsa F4, F5 veya F6 tuş kombinasyonlarını da deneyebilirsiniz.)*
 
 Ekran siyahlıktan çıkıp bir yazı ekranına dönüştüğünde sistem sizden kullanıcı oturum bilgilerini isteyecektir:
 
@@ -76,7 +77,7 @@ Ekran siyahlıktan çıkıp bir yazı ekranına dönüştüğünde sistem sizden
 
 > **Önemli Güvenlik Notu:** Linux sistemlerde şifre girerken güvenlik sebebiyle ekranda hiçbir karakter, yıldız veya nokta belirmez. Bu durum tamamen normaldir. Şifrenizi eksiksiz yazıp doğrudan **Enter** tuşuna basın.
 
-***
+---
 
 ### Adım 2: Bozuk Nvidia Sürücülerini Tamamen Kaldırma
 
@@ -89,21 +90,24 @@ Kullandığınız Linux dağıtımına uygun komut grubunu çalıştırın:
 ```bash
 sudo apt-get purge "*nvidia*"
 sudo apt autoremove --purge
+
 ```
 
 * **Fedora ve RHEL Tabanlı Dağıtımlar İçin:**
 
 ```bash
 sudo dnf remove "*nvidia*"
+
 ```
 
 * **Arch Linux ve Manjaro Tabanlı Dağıtımlar İçin:**
 
 ```bash
 sudo pacman -Rns $(pacman -Qq | grep nvidia)
+
 ```
 
-***
+---
 
 ### Adım 3: Sistemi Yeniden Başlatma ve Açık Kaynak Sürücüye Dönüş
 
@@ -111,11 +115,12 @@ Sürücü paketleri tamamen kaldırıldıktan sonra, grafik alt sisteminin varsa
 
 ```bash
 sudo reboot
+
 ```
 
 Yeniden başlatma işleminin ardından sisteminiz normal açılış rutinine dönecek ve grafik masaüstü arayüzüne (GNOME, KDE, XFCE vb.) sorunsuz bir şekilde erişebileceksiniz.
 
-***
+---
 
 ### Adım 4: Kararlı Resmi Nvidia Sürücüsünü Yeniden Kurma
 
@@ -126,6 +131,7 @@ Masaüstü ortamına ulaştıktan sonra terminal uygulamasını açın ve günce
 ```bash
 sudo ubuntu-drivers install
 sudo reboot
+
 ```
 
 * **Fedora İçin:**
@@ -133,6 +139,7 @@ sudo reboot
 ```bash
 sudo dnf install akmod-nvidia
 sudo reboot
+
 ```
 
 * **Arch Linux İçin:**
@@ -140,18 +147,19 @@ sudo reboot
 ```bash
 sudo pacman -S nvidia nvidia-utils nvidia-settings
 sudo reboot
+
 ```
 
 Kurulum tamamlandıktan sonra bilgisayarınızı son bir kez yeniden başlattığınızda sisteminiz Nvidia sürücüleriyle sorunsuz bir şekilde çalışmaya devam edecektir.
 
-***
+---
 
 ## Alternatif Durumlar ve Ek İpuçları
 
 * **Güvenlik Mod (Recovery Mode) Kullanımı:** Eğer standart yöntemlerle TTY ekranına erişemiyorsanız, bilgisayarı yeniden başlatıp önyükleme sırasında açılan **Grub Bootloader** menüsünden **Advanced Options for Linux** seçeneğine girerek **Recovery Mode** satırını seçebilir ve buradan **Root** komut satırına geçiş yapabilirsiniz.
 * **Nouveau Çakışma Kontrolü:** Bazı özel durumlarda açık kaynaklı `nouveau` sürücüsü arka planda çalışmaya devam ederek tescilli sürücünün yüklenmesini engelleyebilir. Bu gibi senaryolarda `/etc/modprobe.d/blacklist.conf` dosyasına `blacklist nouveau` kuralının ekli olduğundan emin olunmalıdır.
 
-***
+---
 
 ## Sık Sorulan Sorular (SSS)
 
